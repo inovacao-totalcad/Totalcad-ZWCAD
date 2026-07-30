@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>vlax-invoke-method</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">vlax-invoke-method</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(vlax-invoke-method obj method arg1 [arg2...])</p>
+<p class="body_text">Invokes the method specified by "method" of the vla-object specified by "obj".</p>
+<p class="body_text">If the method makes sense to the vla-object and the supplied arguments are valid, the function runs successfully and the returned value depends on the vla-object's method, otherwise displays an error message. </p>
+<p class="body_text">The function accepts two arguments at least, and how many arguments must be supplied depends on the method invoked:</p>
+<table class="table-desc">
+<tr>
+<th>Argument</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td><b>obj</b>
+</td>
+<td>
+
+A VLA-object.
+</td>
+</tr>
+<tr>
+<td><b>method</b>
+</td>
+<td>
+
+A symbol or string naming the method to be invoked.
+</td>
+</tr>
+<tr>
+<td><b>arg1, arg2...</b>
+</td>
+<td>
+
+Argument to be passed to the method called.
+</td>
+</tr>
+</table>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+
+(vl-load-com)<br/>
+(setq ename_line (car (entsel "\nPlease select   a line: ")))<br/>
+(setq vlaname_line (vlax-ename-&gt;vla-object ename_line))<br/>
+(setq centerpt (vlax-get-property vlaname_line'StartPoint))<br/>
+(<b><font color="#0e85e4">vlax-invoke-method</font></b> vlaname_line 'ArrayPolar 10 360 centerpt)
+</td>
+<td>
+<img border="0" src="../pics/ArrayPolar.bmp"/>
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="vlax-get-property.htm">(vlax-get-property vla-object propertyName)</a></p>
+<p class="body_text"><a href="vlax-method-applicable-p.htm">(vlax-method-applicable-p objmethod)</a></p>
+<p class="body_text"><a href="vlax-property-available-p.htm">(vlax-property-available-p obj prop [check-modify])</a></p>
+<p class="body_text"><a href="vlax-put-property.htm">(vlax-put-property obj property arg)</a></p>
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

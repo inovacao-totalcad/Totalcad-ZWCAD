@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>vl-symbol-name</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">vl-symbol-name</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(vl-symbol-name symbol)</p>
+<p class="body_text">Returns the name of the symbol in the form of capital string.</p>
+<p class="body_text">If the datatype of the symbol argument is SYM, this function returns the name of the symbol in the form of capital string, otherwise, returns an error message like "bad argument type". </p>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+
+(vl-symbol-name t)
+</td>
+<td>
+
+"T"
+</td>
+</tr>
+<tr>
+<td>
+
+(vl-symbol-name 'S::StartUp)
+</td>
+<td>
+
+"S::STARTUP"</td>
+</tr>
+<tr>
+<td>
+
+(vl-symbol-name 12)
+</td>
+<td>
+<span class="body">error: "bad argument type"</span></td>
+</tr>
+</table>
+
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

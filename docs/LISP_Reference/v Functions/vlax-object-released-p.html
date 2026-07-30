@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>vlax-object-released-p</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">vlax-object-released-p</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(vlax-object-released-p obj)</p>
+<p class="body_text">Determines whether the specified argument with VLA object data type has been released.</p>
+<hr align="left"/>
+<p class="define_head_1">Attentions</p>
+<p class="body_text">Erasing a VLA-object (using command ERASE or vla-erase) does not release the object. A VLA-object is not released until you invoke vlax-release-object on the object, or normal AutoLISP garbage collection occurs, or the drawing database is destroyed at the end of the drawing session.</p>
+<p class="body_text">If obj argument represents a VLA object and it has been released, this function returns T, otherwise nil. If this argument doesn't represent VLA object, ZWCAD will reports "error: bad argument type".</p>
+<p class="body_text">The function accepts one argument:</p>
+<table class="table-desc">
+<tr>
+<th>Argument</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td>
+<b>obj</b>
+</td>
+<td>
+
+A VLA  object.</td>
+</tr>
+</table>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<pre>
+(setq obj (vlax-ename-&gt;vla-object
+	    (car (entsel "\nselect a line: "))
+	  )
+)
+(<span class="keyfunc">vlax-object-released-p</span> obj)
+</pre>
+</td>
+<td>
+
+nil
+  <p class="body_text">The obj argument represents a line object, and the argument isn't released. </p></td>
+</tr>
+<tr>
+<td>
+<pre>
+(setq obj (vlax-ename-&gt;vla-object
+	    (car (entsel "\nselect a line: "))
+	  )
+)
+(vlax-release-object obj)
+(<span class="keyfunc">vlax-object-released-p</span> obj)
+</pre>
+</td>
+<td>
+
+T
+  <p class="body_text">The obj argument represents a line object, and the argument has been released by vlax-release-object function. </p></td>
+</tr>
+</table>
+
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

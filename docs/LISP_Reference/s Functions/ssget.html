@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ssget</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">ssget</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(ssget [mode] [point1 [point2]] [point-list] [filter-list])</p>
+<p class="body_text">Prompts the user to create a selection set.</p>
+<p class="body_text">When called without arguments, this function displays a "Select objects:" prompt and allows interactive selection. This is the only scenario where selected entities are graphically highlighted. The function returns a selection set identifier like &lt;Selection set: c8260a10&gt;. Note that attributes and polyline vertices are excluded from selection sets.</p>
+<p class="body_text">The mode parameter determines the selection technique:</p>
+<table class="table-desc">
+<tr>
+<th>Mode </th>
+<th>Selection Method</th>
+<th>Arguments </th>
+<th>Sample Call </th>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+Simple selection
+</td>
+<td>
+point1
+</td>
+<td>
+<b>(<font color="#0e85e4">ssget</font></b><b>)</b> or <b>(<font color="#0e85e4">ssget</font></b> '(5 7)<b>)</b>
+</td>
+</tr>
+<tr>
+<td>
+<b>"C"</b>
+</td>
+<td>
+Crossing window
+</td>
+<td>
+point1 point2 
+</td>
+<td>
+<b>(<font color="#0e85e4">ssget</font></b> "C" '(0 0) '(10 5)<b>)</b>
+</td>
+</tr>
+<tr>
+<td>
+<b>"CP"</b>
+</td>
+<td>
+Polygonal crossing
+</td>
+<td>
+points-list  
+</td>
+<td>
+<b>(<font color="#0e85e4">ssget</font></b> "CP" polyPts<b>)</b>
+</td>
+</tr>
+<tr>
+<td>
+<b>"F"</b>
+</td>
+<td>
+Fence selection
+</td>
+<td>
+points-list  
+</td>
+<td>
+<b>(<font color="#0e85e4">ssget</font></b> "F" fencePoints<b>)</b>
+</td>
+</tr>
+<tr>
+<td>
+<b>"I"</b>
+</td>
+<td>
+Implied selection  
+</td>
+<td>
+none   
+</td>
+<td>
+<b>(<font color="#0e85e4">ssget</font></b> "I"<b>)</b>
+</td>
+</tr>
+<tr>
+<td>
+<b>"L"</b>
+</td>
+<td>
+Last created entity  
+</td>
+<td>
+none   
+</td>
+<td>
+<b>(<font color="#0e85e4">ssget</font></b> "L"<b>)</b>
+</td>
+</tr>
+<tr>
+<td>
+<b>"P"</b>
+</td>
+<td>
+Previous selection set  
+</td>
+<td>
+none    
+</td>
+<td>
+<b>(<font color="#0e85e4">ssget</font></b> "P"<b>)</b>
+</td>
+</tr>
+<tr>
+<td>
+<b>"W"</b>
+</td>
+<td>
+Window selection     
+</td>
+<td>
+point1 point2     
+</td>
+<td>
+<b>(<font color="#0e85e4">ssget</font></b> "W" '(1 2) '(8 6)<b>)</b>
+</td>
+</tr>
+<tr>
+<td>
+<b>"WP"</b>
+</td>
+<td>
+Polygonal window    
+</td>
+<td>
+points-list      
+</td>
+<td>
+<b>(<font color="#0e85e4">ssget</font></b> "WP" windowPts<b>)</b>
+</td>
+</tr>
+<tr>
+<td>
+<b>"X"</b>
+</td>
+<td>
+Database scan    
+</td>
+<td>
+none     
+</td>
+<td>
+<b>(<font color="#0e85e4">ssget</font></b> "X"<b>)</b>
+</td>
+</tr>
+<tr>
+<td>
+<b>":S"</b>
+</td>
+<td>
+Single-selection mode    
+</td>
+<td>
+none     
+</td>
+<td>
+<b>(<font color="#0e85e4">ssget</font></b> ":S"<b>)</b>
+</td>
+</tr>
+</table>
+<p class="body_text">The "I" mode accesses preselected entities when PICKFIRST is enabled.</p>
+<p class="body_text">Coordinate arguments (point1, point2) define selection areas based on the chosen mode.</p>
+<p class="body_text">The filter-list uses dotted pairs to specify entity properties:</p>
+<p class="body_text">(ssget "X" '((0 . "LINE") (62 . 5)))</p>
+<p class="body_text">selects all blue lines. Relational tests use the -4 group code:</p>
+<p class="body_text">(ssget "X" '((0 . "ARC") (-4 . "&gt;=") (40 . 10.0))</p>
+<p class="body_text">selects all arcs with radius &gt;= 10 units. Supported operators:</p>
+<table class="table-desc">
+<tr>
+<th>Operator</th>
+<th>Function</th>
+</tr>
+<tr>
+<td>
+<b>"&amp;"</b>
+</td>
+<td>
+Bitwise AND (integers)
+</td>
+</tr>
+<tr>
+<td>
+<b>"&amp;="</b>
+</td>
+<td>
+Bitwise equality (integers) 
+</td>
+</tr>
+<tr>
+<td>
+<b>"*"</b>
+</td>
+<td>
+Wildcard match (strings) 
+</td>
+</tr>
+<tr>
+<td>
+<b>"="</b>
+</td>
+<td>
+Equality test
+</td>
+</tr>
+<tr>
+<td>
+<b>"!="</b>
+</td>
+<td>
+Inequality test 
+</td>
+</tr>
+<tr>
+<td>
+<b>"/=" </b>
+</td>
+<td>
+Inequality test
+</td>
+</tr>
+<tr>
+<td>
+<b>"&lt;&gt;"</b>
+</td>
+<td>
+Inequality test
+</td>
+</tr>
+<tr>
+<td>
+<b>"&lt;"</b>
+</td>
+<td>
+Less than
+</td>
+</tr>
+<tr>
+<td>
+<b>"&lt;="</b>
+</td>
+<td>
+Less than or equal
+</td>
+</tr>
+<tr>
+<td>
+<b>"&gt;"</b>
+</td>
+<td>
+Greater than
+</td>
+</tr>
+<tr>
+<td>
+<b>"&gt;="</b>
+</td>
+<td>
+Greater than or equal
+</td>
+</tr>
+</table>
+<p class="body_text">Bitwise operators work exclusively with integers. The asterisk (*) is string-specific.</p>
+<p class="define_head_1">Important</p>
+<p class="body_text">Entity snap settings do not affect ssget selections.</p>
+<!--
+<p class="body_text">When the selection set is used in model space, paper space entities are not selected, and vice versa: entities from the space not currently in effect are filtered out.</p> 
+-->
+<!---bottom...
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="command.htm">(command cmd [arguments] ...)</A></P>
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

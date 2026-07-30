@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>vlr-remove</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">vlr-remove</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(vlr-remove reactor)</p>
+<p class="body_text">Forbids using a specified reactor object.</p>
+<p class="body_text">If the reactor argument represents a reactor object, this function returns a reactor object even if the reactor object has been forbidden, otherwise prompts "error: bad argument type".</p>
+<p class="body_text">The function accepts one argument:</p>
+<table class="table-desc">
+<tr>
+<th>Argument</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td>
+<b>reactor</b>
+</td>
+<td>
+
+A reactor object. 
+</td>
+</tr>
+</table>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+
+(vl-load-com)<br/>
+(setq appobjvlr (vlr-acdb-reactor nil '((:vlr-objectAppended . objectAppended))))<br/>
+;;;define the callback function<br/>
+(defun objectAppended(reactor_object obj)<br/>(alert "One entity has been appended to the drawing database!")<br/>)<br/>
+;;;Forbid a reactor<br/>
+(defun c:Forbidvlr()<br/>(<b><font color="#0e85e4">vlr-remove</font></b> appobjvlr)<br/>)
+</td>
+<td>
+If you haven't executed Forbidvlr command, ZWCAD will open a dialog as following automatically when you draw any entity:<br/>
+<img border="0" src="../pics/vlr-acdb-reactor-1.bmp"/><br/>
+But after executing Forbidevlr command, ZWCAD will never again open the dialog when you draw any entity.
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="vlr-remove-all.htm">(vlr-remove-all [reactor-type])</a></p>
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

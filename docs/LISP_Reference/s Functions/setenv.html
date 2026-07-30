@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>setenv</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">setenv</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(setenv variable value)</p>
+<p class="body_text">Assigns a specified value to a system environment variable within the ZWCAD application context.</p>
+<p class="body_text">This function modifies or creates global environment parameters accessible during the current ZWCAD session. For persistent system variables, use platform-specific configuration methods.</p>
+<p class="body_text"><b>Implementation Notes</b></p>
+<ul class="body_text">
+<li>New variables created through this function are maintained in ZWCAD's runtime memory and may not be visible in external system terminals.</li>
+<li>When modifying ZWCAD-specific configuration variables (e.g., ZWCAD_PREFIX), values are automatically routed to appropriate internal registry entries.</li>
+<li>Environment changes take immediate effect for subsequent commands but do not alter system-level configurations.</li>
+</ul>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">setenv</font> </b>"tmp" "one"<b>)</b>
+</td>
+<td>
+
+"one"
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="getenv.htm">(getenv variable)</a></p>
+<!---bottom...
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

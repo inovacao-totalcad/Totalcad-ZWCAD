@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>done_dialog</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">done_dialog</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(done_dialog [flag])</p>
+<p class="body_text">Closes the active dialog box.</p>
+<p class="body_text">This function exits the current dialog and provides the x,y coordinates of its position, allowing subsequent start_dialog calls to reposition it accordingly.</p>
+<p class="body_text">The optional <i>flag</i> parameter sets a return code for the start_dialog function. When the flag exceeds 1, start_dialog returns this value directly. For values 1 or below, standard status codes apply:</p>
+<table class="table-desc">
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><b>0</b></td>
+<td>Dialog was canceled by user</td>
+</tr>
+<tr>
+<td><b>1</b></td>
+<td>Dialog was accepted by user</td>
+</tr>
+</table>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+</tr>
+<tr>
+<td>
+<b>(</b><font color="#0e85e4">setq</font> dlg <b>(</b><font color="#0e85e4">start_dialog</font><b>))</b><br/>
+<b>(<font color="#0e85e4">done_dialog</font> </b>dlg<b>)</b>
+</td>
+</tr>
+</table>
+
+<!---bottom...
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="command.htm">(command cmd [arguments] ...)</A></P>
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

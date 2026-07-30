@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>vlax-curve-getParamAtDist</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">vlax-curve-getParamAtDist</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(vlax-curve-getParamAtDist curve-obj dist)</p>
+<p class="body_text">Returns the parameter of a curve at the specified distance from the beginning of the curve.</p>
+<p class="body_text">This function returns a real number representing an parameter, if successful; otherwise nil. </p>
+<p class="body_text">The function accepts two arguments:</p>
+<table class="table-desc">
+<tr>
+<th>Argument</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td>
+<b>curve-obj</b>
+</td>
+<td>
+
+A VLA-object. 
+</td>
+</tr>
+<tr>
+<td>
+<b>dist</b>
+</td>
+<td>
+
+A number specifying the distance from the beginning of the curve. 
+</td>
+</tr>
+</table>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+
+(command "spline" "0,0" "6,7" "12,2" "22,8" "" "" "")<br/>
+(setq vla_object (vlax-ename-&gt;vla-object (entlast)))<br/>
+(<b><font color="#0e85e4">vlax-curve-getParamAtDist</font></b> vla_object 10.0)
+</td>
+<td>
+9.59229
+</td>
+</tr>
+</table>
+
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

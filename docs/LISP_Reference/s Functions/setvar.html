@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>setvar</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">setvar</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(setvar sysvar value)</p>
+<p class="body_text">Modifies configuration settings in ZWCAD through system variables.</p>
+<p class="body_text">This function updates specified ZWCAD environment parameters. The sysvar parameter must be a case-sensitive string matching the target system variable's official name.</p>
+<p class="body_text">The required value format varies by system variable type. Acceptable formats include numeric values (integer or decimal), coordinate arrays ([x,y] or [x,y,z]), or text-based entries. Refer to ZWCAD system variable documentation for type-specific requirements.</p>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">setvar</font> </b>"gripblock" 1<b>)</b>
+</td>
+<td>
+
+1
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">setvar</font> </b>"plinetype" 0<b>)</b>
+</td>
+<td>
+
+0
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Note</p>
+<ul class="command_ul">
+<li><p>The setvar function is identical in nature to the setvar command, with a single exception: the Angbase system variable accepts degrees with the Setvar command but only accepts radians with the setvar function.</p>
+</li>
+<li><p>Some system variables are read-only, which means their value cannot be changed with setvar. For example, the CDate system variable contains the current date and time. You cannot change that with the setvar function. Instead, you must use the Windows Date &amp; Time Properties dialog box. You can, however, retrieve the value of any system variable with getvar.   The first eight color numbers have the following meanings:</p></li></ul>
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="getvar.htm">(getvar sysvar)</a></p>
+<!---bottom...
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

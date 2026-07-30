@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>trans</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">trans</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(trans point from to [flag])</p>
+<p class="body_text">Converts a point's coordinates between different reference frames.</p>
+<p class="body_text">This routine transforms spatial coordinates represented in one coordinate framework to another specified system.</p>
+<p class="body_text">The point parameter must be a 3-element list. Its interpretation varies based on the flag parameter's value.</p>
+<ul class="command_ul">
+<li><p>The from parameter specifies the source coordinate system:</p></li></ul>
+<table class="table-desc">
+<tr>
+<th>ID</th>
+<th>Reference Frame</th>
+</tr>
+<tr>
+<td>
+<b>0</b>
+</td>
+<td>
+Global coordinate framework (WCS)
+</td>
+</tr>
+<tr>
+<td>
+<b>1</b>
+</td>
+<td>
+Active user coordinate system (UCS)
+</td>
+</tr>
+<tr>
+<td>
+<b>2</b>
+</td>
+<td>
+Viewport display coordinates (DCS)<br/>Use 0/1 for current viewport<br/>Use 3 for model space viewport
+</td>
+</tr>
+<tr>
+<td>
+<b>3</b>
+</td>
+<td>
+Layout space display coordinates
+</td>
+</tr>
+</table>
+<ul class="command_ul">
+<li><p>The to parameter indicates the target system using the same ID codes</p></li>
+<li><p>The flag parameter defines coordinate interpretation:</p></li></ul>
+<table class="table-desc">
+<tr>
+<th>Flag</th>
+<th>Behavior</th>
+</tr>
+<tr>
+<td>
+<b>T</b>
+</td>
+<td>
+Vector translation mode
+</td>
+</tr>
+<tr>
+<td>
+<b>nil</b>
+</td>
+<td>
+Standard position conversion
+</td>
+</tr>
+</table>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">trans</font> </b>'<b>(</b>3.6 -4 5.4<b>)</b> 1 0<b>)</b>
+</td>
+<td>
+
+(3.60000 -6.64680 0.989949)
+</td>
+</tr>
+</table>
+
+<!---bottom...
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="command.htm">(command cmd [arguments] ...)</A></P>
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

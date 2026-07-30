@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>vlax-dump-object</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">vlax-dump-object</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(vlax-dump-object vla-object [T])</p>
+<p class="body_text">List a VLA-object's properties or properties and methods.</p>
+<p class="body_text">If T parameter isn't specified, this function will list all properties of the vla-object, return the name of this object, and list all methods of the vla-object additionally and returns T. </p>
+<p class="body_text">The function accepts one argument and one optional argument:</p>
+<table class="table-desc">
+<tr>
+<th>Argument</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td><b>vla-object</b>
+</td>
+<td>
+
+A VlA-object.
+</td>
+</tr>
+<tr>
+<td><b>T</b>
+</td>
+<td>
+
+If specified, this function also lists all methods of the VLA-object.
+</td>
+</tr>
+</table>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>(<b><font color="#0e85e4">vlax-dump-object</font></b> (vlax-get-zwcad-object))
+</td>
+<td>
+
+Property values:<br/>
+;    ActiveDocument (RO)<br/>
+;    Application (RO)<br/>
+;    Caption (RO)<br/>
+;    DefaultFilePath<br/>
+;    Documents (RO)<br/>
+;    FullName (RO)<br/>
+;    Height<br/>
+;    LocaleID (RO)<br/>
+;    WindowLeft<br/>
+;    Library (RO)<br/>
+;    Name (RO)<br/>
+;    Path (RO)<br/>
+;    PlotManager (RO)<br/>
+;    Preferences (RO)<br/>
+;    StatusBar<br/>
+;    WindowTop<br/>
+;    VBE (RO)<br/>
+;    Version (RO)<br/>
+;    Visible<br/>
+;    Width<br/>
+;    HWND (RO)<br/>
+;    WindowState<br/>
+;    LockHardID (RO)<br/>
+;    StatusID (RO)<br/>
+#&lt;VLA-OBJECT IZWCADApplication 1e537c&gt;
+</td>
+</tr>
+<tr>
+<td>(<b><font color="#0e85e4">vlax-dump-object</font></b> (vlax-get-zwcad-object) T)
+</td>
+<td>
+
+Property values:<br/>
+;    ActiveDocument (RO)<br/>
+;    Application (RO)<br/>
+;    Caption (RO)<br/>
+;    DefaultFilePath<br/>
+;    Documents (RO)<br/>
+;    FullName (RO)<br/>
+;    Height<br/>
+;    LocaleID (RO)<br/>
+;    WindowLeft<br/>
+;    Library (RO)<br/>
+;    Name (RO)<br/>
+;    Path (RO)<br/>
+;    PlotManager (RO)<br/>
+;    Preferences (RO)<br/>
+;    StatusBar<br/>
+;    WindowTop<br/>
+;    VBE (RO)<br/>
+;    Version (RO)<br/>
+;    Visible<br/>
+;    Width<br/>
+;    HWND (RO)<br/>
+;    WindowState<br/>
+;    LockHardID (RO)<br/>
+;    StatusID (RO)<br/>
+Methods supported:<br/>
+;    LoadZVB (1)<br/>
+;    UnloadZVB (1)<br/>
+;    RunMacro (1)<br/>
+;    ZoomAll ()<br/>
+;    ZoomCenter (2)<br/>
+;    ZoomExtents ()<br/>
+;    ZoomPrevious ()<br/>
+;    ZoomPickWindow ()<br/>
+;    ZoomScaled (2)<br/>
+;    ZoomWindow (2)<br/>
+;    Update ()<br/>
+;    DefineFunction (2)<br/>
+;    UndefineFunction (1)<br/>
+;    Help (3)<br/>
+;    Quit ()<br/>
+;    ListZRX()<br/>
+;    LoadZRX (1)<br/>
+;    UnLoadZRX (1)<br/>
+;    LoadLISP (1)<br/>
+;    RunCommand (1)<br/>
+;    RunScript (1)<br/>
+;    GetInterfaceObject (1)<br/>
+;    IsFunctionLoaded (1)<br/>
+;    SetAppForMPrint (1)<br/>
+;    MPrint (1)<br/>
+T
+</td>
+</tr>
+</table>
+
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

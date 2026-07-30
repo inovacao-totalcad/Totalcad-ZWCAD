@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>getorient</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">getorient</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<div class="zwcad_description">
+<p class="function_syntax">(getorient [base_point] [message])</p>
+<p class="definition">Captures angular input from the user interface.</p>
+<p class="specification">Similar to getangle but returns angular values unaffected by system variables. The measurement originates from the positive X-axis (0 radians) with counterclockwise progression, providing consistent orientation references. Returned values represent radians relative to the coordinate system's absolute basis.</p>
+<p class="application">Recommended for establishing canonical directions rather than incremental rotations. Input methods supporting relative coordinates (@delta) remain permissible.</p>
+<p class="restriction">Interactive responses must be graphical/coordinate inputs - symbolic expressions are disallowed.</p>
+</div>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">getorient</font> </b>"Angle:"<b>)</b>
+</td>
+<td>
+
+Angle:45<br/>
+0.785398
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="initget.htm">(initget [bits] [string])</a></p>
+<p class="body_text"><a href="getangle.htm">(getangle [point] [prompt])</a></p>
+<!---bottom...
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

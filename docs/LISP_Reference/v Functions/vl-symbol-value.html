@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>vl-symbol-value</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">vl-symbol-value</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(vl-symbol-value symbol)</p>
+<p class="body_text">Returns the value of the symbol.</p>
+<p class="body_text">If the datatype of the symbol argument is SYM, this function returns the value of the symbol, otherwise, returns nil.</p>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+(<b><font color="#0e85e4">vl-symbol-value</font></b> T)
+</td>
+<td>
+T</td>
+</tr>
+<tr>
+<td>
+(<b><font color="#0e85e4">vl-symbol-value</font></b> 'pi)
+</td>
+<td>
+3.14159</td>
+</tr>
+<tr>
+<td>
+(<b><font color="#0e85e4">vl-symbol-value</font></b> 'PAUSE)
+</td>
+<td>"\\"</td>
+</tr>
+</table>
+
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

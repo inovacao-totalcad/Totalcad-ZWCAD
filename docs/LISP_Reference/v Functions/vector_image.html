@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>vector_image</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">vector_image</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="function-syntax">(vector_image start_x start_y end_x end_y color_code)</p>
+<div class="description">
+    Renders a directional line segment within a dialog tile, extending from initial coordinates (start_x, start_y) to terminal coordinates (end_x, end_y). The coordinate system originates at the top-left corner with (0,0).
+</div>
+<section class="parameters">
+<h3>Input Arguments</h3>
+<dl>
+<dt><em>start_x</em></dt>
+<dd>Horizontal position of the starting point</dd>
+<dt><em>start_y</em></dt>
+<dd>Vertical position of the starting point</dd>
+<dt><em>end_x</em></dt>
+<dd>Horizontal position of the endpoint</dd>
+<dt><em>end_y</em></dt>
+<dd>Vertical position of the endpoint</dd>
+<dt><em>color_code</em></dt>
+<dd>Numeric representation for line color, including these special codes:</dd>
+</dl>
+</section>
+<div class="color-reference">
+<table class="color-codes">
+<thead>
+<tr>
+<th>Code</th>
+<th>Application</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="highlight">-2</td>
+<td>Adopts the drawing area's background color</td>
+</tr>
+<tr>
+<td class="highlight">-15</td>
+<td>Matches the dialog panel's background shade</td>
+</tr>
+<tr>
+<td class="highlight">-16</td>
+<td>Uses the dialog's primary text color</td>
+</tr>
+<tr>
+<td class="highlight">-18</td>
+<td>Applies the default line color of dialogs</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returns">
+<h3>Output</h3>
+<p>Provides the numerical color identifier used for rendering</p>
+</div>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">vector_image</font> </b>0 0 2 5 -2<b>)</b>
+</td>
+<td>
+
+nil
+</td>
+</tr>
+</table>
+
+<!---bottom...
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="command.htm">(command cmd [arguments] ...)</A></P>
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>vlax-make-variant</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">vlax-make-variant</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(vlax-make-variant [value] [type])</p>
+<p class="body_text">Creates a variant type data.</p>
+<p class="body_text">This function returns a variant type data:</p>
+<ul class="command_ul">
+<li><p>If only the "value" parameter is specified, the data is initialized with the specified value, and its factual type depends on the specified value:</p>
+<table class="table-desc_inLine">
+<tr>
+<th>Value</th>
+<th>Type</th>
+</tr>
+<tr>
+<td>
+<b>nil</b>
+</td>
+<td>
+
+vlax-vbEmpty.
+</td>
+</tr>
+<tr>
+<td>
+<b>:vlax-null</b>
+</td>
+<td>
+
+vlax-vbNull .
+</td>
+</tr>
+<tr>
+<td>
+<b>integer</b>
+</td>
+<td>
+
+vlax-vbLong.
+</td>
+</tr>
+<tr>
+<td>
+<b>real</b>
+</td>
+<td>
+
+vlax-vbDouble. 
+</td>
+</tr>
+<tr>
+<td>
+<b>string</b>
+</td>
+<td>
+
+vlax-vbString. 
+</td>
+</tr>
+<tr>
+<td>
+<b>VLA-object</b>
+</td>
+<td>
+
+vlax-vbObject. 
+</td>
+</tr>
+<tr>
+<td>
+<b>:vlax-true, :vlax-false</b>
+</td>
+<td>
+
+vlax-vbBoolean. 
+</td>
+</tr>
+<tr>
+<td>
+<b>safearray</b>
+</td>
+<td>
+
+vlax-vbArray. 
+</td>
+</tr>
+</table>
+</li>
+<li>If the "value" parameter equals nil and the "type" parameter is specified, the data is initialized with the default value which depends on the "type" parameter:
+<table class="table-desc_inLine">
+<tr>
+<th>Type</th>
+<th>Initial value</th>
+</tr>
+<tr>
+<td>
+<b>numbers</b>
+</td>
+<td>
+
+0.000000
+</td>
+</tr>
+<tr>
+<td>
+<b>strings</b>
+</td>
+<td>
+
+0. 
+</td>
+</tr>
+<tr>
+<td>
+<b>booleans</b>
+</td>
+<td>
+
+0. 
+</td>
+</tr>
+<tr>
+<td>
+<b>Variants</b>
+</td>
+<td>
+
+vlax-vbEmpty(Uninitialized). 
+</td>
+</tr>
+</table>
+</li>
+<li>
+<p>If both parameters are specified, the system automatically transforms the "value" parameter to the "type" datatype, then initializes the data with the "value" parameter after transforming, and the data's factual type depends on the "type" parameter.</p>
+<p>The function accepts two optional arguments:</p>
+<table class="table-desc_inLine">
+<tr>
+<th>Argument</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td>
+<b>value</b>
+</td>
+<td>
+The value to be assigned to the variant.
+</td>
+</tr>
+<tr>
+<td>
+<b>type</b>
+</td>
+<td>
+
+The type of variant. It can be one of the following constants:<br/>
+<li>vlax-vbEmpty (0)Uninitialized (default value)
+</li><li>vlax-vbNull (1)Contains no valid data
+</li><li>vlax-vbInteger (2)Integer
+</li><li>vlax-vbLong (3)Long integer
+</li><li>vlax-vbSingle (4)Single-precision floating-point number
+</li><li>vlax-vbDouble (5)Double-precision floating-point number
+</li><li>vlax-vbString (8)String
+</li><li>vlax-vbBoolean (11)Boolean
+</li><li>vlax-vbArray (8196)Array<br/>
+This parameter can be a string constant or an integer constant(in parentheses), but the integer constant aren't suggested using for the lisp codes' compatibility.
+</li></td>
+</tr>
+</table>
+</li>
+</ul>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+
+(<b><font color="#0e85e4">vlax-make-variant</font></b> 12.3 vlax-vbSingle)
+</td>
+<td>
+<img border="0" src="../pics/makeVariant.bmp"/>
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="vlax-make-safearray.htm">(vlax-make-safearray type '(l-bound . u-bound) ['(l-bound . u-bound)...])</a></p>
+<p class="body_text"><a href="vlax-variant-change-type.htm">(vlax-variant-change-type var type)</a></p>
+<p class="body_text"><a href="vlax-variant-type.htm">(vlax-variant-type var)</a></p>
+<p class="body_text"><a href="vlax-variant-value.htm">(vlax-variant-value var)</a></p>
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

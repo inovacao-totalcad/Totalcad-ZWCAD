@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>vlax-map-collection</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">vlax-map-collection</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(vlax-map-collection obj function)</p>
+<p class="body_text">Applies a function to all objects in a VLA collection object.</p>
+<p class="body_text">If obj argument doesn't represent  a VLA collection object, or each object in the VLA collection object doesn't match the function, vlax-map-collection function would report "error: *error*", otherwise applies the function to all objects in the VLA collection object and returns the value of obj argument.</p>
+<p class="body_text">The function accepts two arguments:</p>
+<table class="table-desc">
+<tr>
+<th>Argument</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td>
+<b>obj</b>
+</td>
+<td>
+
+A VLA collection object.</td>
+</tr>
+<tr>
+<td>
+<b>function</b>
+</td>
+<td>
+
+A function name or lambda expression. 
+</td>
+</tr>
+</table>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<pre>
+(vl-load-com)
+
+(defun c:test (/ curdoc	PaperSpace Nums_circle Nums_line Nums_arc
+	       Nums_ellipse)
+  (setq	Nums_circle
+	 0
+	Nums_line 0
+	Nums_arc 0
+	Nums_ellipse
+	 0
+  )
+  (setq
+    curdoc (vlax-get-property (vlax-get-zwcad-object) 'ActiveDocument)
+  )
+  (setq PaperSpace (vlax-get-property curdoc 'ModelSpace))
+  (<b><font color="#0e85e4">vlax-map-collection</font></b> PaperSpace 'statistics)
+  (alert (strcat (itoa Nums_circle)
+		 " circles"
+		 "\n"
+		 (itoa Nums_line)
+		 " lines"
+		 "\n"
+		 (itoa Nums_arc)
+		 " arcs"
+		 "\n"
+		 (itoa Nums_ellipse)
+		 " ellipses"
+	 )
+  )
+  (princ)
+)
+
+(defun statistics (ent / objType)
+  (setq objType (cdr (assoc 0 (entget (vlax-vla-object-&gt;ename ent)))))
+  (cond
+    ((= objType "CIRCLE")
+     (setq Nums_circle (1+ Nums_circle))
+    )
+    ((= objType "LINE")
+     (setq Nums_line (1+ Nums_line))
+    )
+    ((= objType "ARC")
+     (setq Nums_arc (1+ Nums_arc))
+    )
+    ((= objType "ELLIPSE")
+     (setq Nums_ellipse (1+ Nums_ellipse))
+    )
+  )
+)
+</pre><br/>
+</td>
+<td>
+<p class="body_text"><img src="../pics/vlax-map-collection.bmp"/></p>
+<p class="body_text">The custom command "Test" is invoked to statistics the number of circle, line, arc and ellipse in current drawing's ModelSpace.</p></td>
+</tr>
+</table>
+
+<!---Tell me about
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="vlax-ldata-get.htm">(vlax-ldata-get dict key [default-data])</A></P>
+<p class="body_text"><A HREF="vlax-ldata-list.htm">(vlax-ldata-list dict)</A></P>
+<p class="body_text"><A HREF="vlax-ldata-put.htm">(vlax-ldata-put dict key data)</A></P>
+-->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

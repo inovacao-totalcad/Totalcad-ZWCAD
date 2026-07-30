@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>vlr-object-reactor</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">vlr-object-reactor</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(vlr-object-reactor owners data callbacks)</p>
+<p class="body_text">Constructs a drawing object reactor object.</p>
+<p class="body_text">This function returns a drawing object reactor object.</p>
+<p class="body_text">The function accepts three arguments:</p>
+<table class="table-desc">
+<tr>
+<th>Argument</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td>
+<b>owners</b>
+</td>
+<td>
+
+A list containing VLA-objects representing the drawing objects to be watched. 
+</td>
+</tr>
+<tr>
+<td>
+<b>data</b>
+</td>
+<td>
+
+Any AutoLisp data, if there is no data, it can be nil. 
+</td>
+</tr>
+<tr>
+<td>
+<b>callbacks</b>
+</td>
+<td>
+
+A list of pairs of the following form:<br/>
+(event-name . callback_function)<br/>
+<font color="#C40000"><b>event-name</b></font> is one of the symbols listed below:<br/>
+<ul class="list_inLine" type="disc">
+<li><b>:vlr-erased</b>The object has been marked as erased.</li>
+<li><b>:vlr-unerased</b>This object's erased mark has been cancelled (for instance, to execute undo operate after erase the VLA object).</li>
+<li><b>:vlr-openedForModify</b>The object is about to be modified.</li>
+<li><b>:vlr-modified</b>The object has been modified.
+<br/>
+<font color="#C40000"><b>callback_function</b></font> is a symbol representing a function to be called when the event fires. Each callback function accepts three arguments:</li>
+<li><b>owner</b>The owner of the VLA-object the event applies to.</li>
+<li><b>reactor_object</b>The reactor object that called the callback function.</li>
+<li><b>param-list</b>A list whose content depends on the event triggered, showing as following:
+<ul class="list_inLine" type="disc">
+<li><b>:vlr-erased</b> nil.</li>
+<li><b>:vlr-unerased</b>nil.</li>
+<li><b>:vlr-openedForModify</b>nil.</li>
+<li><b>:vlr-modified</b>nil.</li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+(vl-load-com)<br/>
+(defun c:object(/ vname vnamelist)<br/>(setq vname (vlax-ename-&gt;vla-object (car (entsel "\nselect an entity to link the reactor: "))))<br/>(setq vnamelist (list vname))<br/>(<b><font color="#0e85e4">vlr-object-reactor</font></b> vnamelist nil '((:vlr-modified . modified)))<br/>)<br/>
+;;;define the callback function<br/>
+(defun modified(notifier-object reactor_object param-list)<br/>(alert (strcat<br/>"The lenght of the entity is: "<br/>(vl-princ-to-string (vlax-get-property notifier-object 'Length))))<br/>)
+</td>
+<td>
+After you execute object command and select a line to link the reactor in the drawing, if you modify the entity (for example, move it), ZWCAD will open a dialog as following automatically:<br/>
+<img border="0" src="../pics/vlr-object-reactor.bmp"/>
+</td>
+</tr>
+<tr>
+<td>
+<p>(vl-load-com)<br/>
+  (vl-load-reactors)<br/>
+  (setq oldcmdecho (getvar "cmdecho"))<br/>
+  (setvar "cmdecho" 0)</p>
+<p>(setq	myCircle<br/>(progn<br/>(setq ctrPt (list 430 0 0))<br/>(setq radius 30.0)<br/>(vla-addCircle<br/>(vla-get-ModelSpace<br/>(vla-get-ActiveDocument (vlax-get-zwcad-object))<br/>)<br/>(vlax-3d-point ctrPt)<br/>radius<br/>)<br/>)<br/>
+    )<br/>
+    (command "regen")</p>
+<p>(defun print1(notifier-object reactor-object param-list)<br/>(princ (vl-princ-to-string notifier-object)) <br/>(alert "The interface :vlr-modified is succeed!")<br/>
+)</p>
+<p>(defun c:test1() <br/>(setq	objModifiedReactor<br/>(<b><font color="#0e85e4">vlr-object-reactor</font></b><br/>(list myCircle)<br/>"mycircle"<br/>'((:vlr-modified . print1))<br/>)<br/>)<br/>
+)</p></td>
+<td>
+
+After you execute object command and select a line to link the reactor in the drawing, if you delete the entity (for example, E or delete), ZWCAD will call the function print1 automatically:<br/></td>
+</tr>
+</table>
+
+<!---Tell me about
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="vlax-ldata-get.htm">(vlax-ldata-get dict key [default-data])</A></P>
+<p class="body_text"><A HREF="vlax-ldata-list.htm">(vlax-ldata-list dict)</A></P>
+<p class="body_text"><A HREF="vlax-ldata-put.htm">(vlax-ldata-put dict key data)</A></P>
+-->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

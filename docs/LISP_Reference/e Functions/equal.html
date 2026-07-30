@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>equal</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">equal</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<div class="function-definition">(equal statement1 statement2 [tolerance])</div>
+<div class="description">
+<p>Evaluates if two statements are identical.</p>
+<p>This function performs a comparison between statement1 and statement2, returning T if they match exactly and nil otherwise. While the equal function operates on lists, the = operator is designated for numerical and string comparisons. When comparing floating-point values, the optional tolerance parameter specifies the permissible difference threshold.</p>
+</div>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(</b><font color="#0e85e4">setq</font>s1 '<b>(</b>1 2 3<b>))</b><br/>
+<b>(</b><font color="#0e85e4">setq</font>s2 '<b>(</b>1 2 3<b>))</b><br/>
+<b>(</b><font color="#0e85e4">setq</font>s3s2<b>)</b><br/>
+<b>(<font color="#0e85e4">equal</font></b> s1s3<b>)</b><br/>
+</td>
+<td>
+
+T
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">equal</font> </b>s2s3<b>)</b>
+</td>
+<td>
+
+T
+</td>
+</tr>
+</table>
+
+The tolerance is the amount that the two expressions are allowed to differ, which is very important when comparing real numbers (which tend to suffer from rounding error). In the following example, the two statements can differ by 0.01:
+
+<hr align="left"/>
+<p class="define_head_1">Note</p>
+<p class="body_text">
+
+The equal function operates differently from the = operator and eq. The = operator evaluates to T when numeric or string values match, while equal returns T if two expressions have equivalent structural contents. The eq function checks identity, yielding T only when two expressions reference the same memory object.</p>
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="(Equal to operator).htm">(= item1 item2 ...)</a></p>
+<p class="body_text"><a href="eq.htm">(eq statement1 statement2)</a></p>
+<!---bottom...
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

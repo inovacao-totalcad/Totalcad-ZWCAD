@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>*error*</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">*error*</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(*error* string)</p>
+<p class="body_text">Handles program exception reporting and recovery mechanisms.</p>
+<p class="body_text">This user-definable function processes runtime anomalies in ZWCAD LISP applications. Developers can intercept execution faults through argument string analysis, implement corrective actions, and restore application states. For effective error management, store the initial *error* handler reference before redefinition:</p>
+<pre class="body_text">(setq prev_error *error*)</pre>
+<p class="body_text">Restore the original handler after critical operations using:</p>
+<pre class="body_text">(setq *error* prev_error)</pre>
+<p class="body_text">The function requires strict parameter compliance - a single string argument representing the error descriptor. Implement resource cleanup procedures within custom handlers to prevent memory leaks and ensure drawing file integrity.</p>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+</tr>
+<tr>
+<td>
+<b>(</b><font color="#0e85e4">defun</font> c:test<b>()</b><br/>
+<b>(</b><font color="#0e85e4">setq</font> message "too few arguments"<b>)</b><br/>
+<b>(<font color="#0e85e4">*error* </font></b><b>(</b><font color="#0e85e4">message</font><b>))</b><br/>
+<b>)</b><br/>
+<b>(</b><font color="#0e85e4">defun <b>*error*</b></font> <b>(</b>msg<b>)</b><br/>
+<b>(</b><font color="#0e85e4">princ</font> "error: "<b>)</b><br/>
+<b>(</b><font color="#0e85e4">princ</font> msg<b>)</b><br/>
+<b>(</b><font color="#0e85e4">princ</font><b>)</b><br/>
+<b>)</b><br/>
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="vl-catch-all-apply.htm">(vl-catch-all-apply 'function list)</a></p>
+<p class="body_text"><a href="vl-catch-all-error-message.htm">(vl-catch-all-error-message error-obj)</a></p>
+<p class="body_text"><a href="vl-catch-all-error-p.htm">(vl-catch-all-error-p arg)</a></p>
+<!---bottom...
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

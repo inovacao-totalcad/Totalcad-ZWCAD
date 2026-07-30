@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>trace</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">trace</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(trace function . . .)</p>
+<p class="body_text">Enables debugging mode for specified functions.</p>
+<p class="body_text">This diagnostic tool monitors the execution of designated functions. When active, it displays real-time output showing entered parameters and computed results during each function call.</p>
+<p class="define_head_1">Important</p>
+<p class="body_text">The tracing feature can be disabled using the untrace command. Multiple functions may be untraced simultaneously by listing them after the command.</p>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(</b><font color="#0e85e4">defun</font> fun <b>(</b>a b<b>)</b> <b>(</b>+ a b<b>))</b><br/>
+<b>(<font color="#0e85e4">trace</font></b> fun<b>)</b><br/>
+<b>(</b><font color="#0e85e4">fun</font> 3 4<b>)</b>
+</td>
+<td>
+
+Entering FUN: 3 4<br/>
+Result: 7<br/>
+7
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="untrace.htm">(untrace function ...)</a></p>
+<!---bottom...
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

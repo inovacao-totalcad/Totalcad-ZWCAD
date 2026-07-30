@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>handent</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">handent</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(handent handle)</p>
+<p class="body_text">Acquire entity name using permanent handle identifier.</p>
+<p class="body_text">This operation converts persistent handle values to their corresponding entity names. Handles maintain consistency across drawing sessions, while entity names may change during regeneration.</p>
+<p class="body_text">Example implementation with handle "B4":</p>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">handent</font> </b>"242"<b>)</b>
+</td>
+<td>
+
+&lt;ENTITY NAME: 48158b00&gt;
+</td>
+</tr>
+<tr>
+<td>
+</td></tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="entdel.htm">(entdel entity-name)</a></p>
+<p class="body_text"><a href="entget.htm">((entget entity-name [application-list])</a></p>
+<p class="body_text"><a href="entlast.htm">(entlast)</a></p>
+<p class="body_text"><a href="entmod.htm">(entmod entity-list)</a></p>
+<p class="body_text"><a href="entmake.htm">(entmake [entity-list])</a></p>
+<p class="body_text"><a href="entmakex.htm">(entmakex [elist])</a></p>
+<p class="body_text"><a href="entnext.htm">(entnext [entity-name])</a></p>
+<p class="body_text"><a href="entsel.htm">(entsel [prompt])</a></p>
+<p class="body_text"><a href="entupd.htm">(entupd entity-name)</a></p>
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

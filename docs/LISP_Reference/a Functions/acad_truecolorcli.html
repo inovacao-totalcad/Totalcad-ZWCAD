@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>acad_truecolorcli</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">acad_truecolorcli</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<h1 class="prompt">(acad_truecolorcli color [allowbylayer] [prompt])</h1>
+<div>
+<p class="body_text">Interactive color selection function for command-line interface.</p>
+</div>
+<div>
+<p class="body_text">This routine initiates a color selection dialog at the command prompt. Returns either a list of property-value tuples defining the chosen color or <em>nil</em> if aborted.</p>
+<p class="body_text"><strong>color</strong>: Preset color specification. Accepts integer color indices or DXF-formatted pairs (62, 420, or 430 groups):</p>
+<ul>
+<li>(62 . N): Integer index (0=BYKBLOCK, 256=BYKLAYER)</li>
+<li>(420 . RGB): 24-bit true color value</li>
+<li>(430 . "Name$Catalog"): Color book reference</li>
+</ul>
+<p class="body_text"><strong>allowbylayer</strong>: When present/non-nil, enables BYLAYER/BYBLOCK selection</p>
+<p class="body_text"><strong>prompt</strong>: Custom prompt message (default: standard color query)</p>
+</div>
+<div>
+<p>Output formats vary by selection type:</p>
+<ul>
+<li>Index color: Single (62 . Index) tuple</li>
+<li>True color: Two tuples - nearest index (62) and RGB value (420)</li>
+<li>Book color: Three tuples - nearest index (62), RGB equivalent (420), and catalog entry (430)</li>
+</ul>
+</div>
+<!---bottom..
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="command.htm">(command cmd [arguments] ...)</A></P>
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>read-line</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">read-line</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(read-line [file-descriptor])</p>
+<p class="body_text">Returns a complete text line from a file stream.</p>
+<p class="body_text">This function provides sequential line reading capability, offering improved convenience compared to character-by-character processing. It retrieves string-formatted content through a file descriptor created by the open(open filename mode)(IDR_237) function. Each invocation advances the file position to subsequent data entries.</p>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(</b><font color="#0e85e4">setq</font> file <b>(</b><font color="#0e85e4">open</font> "sample_file.txt" "r"<b>))</b><br/>
+<b>(</b><font color="#0e85e4">setq</font> c<b>(<font color="#0e85e4">read-line</font> </b>file<b>))</b><br/>
+<b>(</b><font color="#0e85e4">setq</font> d<b>(<font color="#0e85e4">read-line</font> </b>file<b>))</b>
+</td>
+<td>
+<br/>
+"First Line Content" <br/>
+"Second Line Content" 
+</td>
+</tr>
+</table>
+
+
+<hr align="left"/>
+<p class="define_head_1">Note</p>
+<ul class="command_ul">
+<li><p>The read-line function automatically moves to the next line in the file; it returns the next line from the file.</p></li>
+<li><p>When read-line reaches the end of the file, it returns nil.</p></li></ul>
+<!---bottom...
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="command.htm">(command cmd [arguments] ...)</A></P>
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<hr align="left"/>
+<p class="define_head_1">Unicode support</p>
+<p class="define_text_1">The result of this function is affected by the LISPSYS system variable.</p>
+<p class="define_text_1"><strong>Example: </strong>(open "read-line.txt" "r") (read-line f) (close f)</p>
+<ul class="define_text_2">
+<li>When LISPSYS is 1, the result is "你好".</li>
+<li>When LISPSYS is 0, the result may not be as expected.</li>
+</ul>
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

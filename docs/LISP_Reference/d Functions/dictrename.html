@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>dictrename</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">dictrename</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<div class="cmd_line"><font color="#186DAD"><b>(dictrename ename oldkey newkey)</b></font></div>
+<div class="body_text">Modifies the key name of an existing entry within a specified dictionary.</div>
+<div class="body_text">This function changes the identifier <i>oldkey</i> to <i>newkey</i> in the dictionary referenced by <i>ename</i>. The operation will fail and return nil if: the target dictionary is invalid, the original key does not exist, the new key is already present, or invalid parameters are supplied. Successful execution returns the updated key name.</div>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+</tr>
+<tr>
+<td>
+<b>(</b><font color="#0e85e4">setq</font> dict  <b>(</b><font color="#0e85e4">list</font> '<b>(</b>0 . "DICTIONARY"<b>)</b>'<b>(</b>100 . "AcDbDictionary"<b>)))</b>
+<b>(</b><font color="#0e85e4">setq</font> new_name  <b>(</b><font color="#0e85e4">entmakes</font> dict<b>))</b>
+<b>(</b><font color="#0e85e4">setq</font> nmdict  <b>(</b><font color="#0e85e4">namedobjdict</font> <b>))</b>
+<b>(</b><font color="#0e85e4">setq</font> newdict  <b>(</b><font color="#0e85e4">dictadd</font>nmdict"NEW_DICTIONARY"new_name <b>))</b>
+<b>(</b><font color="#0e85e4">setq</font> datalist <b>(</b><font color="#0e85e4">append</font> <b>(</b><font color="#0e85e4">list</font> '<b>(</b>0 . "XRECORD"<b>)</b>'<b>(</b>100 .   "AcDbXrecord"<b>))</b> '<b>((</b>1 . "new_data"<b>)</b> <b>(</b>10 1. 2. 3.<b>)</b> <b>(</b>70 . 33<b>))))</b>
+<b>(</b><font color="#0e85e4">setq</font> new_name <b>(</b><font color="#0e85e4">entmakex</font>   datalist<b>))</b>
+<b>(</b><font color="#0e85e4">dictadd</font> newdict "NEW_DATA_RECORD"   new_name<b>)</b>
+<b>(<font color="#0e85e4">dictrename</font></b> nmdict "NEW_DICTIONARY" "NEW_NAME_DICTIONARY"<b><font color="#0e85e4">)</font></b></td>
+</tr>
+</table>
+
+
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="dictadd.htm">(dictadd ename symbol newobj)</a></p>
+<p class="body_text"><a href="dictnext.htm">(dictnext ename [rewind])</a></p>
+<p class="body_text"><a href="dictremove.htm">(dictremove ename symbol)</a></p>
+<p class="body_text"><a href="dictsearch.htm">(dictsearch ename symbol [setnext])</a></p>
+<p class="body_text"><a href="namedobjdict.htm">(namedobjdict)</a></p>
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

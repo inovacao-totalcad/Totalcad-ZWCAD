@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>dos_orderlist </title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">dos_orderlist </span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt"> (dos_orderlist title prompt list [strings])</p>
+<p class="body_text">Displays a layer list in a sizeable window dialog box , and 
+you can reorder the items in the list by dragging or by clicking 
+up/down/top/bottom button.</p>
+<hr align="left"/>
+<p class="define_head_1">Parameters</p>
+<p class="body_text">title<br/>
+  A string of the title for the dialog box.</p>
+<p class="body_text">prompt<br/>
+  A string of the dialog prompt.</p>
+<p class="body_text">list</p>
+<p class="body_text">A list of string that contains the strings to be 
+		displayed in the list of the dialog box.</p>
+<p class="body_text">strings</p>
+<p class="body_text">If not specified or <strong><em>T</em></strong>, a list of ordered strings is 
+		returned, if <em><strong>nil</strong></em>, alist of intergers that identify the ordered strings 
+		is returned.</p>
+<hr align="left"/>
+<p class="define_head_1">Returns</p>
+<p class="body_text"><strong>A list of the selected strings </strong> if  successful.<br/>
+<strong>nil</strong> on error or cancel.</p>
+<hr align="left"/>
+<p class="define_head_1">Example</p><table class="table-desc">
+<tr>
+<th>Code </th>
+<th>Result </th>
+</tr>
+<tr>
+<td>(<strong>dos_subdir</strong>)</td>
+<td>(setq list1 (list "Layer1" "Layer2" "Layer3" "Layer4" "Layer5" "Layer6"))<br/>(dos_orderlist "Layers" "Drag to reorder layers" list1)</td>
+</tr>
+</table>
+
+<!---bottom...
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="command.htm">(command cmd [arguments] ...)</A></P>
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

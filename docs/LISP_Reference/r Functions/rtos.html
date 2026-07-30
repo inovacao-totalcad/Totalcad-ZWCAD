@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>rtos</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">rtos</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(rtos value [format-type [decimal-digits]])</p>
+<p class="body_text">Transforms a numerical value into its string representation.</p>
+<p class="body_text">This routine processes a real number to generate a formatted text output. The primary parameter <i>value</i> specifies the numerical input for conversion.</p>
+<p class="body_text">Optional parameters <i>format-type</i> (integer 1-5) and <i>decimal-digits</i> control the output formatting:</p>
+<table class="table-desc">
+<tr>
+<th>Format Code</th>
+<th>Display Style</th>
+</tr>
+<tr>
+<td><b>1</b></td>
+<td>Scientific notation</td>
+</tr>
+<tr>
+<td><b>2</b></td>
+<td>Fixed decimal</td>
+</tr>
+<tr>
+<td><b>3</b></td>
+<td>Engineering units</td>
+</tr>
+<tr>
+<td><b>4</b></td>
+<td>Architectural measurements</td>
+</tr>
+<tr>
+<td><b>5</b></td>
+<td>Fractional values</td>
+</tr>
+</table>
+<p class="body_text">The <i>decimal-digits</i> parameter specifies rounding precision (0-8 decimal places), affecting all formats except architectural and fractional representations.</p>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">rtos</font> </b>23 1 4<b>)</b>
+</td>
+<td>
+
+"2.3000E+01"
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">rtos</font> </b>34.7 3 2<b>)</b>
+</td>
+<td>
+
+"2'-11\""
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Note</p>
+<p class="body_text">
+
+When omitted, the mode and precision parameters inherit their values from the system variables LUNITS (defaulting to decimal units) and LUPREC (defaulting to 4 decimal places). To leverage the active configuration without manual specification, exclude these arguments entirely.</p>
+<!---bottom...
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="command.htm">(command cmd [arguments] ...)</A></P>
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

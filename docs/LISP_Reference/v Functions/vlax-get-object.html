@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>vlax-get-object</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">vlax-get-object</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(vlax-get-object prog-id)</p>
+<p class="body_text">Returns a running instance of an application object.</p>
+<p class="body_text">Use this function when you want to get an instance of an application, and an object of the type is specified by &lt;Component&gt; (see the argument description) to be returned. If there is instance of the specified object currently running, this function returns a VLA-object representing the instance of the specified application, otherwise nil.</p>
+<p class="body_text">The function accepts one argument:</p>
+<table class="table-desc">
+<tr>
+<th>Argument</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td>
+<b>prog-id</b>
+</td>
+<td>
+
+A string containing the programmatic identifier of the desired ActiveX object, its format is as following:<br/>
+&lt;Vendor&gt;.&lt;Component&gt;.&lt;Version&gt;<br/>
+eg: excel.application.12 
+</td>
+</tr>
+</table>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+
+(<b><font color="#0e85e4">vlax-get-object</font></b> "Excel.application")
+</td>
+<td>
+#&lt;VLA-OBJECT _Application 201374&gt;
+</td>
+</tr>
+</table>
+
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

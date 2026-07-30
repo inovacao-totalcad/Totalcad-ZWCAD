@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>vlax-ldata-put</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">vlax-ldata-put</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(vlax-ldata-put dict key data)</p>
+<p class="body_text">Stores LISP data to a drawing dictionary or a drawing entity dictionary.</p>
+<p class="body_text">If the specified key is existed in the specified dictionary, this function corrects the data of the specified key and returns the data value, otherwise creates the key in the specified dictionary to store the LISP data and returns the data value too.</p>
+<p class="body_text">The function accepts three arguments:</p>
+<table class="table-desc">
+<tr>
+<th>Argument</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td>
+<b>dict</b>
+</td>
+<td>
+
+A VLA-object(ZWCAD drawing entity object), or a string naming a global dictionary. 
+</td>
+</tr>
+<tr>
+<td>
+<b>key</b>
+</td>
+<td>
+
+A string specifying the dictionary key. 
+</td>
+</tr>
+<tr>
+<td>
+<b>data</b>
+</td>
+<td>
+
+LISP data to be stored in the key. 
+</td>
+</tr>
+</table>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+
+(vl-load-com)<br/>
+(<b><font color="#0e85e4">vlax-ldata-put</font></b> "ZWCAD_BOM_DICTIONARY" "ZWCAD_MXB_MXL1" "Chinaweal Longteng")
+</td>
+<td>
+"Chinaweal Longteng"
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="vlax-ldata-get.htm">(vlax-ldata-get dict key [default-data])</a></p>
+<p class="body_text"><a href="vlax-ldata-list.htm">(vlax-ldata-list dict)</a></p>
+<p class="body_text"><a href="vlax-ldata-delete.htm">(vlax-ldata-delete dict key)</a></p>
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>tblnext</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">tblnext</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(tblnext table-name [flag])</p>
+<p class="body_text">Retrieves sequential entries from a specified symbol table.</p>
+<p class="body_text">This function accesses symbol table records in ZWCAD, returning either the initial entry or subsequent entries depending on the flag parameter. Supported table types include:</p>
+<table class="table-desc">
+<tr>
+<th>Symbol Table</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><b>"vport"</b></td>
+<td>Configuration settings for viewport layouts</td>
+</tr>
+<tr>
+<td><b>"layer"</b></td>
+<td>Defined layer properties</td>
+</tr>
+<tr>
+<td><b>"ltype"</b></td>
+<td>Line pattern definitions</td>
+</tr>
+<tr>
+<td><b>"ucs"</b></td>
+<td>User coordinate system configurations</td>
+</tr>
+<tr>
+<td><b>"dimstyle"</b></td>
+<td>Dimensioning specifications</td>
+</tr>
+<tr>
+<td><b>"block"</b></td>
+<td>Grouped entity collections</td>
+</tr>
+<tr>
+<td><b>"style"</b></td>
+<td>Font and text formatting presets</td>
+</tr>
+<tr>
+<td><b>"view"</b></td>
+<td>Saved perspective configurations</td>
+</tr>
+<tr>
+<td><b>"appid"</b></td>
+<td>Third-party application identifiers</td>
+</tr>
+</table>
+<p class="body_text">The initial call returns the table's first entry as dotted pair values. Subsequent calls without flag modification progress through the table sequentially. Returns nil upon reaching the table's end.</p>
+<p class="body_text">Providing a non-nil flag (typically T) resets the iterator to the table's starting position.</p>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">tblnext</font> </b>"layer"<b>)</b>
+</td>
+<td>
+((0 . "LAYER") (2 . "0") (70 . 64) (6 . "Continuous") (62 . 7) (290 . 1) (370 . -3))
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">tblnext</font> </b>"layer" T<b>)</b>
+</td>
+<td>
+((0 . "LAYER") (2 . "0") (70 . 64) (6 . "Continuous") (62 . 7) (290 . 1) (370 . -3))
+</td>
+</tr>
+</table>
+
+<!---bottom...
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="command.htm">(command cmd [arguments] ...)</A></P>
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

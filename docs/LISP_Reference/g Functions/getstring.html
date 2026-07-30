@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>getstring</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">getstring</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(getstring [flag] [prompt])</p>
+<p class="body_text">Prompts the user for textual input and returns the provided value.</p>
+<p class="body_text">This function waits for keyboard input and captures alphanumeric characters. The returned string is limited to the initial 2048 characters entered.</p>
+<p class="body_text">When the optional flag parameter is specified with a non-nil value (commonly T), spacebar characters will be included in the input stream until the Enter key terminates input. If the flag is omitted or nil, input terminates upon encountering either the spacebar or Enter key.</p>
+<p class="body_text">Input is captured as raw text without evaluation, preventing users from entering executable LISP expressions through this function.</p>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">getstring</font> </b>"Where are you from?"<b>)</b>
+</td>
+<td>
+
+Where are you from?china<br/>
+"china"
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Note</p>
+<p class="body_text">
+
+To prompt the user to choose from a set of predetermined keywords, utilize the getkword function instead.</p>
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="initget.htm">(initget [bits] [string])</a></p>
+<!---bottom...
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

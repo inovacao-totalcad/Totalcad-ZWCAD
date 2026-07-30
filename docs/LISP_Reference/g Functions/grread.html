@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>grread</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">grread</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(grread [tracking] [options [cursor-style]])</p>
+<p class="body_text">Captures real-time input events from interactive devices.</p>
+<p class="body_text">This advanced input handler enables sequential data retrieval with customizable processing. When the tracking parameter is active (non-nil), continuous coordinate tracking captures dynamic pointer movements at high frequency.</p>
+<table class="table-desc">
+<caption>Option Flags Configuration</caption>
+<tr>
+<th>Bitflag</th>
+<th>Behavior</th>
+</tr>
+<tr>
+<td><b>1</b></td>
+<td>Enables live coordinate streaming: returns lists containing event type and (X,Y,Z) position</td>
+</tr>
+<tr>
+<td><b>2</b></td>
+<td>Captures full keyboard input including special keys (F1-F12, arrows) without cursor interaction</td>
+</tr>
+<tr>
+<td><b>4</b></td>
+<td>Enables cursor type specification (required for cursor-style parameter)</td>
+</tr>
+<tr>
+<td><b>8</b></td>
+<td>Suppresses interruption alerts during input cancellation</td>
+</tr>
+</table>
+<table class="table-desc">
+<caption>Cursor Display Modes</caption>
+<tr>
+<th>Code</th>
+<th>Visual</th>
+</tr>
+<tr>
+<td><b>0</b></td>
+<td>Standard crosshair indicator</td>
+</tr>
+<tr>
+<td><b>2</b></td>
+<td>Invisible tracking (no visual feedback)</td>
+</tr>
+<tr>
+<td><b>4</b></td>
+<td>Rectangular selection marker</td>
+</tr>
+</table>
+<table class="table-desc">
+<caption>Event Identification</caption>
+<tr>
+<th>Input Source</th>
+<th>Return Format</th>
+</tr>
+<tr>
+<td>Keyboard press</td>
+<td>(2 ASCII_code)</td>
+</tr>
+<tr>
+<td>Coordinate selection</td>
+<td>(3 (X Y Z))</td>
+</tr>
+<tr>
+<td>Mouse movement</td>
+<td>(5 (X Y Z))</td>
+</tr>
+</table>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+</tr>
+<tr>
+<td>
+<b>(</b><font color="#0e85e4">defun</font> c:test <b>()</b><br/>
+<b>(<b><font color="#0e85e4">grread</font></b> t 0<b>)</b><br/>
+<b>)</b>
+</b></td>
+</tr>
+</table>
+
+
+<!---bottom...
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="command.htm">(command cmd [arguments] ...)</A></P>
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

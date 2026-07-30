@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>acad_colordlg</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">atoms-family</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(atoms-family format [symbol1 symbol2 ...])</p>
+<p class="body_text">This function retrieves a list of both built-in and custom-defined functions available in the current environment. The format parameter determines the output format of the returned data, accepting integer values 0 or 1.</p>
+<table class="table-desc">
+<tr>
+<th>Format Value</th>
+<th>Output Type</th>
+</tr>
+<tr>
+<td><b>0</b></td>
+<td>Returns function symbols as atomic identifiers</td>
+</tr>
+<tr>
+<td><b>1</b></td>
+<td>Returns function names as string values</td>
+</tr>
+</table>
+<p class="body_text">When providing optional symbol arguments (as string entries), the function checks if the specified symbols are currently defined. Defined symbols will be returned in the requested format (atomic identifier or string), while undefined entries will appear as nil in the result list.</p>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">atoms-family</font> </b>0 '<b>(</b>"PLOTTERMANAGER" "LSNEW" "xyz"<b>))</b>
+</td>
+<td>
+(PLOTTERMANAGER LSNEW nil)
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">atoms-family</font> </b>1 '<b>(</b>"BLOCK" "REDRAW" "CDR"<b>))</b>
+</td>
+<td>
+
+("BLOCK" "REDRAW" "CDR")
+</td>
+</tr>
+</table>
+
+<!---bottom..
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="command.htm">(command cmd [arguments] ...)</A></P>
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

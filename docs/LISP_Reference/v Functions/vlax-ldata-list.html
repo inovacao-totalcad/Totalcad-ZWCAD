@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>vlax-ldata-list</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">vlax-ldata-list</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(vlax-ldata-list dict)</p>
+<p class="body_text">Lists LISP data in a specified drawing dictionary.</p>
+<p class="body_text">If the specified dictionary is existed and there're some keys in it, this function returns an associative list consisting of pairs (key . value), otherwise nil.</p>
+<p class="body_text">The function accepts one argument:</p>
+<table class="table-desc">
+<tr>
+<th>Argument</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td>
+<b>dict</b>
+</td>
+<td>
+
+A VLA-object, ZWCAD drawing entity object, or a string naming a global dictionary. 
+</td>
+</tr>
+</table>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+
+(vl-load-com)<br/>
+(vlax-ldata-put "ZWCAD_BOM_DICTIONARY" "ZWCAD_MXB_MXL1" "Bolts")<br/>
+(vlax-ldata-put "ZWCAD_BOM_DICTIONARY" "ZWCAD_MXB_MXL2" "Nuts")<br/>
+(vlax-ldata-put "ZWCAD_BOM_DICTIONARY" "ZWCAD_MXB_MXL3" "Pins")<br/>
+(<b><font color="#0e85e4">vlax-ldata-list</font></b> "ZWCAD_BOM_DICTIONARY")
+</td>
+<td>
+(("ZWCAD_MXB_MXL1" . "Bolts") ("ZWCAD_MXB_MXL2" . "Nuts") ("ZWCAD_MXB_MXL3" . "Pins"))
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="vlax-ldata-get.htm">(vlax-ldata-get dict key [default-data])</a></p>
+<p class="body_text"><a href="vlax-ldata-delete.htm">(vlax-ldata-delete dict key)</a></p>
+<p class="body_text"><a href="vlax-ldata-put.htm">(vlax-ldata-put dict key data)</a></p>
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

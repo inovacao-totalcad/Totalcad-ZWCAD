@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>dos_splitpath</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">dos_splitpath</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt"> (dos_splitpath path)</p>
+<p class="body_text">Split full path to four parts.</p>
+<hr align="left"/>
+<p class="define_head_1">Parameters</p>
+<p class="body_text">path<br/>
+  The full path.</p>
+<hr align="left"/>
+<p class="define_head_1">Returns</p>
+<p class="body_text"><strong>Table with the following four elements</strong> if  successful.<br/>
+    drive with (:).<br/>
+    dir with (\\) at begin and end.<br/>
+    filename without extension.<br/>
+    extension with (.) at begin.<br/>
+<strong>nil</strong> on error.</p>
+<hr align="left"/>
+<p class="define_head_1">Example</p><table class="table-desc">
+<tr>
+<th>Code </th>
+<th>Result </th>
+</tr>
+<tr>
+<td>(<strong>dos_splitpath </strong> "C:\\Program Files\\ZWCAD2025\\zwcad.exe")</td>
+<td>("C:" "\\Program Files\\ZWCAD2025\\" "zwcad" ".exe")</td>
+</tr>
+<tr>
+<td>(<strong>dos_splitpath </strong> "C:\\Program Files\\ZWCAD2025\\")</td>
+<td>("C:" "\\Program Files\\ZWCAD2025\\" "" "")</td>
+</tr>
+</table>
+
+<!---bottom...
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="command.htm">(command cmd [arguments] ...)</A></P>
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

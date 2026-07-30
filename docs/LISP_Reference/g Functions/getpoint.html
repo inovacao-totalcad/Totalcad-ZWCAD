@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>getpoint</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">getpoint</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<h3 class="function-def">(getpoint [base_point] [message])</h3>
+<div class="spec">
+<p class="desc-primary">Prompts the user to select a point in the drawing area.</p>
+<p class="desc-secondary">This function halts execution until the user provides a coordinate location. When a base point argument is supplied, it establishes a dynamic reference marker that visually connects to the current cursor position. Input can be provided through keyboard entry or interactive screen selection.</p>
+<p class="desc-secondary">An optional message string displays custom instructional text in the command line interface. The function returns either a 3D point list or nil if input is canceled.</p>
+</div>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">getpoint</font> </b>"Pick a point: "<b>)</b>
+</td>
+<td>
+
+Select a point:3,4<br/>
+(3.00000 4.00000 0.000000)
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="initget.htm">(initget [bits] [string])</a></p>
+<p class="body_text"><a href="getcorner.htm">(getcorner point [prompt])</a></p>
+<!---bottom...
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>cdr</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">cdr</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(cdr list)</p>
+<p class="body_text">Returns all elements of the list excluding the initial entry.</p>
+<p class="body_text">As a fundamental list decomposition function, cdr provides sequential access to list contents. When applied to a list, it returns a new sublist containing elements from the second position onward. For example, executing (cdr '("red" 15 [20,40] nil)) results in (15 [20,40] nil). This function is particularly useful for iterative list processing and data structure manipulation.</p>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">cdr</font> </b>'<b>(</b>9 5 8<b>))</b>
+</td>
+<td>
+
+(5 8)
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">cdr</font> </b>'<b>(</b>"one" "two"<b>))</b>
+</td>
+<td>
+
+("two")
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">cdr</font> </b>'<b>(</b>9<b>))</b>
+</td>
+<td>
+
+nil
+</td>
+</tr>
+</table>
+
+<!---bottom...
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="command.htm">(command cmd [arguments] ...)</A></P>
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

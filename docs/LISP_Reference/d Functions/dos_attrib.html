@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>dos_attrib</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">dos_attrib</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">
+(dos_attrib [filespec [bits]])</p>
+<p class="body_text">Returns file attributes, or sets file  attributes to the value described by bits.</p>
+<hr align="left"/>
+<p class="define_head_1">Parameters</p>
+<p class="body_text">filespec<br/>
+  The desired file or files. filespec can  contain wildcard characters ("*" and "?"). If filespec is  not supplied, it is assumed to be *.*.<br/>
+  bits<br/>
+  A bit-coded integer identifying the desired  file attributes to set. Specify more than one file attribute by adding the  following bit values:</p>
+<table class="table-desc">
+<tr>
+<td class="table-item-odd">0 (bit 0)</td>
+<td class="table-item-odd">Normal</td>
+</tr>
+<tr>
+<td class="table-item-double">1 (bit 1)</td>
+<td class="table-item-double">Read-only</td>
+</tr>
+<tr>
+<td class="table-item-odd">2 (bit 2)</td>
+<td class="table-item-odd">Hidden</td>
+</tr>
+<tr>
+<td class="table-item-double">4 (bit 3)</td>
+<td class="table-item-double">System</td>
+</tr>
+<tr>
+<td class="table-item-odd">8 (bit 4)</td>
+<td class="table-item-odd">Archive</td>
+</tr>
+</table>
+<hr align="left"/>
+<p class="define_head_1">Returns</p>
+<p class="body_text">An association list containing the  filenames and the attribute bits if successful.<br/>
+<strong>nil</strong> on  error.</p>
+<hr align="left"/>
+<p class="define_head_1">Example</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result </th>
+</tr>
+<tr>
+<td>
+    (<strong>dos_attrib</strong> "D:\\Program Files\\ZWCAD 2012\\ZWCAD.exe")</td>
+<td>
+(("ZWCAD.exe"    . 8))</td>
+</tr>
+<tr>
+<td>
+    (<strong>dos_attrib </strong>"C:\\Program    Files\\ZWCAD 2012\\ZWCAD.exe" 1)</td>
+<td>
+(("ZWCAD.exe"    . 1))</td>
+</tr>
+</table>
+
+<!---...top---->
+<!---bottom...
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="command.htm">(command cmd [arguments] ...)</A></P>
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

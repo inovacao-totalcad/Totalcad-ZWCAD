@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>princ</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">princ</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="zw_prompt">(princ [expression [file-descriptor]])</p>
+<p class="zw_desc">Evaluates and outputs expressions with escaped character processing.</p>
+<p class="zw_desc">This function directs output to either the Command History panel or an open file. Specifying a file-descriptor parameter routes the output to that file; omitting it displays results in the interactive window.</p>
+<p class="zw_note">Files must be initialized using the open function with write ("w") or append ("a") mode before receiving princ output.</p>
+<p class="zw_desc">The evaluated result of any expression type is displayed. Unlike prin1 and print, princ automatically processes escape sequences and <u>does not</u> add a trailing space or newline character.</p>
+<p class="zw_highlight">Supported escape sequences include:</p>
+<table class="zw_escape_table">
+<tr>
+<th>Escape</th>
+<th>Effect</th>
+</tr>
+<tr>
+<td><b>\n</b></td>
+<td>Line feed (new line)</td>
+</tr>
+<tr>
+<td><b>\t</b></td>
+<td>Horizontal tab</td>
+</tr>
+<tr>
+<td><b>\r</b></td>
+<td>Carriage return</td>
+</tr>
+<tr>
+<td><b>\\</b></td>
+<td>Literal backslash</td>
+</tr>
+<tr>
+<td><b>\"</b></td>
+<td>Double quote character</td>
+</tr>
+<tr>
+<td><b>\e</b></td>
+<td>ESC control code (ASCII 27)</td>
+</tr>
+<tr>
+<td><b>\ooo</b></td>
+<td>Octal character code (e.g. \101 = 'A')</td>
+</tr>
+</table>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Prints</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">princ</font> </b>"hello"<b>)</b>
+</td>
+<td>
+
+hello
+</td>
+<td>
+
+"hello"
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">princ</font> </b>"\nName:"<b>)</b>
+</td>
+<td>
+
+Name:
+</td>
+<td>
+
+"\nName:"
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">princ</font> </b>"Thank you"<b>)</b>
+</td>
+<td>
+
+Thank you
+</td>
+<td>
+
+"Thank you"
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Note</p>
+<p class="body_text">
+
+The distinguishing feature of the princ function compared to LISP's output functions (such as print or prin1) is its treatment of control characters during processing.</p>
+<!---bottom...
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="command.htm">(command cmd [arguments] ...)</A></P>
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

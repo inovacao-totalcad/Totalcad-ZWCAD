@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>vlax-get-property</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">vlax-get-property</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(vlax-get-property vla-object propertyName)</p>
+<p class="body_text">Gets a VLA-object's property.</p>
+<p class="body_text">If the property makes sense to the vla-object, this function returns the specified property's value, otherwise displays an error message. </p>
+<p class="body_text">The function accepts two arguments:</p>
+<table class="table-desc">
+<tr>
+<th>Argument</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td><b>vla-object</b>
+</td>
+<td>
+
+A VLA-object.
+</td>
+</tr>
+<tr>
+<td><b>propertyName</b>
+</td>
+<td>
+
+The VLA-object's property (vlax-dump-object function can be used to query a VLA-object's properties).
+</td>
+</tr>
+</table>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+
+(setq testobj (car (entsel "\nselect a entity:")))<br/>
+(setq vlaObj (vlax-ename-&gt;vla-object testobj))<br/>
+(<b><font color="#0e85e4">vlax-get-property</font></b> vlaObj 'Radius)
+</td>
+<td>
+If you select circle or arc, these codes return the radius' value, otherwise prompt "error: bad argument".
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="vlax-property-available-p.htm">(vlax-property-available-p obj prop [check-modify])</a></p>
+<p class="body_text"><a href="vlax-put-property.htm">(vlax-put-property obj property arg)</a></p>
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

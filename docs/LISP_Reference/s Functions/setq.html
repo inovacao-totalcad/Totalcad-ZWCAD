@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>setq</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">setq</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(setq symbol1 value1 [symbol2 value2] ...)</p>
+<p class="body_text">Assigns specified values to corresponding symbols.</p>
+<p class="body_text">As the primary function for variable assignment in LISP, this sets value1 to symbol1. Multiple pairs can be assigned sequentially. For instance:</p>
+<p class="body_text">(setq radius 5.2 material "steel")</p>
+<p class="body_text">assigns both a numerical value and string to respective symbols.</p>
+<p class="define_head_1">Important</p>
+<p class="body_text">Distinguish from comparison operators like = which evaluate equality rather than modifying variables.</p>
+<p class="body_text">Each symbol receives its corresponding evaluated value expression, which may include numbers, quoted strings, or pre-defined variables. When multiple assignments occur, the final pair's value becomes the function's return value. Uninitialized symbols default to nil.</p>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">setq</font> </b>a 9<b>)</b>
+</td>
+<td>
+
+9
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">setq</font> </b>a 6 b 7<b>)</b>
+</td>
+<td>
+
+7
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">setq</font> </b>c<b>)</b>
+</td>
+<td>
+
+nil
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="set.htm">(set 'symbol statement)</a></p>
+<!---bottom...
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="command.htm">(command cmd [arguments] ...)</A></P>
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>acad_truecolordlg</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">acad_truecolordlg</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<h1 class="prompt">(zwcad_truecolordlg base-color [mode-enable])</h1>
+
+<div>Activates the color selection interface with multiple palette options.</div>
+<p class="body_text">This command opens a tri-panel color selector containing Indexed Colors, RGB Values, and Color Swatch Book sections. Returns the chosen color specification or <em>nil</em> if canceled by the user.</p>
+<p class="body_text">The <i>base-color</i> parameter sets the initial active tab and selection:</p>
+<ul>
+<li><strong>62-type integer</strong> (0-256): Activates indexed colors. Special values: 0=BYBLOCK, 256=BYLAYER</li>
+<li><strong>420-type integer</strong>: Activates RGB mode using COLORREF encoding</li>
+<li><strong>430-type string</strong> (color$book format): Activates color book references</li>
+</ul>
+<p class="body_text">When <i>mode-enable</i> is set to false, organizational color modes (BYBLOCK/BYLAYER) become unavailable.</p>
+<p class="body_text">Output consists of group code pairs representing the selection:</p>
+<ul>
+<li><strong>Index selection</strong>: Single (62 . index) pair</li>
+<li><strong>RGB selection</strong>: Two pairs - nearest index (62) and RGB value (420)</li>
+<li><strong>Swatch selection</strong>: Three pairs - index (62), RGB (420), and book reference (430)</li>
+</ul>
+<div>The interface preserves color equivalencies between selection methods when possible.</div>
+<!---bottom..
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="command.htm">(command cmd [arguments] ...)</A></P>
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

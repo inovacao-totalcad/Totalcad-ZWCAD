@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>vlax-property-available-p</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">vlax-property-available-p</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(vlax-property-available-p obj prop [check-modify])</p>
+<p class="body_text">Determines whether a VLA object has a specified property.</p>
+<p class="body_text">When  nil or nothing is specified for check-modify argument, if the VLA object has the specified property, this function returns T, otherwise nil; When T or other not nil value is specified for check-modify argument, this function returns nil if either the VLA object hasn't the specified property or the value of the porperty can't be modified.</p>
+<p class="body_text">The function accepts two essential arguments and one optional argument:</p>
+<table class="table-desc">
+<tr>
+<th>Argument</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td>
+<b>obj</b>
+</td>
+<td>
+
+A VLA  object.</td>
+</tr>
+<tr>
+<td>
+<b>prop</b>
+</td>
+<td>
+
+A string or symbol representing the name of the property to be tested. 
+</td>
+</tr>
+<tr>
+<td>
+<b>check-modify</b>
+</td>
+<td>
+ Determines checking that the value of the property can be modified or not.
+</td>
+</tr>
+</table>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+
+(<span class="keyfunc">vlax-property-available-p</span> line-obj 'Color)
+</td>
+<td>
+
+T
+  <p class="body_text">Determines if line object has color property. </p></td>
+</tr>
+<tr>
+<td>
+
+(<span class="keyfunc">vlax-property-available-p</span> line-obj 'Handle T)
+</td>
+<td>
+
+nil
+  <p class="body_text">Determines if line object has handle property and the value of handle property can be modified. </p></td>
+</tr>
+<tr>
+<td>
+
+(<span class="keyfunc">vlax-property-available-p</span> line-obj 'Area)
+</td>
+<td>
+
+nil
+  <p class="body_text">Determines if line object has area property. </p></td>
+</tr>
+</table>
+
+
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="vlax-method-applicable-p.htm">(vlax-method-applicable-p objmethod)</a></p>
+<p class="body_text"><a href="vlax-put-property.htm">(vlax-put-property obj property arg)</a></p>
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>acad_helpdlg</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">acad_helpdlg</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(acad_helpdlghelpfile [topic])</p>
+<p class="body_text">Invokes the ZWCAD Help dialog interface.</p>
+<p class="body_text">This function activates the assistance panel for the specified documentation. The <em>helpfile</em> parameter accepts a file path or name (supports .chm and .hlp formats). When provided, the optional <em>topic</em> parameter navigates to a specific subject entry. If no topic is specified, the main index page of the help file is displayed. Returns T upon successful content display or nil if the system cannot locate the requested resource.</p>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<!--
+<TR>
+<td>
+
+<b>(<font color="#0e85e4">acad_helpdlg</FONT> </B>&nbsp;"lisp.chm"<B> </B>&nbsp;""<B>)</B>
+</TD>
+<td>
+
+Displays dialog box with "lisp.chm".
+</TD>
+</tr>
+-->
+<tr>
+<td>
+<b>(<font color="#0e85e4">acad_helpdlg</font> </b>"ZwHelp.exe"<b> </b>""<b>)</b>
+</td>
+<td>
+
+Displays dialog box with "ZwHelp.exe"
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="help.htm">(help [filename [topic [flag]]])</a></p>
+<!---bottom...
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

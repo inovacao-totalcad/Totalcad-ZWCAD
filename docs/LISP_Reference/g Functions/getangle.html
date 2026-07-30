@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>getangle</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">getangle</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(getangle [point] [prompt])</p>
+<p class="body_text">Requests angular input from the user.</p>
+<p class="body_text">This function accepts angle values in the configured unit format and converts them to radians. When a base <i>point</i> is provided, it calculates the angle from the ANGBASE-defined reference axis to the specified direction vector, following a counterclockwise-positive convention regardless of the ANGDIR system setting.</p>
+<p class="body_text">Angular measurement always starts from the ANGBASE orientation and progresses counterclockwise, with returned values in radians. User input is restricted to direct angle specifications - LISP expressions are not permitted.</p>
+<p class="body_text">An optional <i>prompt</i> string can customize the input request message displayed to the user.</p>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">getangle</font> </b>"Input an angle:"<b>)</b><br/>
+</td>
+<td>
+
+Input an angle:45<br/>
+0.785398
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Note</p>
+<p class="body_text">
+
+The getangle function calculates angles relative to the base direction specified in the Units settings. For angle measurements aligned with the absolute coordinate system (East = 0°), employ the getorient function instead.</p>
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="getorient.htm">(getorient [pt] [prompt])</a></p>
+<p class="body_text"><a href="initget.htm">(initget [bits] [string])</a></p>
+<!---bottom...
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

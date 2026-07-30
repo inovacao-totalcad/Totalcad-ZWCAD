@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>entnext</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">entnext</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(entnext [entity-name])</p>
+<p class="body_text">Retrieves the subsequent entity within the drawing database.</p>
+<p class="body_text">When called without arguments, this function returns the initial undeleted entity in the drawing sequence. When provided with an entity identifier, it outputs the immediately following valid entity in the database order. Returns nil upon reaching the end of entity records or when no subsequent entities exist.</p>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(</b><font color="#0e85e4">setq</font> ent1<b>(<font color="#0e85e4">entnext</font> </b><b>))</b>
+</td>
+<td>
+
+&lt;ENTITY NAME: 48158b00&gt;
+</td>
+</tr>
+<tr>
+<td>
+<b>(</b><font color="#0e85e4">setq</font> ent2<b>(<font color="#0e85e4">entnext</font> </b>ent1<b>))</b>
+</td>
+<td>
+
+&lt;ENTITY NAME: 48158b00&gt; (Entity following ent1)
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="entdel.htm">(entdel entity-name)</a></p>
+<p class="body_text"><a href="entget.htm">(entget entity-name [application-list])</a></p>
+<p class="body_text"><a href="entmake.htm">(entmake [entity-list])</a></p>
+<p class="body_text"><a href="entmod.htm">(entmod entity-list)</a></p>
+<p class="body_text"><a href="handent.htm">(handent handle)</a></p>
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

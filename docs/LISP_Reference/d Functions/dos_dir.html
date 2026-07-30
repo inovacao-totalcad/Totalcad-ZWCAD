@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>dos_dir</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">dos_dir</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt"> (dos_dir [filespec [format]])</p>
+<p class="body_text">Returns a list of files in a directory.  The function is very similar the command prompt's <strong>DIR</strong> command.</p>
+<hr align="left"/>
+<p class="define_head_1">Parameters</p>
+<p class="body_text">filespec<br/>
+  The desired file or files. filespec can contain  wildcard characters ("*" and "?"). If filespec is not  specified, all files (*.*) in the current directory are returned.<br/>
+  format<br/>
+  The format of the filenames returned. The default  value is 0. The allowable values are as follows:</p>
+<table class="table-desc">
+<tr>
+<td class="table-item-odd">0 </td>
+<td class="table-item-odd">None.</td>
+</tr>
+<tr>
+<td class="table-item-double">1</td>
+<td class="table-item-double">Sorted alphabetically, ascending.</td>
+</tr>
+<tr>
+<td class="table-item-odd">2</td>
+<td class="table-item-odd">Sorted alphabetically, descending.</td>
+</tr>
+<tr>
+<td class="table-item-double">3</td>
+<td class="table-item-double">Sorted by date, ascending.</td>
+</tr>
+<tr>
+<td class="table-item-odd">4</td>
+<td class="table-item-odd">Sorted by date, descending.</td>
+</tr>
+<tr>
+<td class="table-item-double">5</td>
+<td class="table-item-double">Sorted by size, ascending.</td>
+</tr>
+<tr>
+<td class="table-item-odd">6</td>
+<td class="table-item-odd">Sorted by size, descending.</td>
+</tr>
+</table>
+<hr align="left"/>
+<p class="define_head_1">Returns</p>
+<p class="body_text">A list of filenames if successful.<br/>
+<strong>nil</strong> on error.</p>
+<hr align="left"/>
+<p class="define_head_1">Example</p><table class="table-desc">
+<tr>
+<th>Code </th>
+<th>Result </th>
+</tr>
+<tr>
+<td>
+    (<strong>dos_dir</strong>)</td>
+<td>
+    ("adbf.rdb"    "adbps.rdb" "admhoops.dll" "admhusk.dll"    "admicon.dll" "atl100.dll" "bigfont.ini"    "brkline.dwg" "CustomAction.dll" "dbghelp.dll"    "dwfcore_wt.1.7.0.dll" "dwftk_wt.7.7.0.dll"    "filter.nfl" "FnpCommsSoap.dll"    "FNP_Act_Installer.dll" "fpdfsdk.dll"    "hoops1700_vc90.dll" "hppcf.rdb"    "ICSharpCode.SharpZipLib.DLL"    "LocalTrial_ZWCAD2025_TRIAL.asr" "LspAppUtils.zrx" "ManagedWrapper.DLL"    "MathExpr.dll" "mfc100.dll" "mfc90.dll"    "mfc90u.dll" "MFCMIFC80.dll"    "Microsoft.VC90.CRT.manifest" )</td>
+</tr>
+<tr>
+<td>
+    (<strong>dos_dir</strong> "z*.dll" 2)</td>
+<td>
+    ("ZwExceptView.dll"     "ZwDrawPict.dll" "ZwDraw.dll" "ZwDialogBox.DLL"     "ZwDescT.dll" "ZwDbg.dll" "ZwDatabaseMgd.DLL"     "ZwDatabase.dll" "ZwCxImage.dll" "ZwConstruct.dll"    "ZwColour.dll" "ZwCodeVer.dll" "ZwCmdsEx.dll"     "ZwCmds.dll" "ZwcadRibbonStyle.dll" "ZWCADFNP.dll"    "ZWCADBtn.dll" "ZwBaseLib.dll" "ZwBase.dll"     "ZwAuto.dll" "ZwAuthManagedWrapper.DLL" "ZwAuthHostFNP.dll"     "ZwAuthBase.dll" "ZwAskForInput.dll"     "ZwAcisBuilder.dll" "ZdUI.dll"  )</td>
+</tr>
+<tr>
+<td class="table-item-odd">
+    (<strong>dos_dir</strong> "z*.dll" 4)</td>
+<td class="table-item-odd">
+    ("ZwMouseGestureLib.dll"    "ZwOlp.dll" "ZwPCW.dll" "ZwDatabaseMgd.DLL"    "ZwFg.dll" "ZwGdi.dll" "ZwMouseGestureUI.DLL"    "ZwPictBom.dll" "ZwRibbonData.DLL"    "ZwDatabase.dll" "ZwHopl.dll"    "ZwRibbonControls.DLL" "ZwRibbonSupport.DLL"    "ZwVUtil1.dll" "ZwDrawPict.dll" "ZwHNRW.dll"    "ZwManaged.DLL" "ZwPSSetting.dll" "ZwStyleShWiz.dll"    "ZwAskForInput.dll" "ZWCADBtn.dll"    "ZwColour.dll") </td>
+</tr>
+<tr>
+<td>
+    (<strong>dos_dir</strong> "z*.dll" 6)</td>
+<td>
+    ("ZwDatabase.dll"    "ZwUiMfcEx.dll" "ZwDatabaseMgd.DLL" "ZwFg.dll"    "ZwAuthHostFNP.dll" "ZWCADFNP.dll"    "ZwInstallDriveFNP.dll" "ZwAuto.dll"    "ZWCADBtn.dll" "ZwDialogBox.DLL"    "ZwGeometry.dll" "ZwManaged.DLL"    "ZwPltRaster.dll" "ZwRibbonControls.DLL"    "ZwCxImage.dll" "ZwPltDWF.dll" "ZwCmds.dll"    "ZwOlp.dll" "ZwPltPDF.dll" "ZwGsx.dll"    "ZwGRegen.dll" "ZwPCM.dll" "ZwVUtil1.dll"    "ZwGdiPt.dll" "ZwAcisBuilder.dll"    "ZwPlotSetting.dll" "ZwSgUtil.dll" "ZwSoftActivation.dll"    "ZwDraw.dll" "ZwOsBase.dll"    "ZwRibbonControlsLibrary.DLL" "ZwHNRW.dll"    "ZwUI.dll" "ZwMouseGestureApp.dll" ) </td>
+</tr>
+</table>
+
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

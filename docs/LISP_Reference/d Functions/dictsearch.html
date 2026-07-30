@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>dictsearch</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">dictsearch</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(dictsearch ename symbol [setnext])</p>
+<p class="body_text">Retrieves a dictionary entry by key.</p>
+<p class="body_text">This function locates an entry within a specified dictionary entity (<i>ename</i>) using a lookup string (<i>symbol</i>). When the optional <i>setnext</i> parameter is non-nil, it modifies the internal traversal counter for subsequent <i>dictnext</i> operations to resume after the found entry.</p>
+<h5 class="linklist"><b>See also</b></h5>
+<p><a href="zwcad_lisp_ref_005a.htm">(dictadd)</a></p>
+<p><a href="zwcad_lisp_ref_005b.htm">(dictnext)</a></p>
+<p><a href="zwcad_lisp_ref_005c.htm">(dictremove)</a></p>
+<p><a href="zwcad_lisp_ref_005d.htm">(dictrename)</a></p>
+<p><a href="zwcad_lisp_ref_0100.htm">LISP Compatibility Notes</a></p>
+<p><a href="zwcad_lisp_ref_0099.htm">LISP Programming Guide</a></p>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+</tr>
+<tr>
+<td>
+<b>(</b><font color="#0e85e4">setq</font> dict  <b>(</b><font color="#0e85e4">list</font> '<b>(</b>0 . "DICTIONARY"<b>)</b>'<b>(</b>100 . "AcDbDictionary"<b>)))</b>
+<b>(</b><font color="#0e85e4">setq</font> new_name  <b>(</b><font color="#0e85e4">entmakes</font> dict<b>))</b>
+<b>(</b><font color="#0e85e4">setq</font> nmdict  <b>(</b><font color="#0e85e4">namedobjdict</font> <b>))</b>
+<b>(</b><font color="#0e85e4">setq</font> newdict  <b>(</b><font color="#0e85e4">dictadd</font>nmdict"NEW_DICTIONARY"new_name <b>))</b>
+<b>(</b><font color="#0e85e4">setq</font> datalist <b>(</b><font color="#0e85e4">append</font> <b>(</b><font color="#0e85e4">list</font> '<b>(</b>0 . "XRECORD"<b>)</b>'<b>(</b>100 .   "AcDbXrecord"<b>))</b> '<b>((</b>1 . "new_data"<b>)</b> <b>(</b>10 1. 2. 3.<b>)</b> <b>(</b>70 . 33<b>))))</b>
+<b>(</b><font color="#0e85e4">setq</font> new_name <b>(</b><font color="#0e85e4">entmakex</font>   datalist<b>))</b>
+<b>(</b><font color="#0e85e4">dictadd</font> newdict "NEW_DATA_RECORD"   new_name<b>)</b>
+<b>(<font color="#0e85e4">dictsearch</font></b> nmdict "NEW_DICTIONARY" <b><font color="#0e85e4">)</font></b></td>
+</tr>
+</table>
+
+
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="dictadd.htm">(dictadd ename symbol newobj)</a></p>
+<p class="body_text"><a href="dictnext.htm">(dictnext ename [rewind])</a></p>
+<p class="body_text"><a href="dictremove.htm">(dictremove ename symbol)</a></p>
+<p class="body_text"><a href="namedobjdict.htm">(namedobjdict)</a></p>
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

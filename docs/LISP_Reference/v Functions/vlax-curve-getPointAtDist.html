@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>vlax-curve-getPointAtDist</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">vlax-curve-getPointAtDist</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(vlax-curve-getPointAtDist curve-obj dist)</p>
+<p class="body_text">Returns the point along a curve at the specified distance.</p>
+<p class="body_text">If the specified distance equal to or less than the length of the curve, this function returns a 3D point list representing a point on the curve, otherwise nil. </p>
+<p class="body_text">The function accepts two arguments:</p>
+<table class="table-desc">
+<tr>
+<th>Argument</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td>
+<b>curve-obj</b>
+</td>
+<td>
+
+A VLA-object. 
+</td>
+</tr>
+<tr>
+<td>
+<b>dist</b>
+</td>
+<td>
+
+The distance along the curve. 
+</td>
+</tr>
+</table>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+
+(command "spline" "0,0" "6,7" "12,2" "22,8" "" "" "")<br/>
+(setq vla_object (vlax-ename-&gt;vla-object (entlast)))<br/>
+(command "ucs" "O" "100,100")<br/>
+(<b><font color="#0e85e4">vlax-curve-getPointAtDist</font></b> vla_object 10.0)
+</td>
+<td>
+(6.26490 6.91769 0.000000)
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Note</p>
+<p class="body_text">
+
+This function provides the 3D coordinates of a point in the WCS, regardless of whether the current coordinate system is set to UCS.</p><div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

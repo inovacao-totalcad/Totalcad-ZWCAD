@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>entget</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">entget</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(entget entity-name [application-list])</p>
+<p class="body_text">Retrieves the DXF group codes and values of a specified entity.</p>
+<p class="body_text">This function accesses the drawing database to return an entity's property list in LISP format. Developers typically store this list in a variable and manipulate it using list processing functions such as car, cdr, and assoc to extract specific parameters.</p>
+<p class="body_text">The output consists of structured group code-data pairs formatted as dotted pairs. Each group code (integer) corresponds to specific entity attributes, with its subsequent element containing the associated value for that attribute.</p>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(</b><font color="#0e85e4">command</font> "line" '<b>(</b>2 3<b>)</b> '<b>(</b>6 9<b>)</b> ""<b>)</b><br/>
+<b>(<font color="#0e85e4">entget</font> </b><b>(</b><font color="#0e85e4">entlast</font><b>))</b>
+</td>
+<td>
+
+((-1 . <entity name:="">) (0 . "LINE") (5 . "E3") (67 . 0) (8 . "0") (410 . "Model") (62 . 256) (6 . "ByLayer") (370 . -1) (48 . 1.00000) (60 . 0) (39 . 0.000000) (10 2.00000 3.00000 0.000000) (11 6.00000 9.00000 0.000000) (210 0.000000 0.000000 1.00000))
+</entity></td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Note</p>
+<ul class="command_ul"><li>  Entget does not return all information about an entity. Missing is dotted pair data about the entity's properties when they do not differ from default values: color, linetype, thickness, attributes-follow flag, and the entity handle.</li><br/>
+<li> While the data returned by entget is very similar to DXF format, there is one primary difference: x,y,z coordinates are returned by entget as a single value, rather than the separate values in DXF. Thus, you only see group code 10 with entget, instead of DXF group codes 10 (x-coordinate), 20 (y-coordinate), and 30 (z-coordinate). </li><br/>
+</ul>
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="entdel.htm">(entdel entity-name)</a></p>
+<p class="body_text"><a href="entlast.htm">(entlast)</a></p>
+<p class="body_text"><a href="entmod.htm">(entmod entity-list)</a></p>
+<p class="body_text"><a href="entmake.htm">(entmake [entity-list])</a></p>
+<p class="body_text"><a href="entnext.htm">(entnext [entity-name])</a></p>
+<p class="body_text"><a href="entupd.htm">(entupd entity-name)</a></p>
+<p class="body_text"><a href="handent.htm">(handent handle)</a></p>
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

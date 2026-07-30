@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>grtext</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">grtext</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(grtext [flag text])</p>
+<p class="body_text">Displays custom content in the application's status area.</p>
+<p class="body_text">Controls text output to either the main status bar or dynamic coordinate display. The numerical flag specifies the target location:</p>
+<table class="table-desc">
+<tr>
+<th>Flag</th>
+<th>Display Area</th>
+</tr>
+<tr>
+<td><b>-1</b></td>
+<td>Primary status bar</td>
+</tr>
+<tr>
+<td><b>-2</b></td>
+<td>Live coordinate tracker</td>
+</tr>
+</table>
+<p class="body_text">Accepts string input which will be clipped if exceeding available space. Maximum visibility duration depends on system settings and user interactions.</p>
+<p class="body_text">Note: When coordinate tracking (Coords 1/2) is active, movement inputs will automatically refresh the -2 flagged area with current positional data.</p>
+<p class="body_text">Calling the function without parameters resets both display areas to their default states, removing any user-defined text.</p>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">grtext</font> </b>-1 "tool"<b>)</b>
+</td>
+<td>
+
+"tool"
+</td>
+</tr>
+</table>
+
+<!---bottom...
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="command.htm">(command cmd [arguments] ...)</A></P>
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

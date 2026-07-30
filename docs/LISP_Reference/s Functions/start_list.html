@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>start_list</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">start_list</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(start_list key [operation [index]])</p>
+<p class="body_text">Initializes configuration of a list control element.</p>
+<p class="body_text">This routine prepares a dialog list component identified by key for modification. The operation parameter specifies the type of list manipulation (defaults to 3) with these options:</p>
+<table class="table-desc">
+<tr>
+<th>Op Code</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><b>1</b></td>
+<td>Modify existing list entries</td>
+</tr>
+<tr>
+<td><b>2</b></td>
+<td>Add entries to the list's end</td>
+</tr>
+<tr>
+<td><b>3</b></td>
+<td>Overwrite entire list contents (default)</td>
+</tr>
+</table>
+<p class="body_text">The index parameter applies exclusively to modification operations (Op 1), indicating the position of the item to alter. List positions are zero-indexed (0 = first entry, 1 = second, etc.).</p>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">start_list</font></b> key<b>)</b> or <b>(<font color="#0e85e4">start_list</font></b> key 3<b>)</b><br/>
+<b>(<font color="#0e85e4">start_list</font></b> key 1 2<b>)</b><br/>
+<b>(<font color="#0e85e4">start_list</font></b> key 2<b>)</b>
+</td>
+<td>
+
+start a new list. <br/>
+Same action as above. <br/>
+Change the 2nd item.  <br/>
+Add data.
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Note</p>
+<p class="body_text">
+
+This function is utilized for constructing list boxes and drop-down menus in DCL interfaces. For implementation demonstrations with DCL components, consult the examples provided under list_box and popup_list entries.</p>
+<!---bottom...-
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="command.htm">(command cmd [arguments] ...)</A></P>
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+.---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

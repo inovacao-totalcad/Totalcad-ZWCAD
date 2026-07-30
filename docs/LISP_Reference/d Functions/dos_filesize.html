@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>dos_filesize</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">dos_filesize</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt"> (dos_filesize filespec)</p>
+<p class="body_text">Returns a list containing filenames and sizes in  bytes.</p>
+<hr align="left"/>
+<p class="define_head_1">Parameters</p>
+<p class="body_text">filespec<br/>
+  The desired file or files. filespec can contain  wildcard characters ("*" and "?"). If filespec is not  supplied, it is assumed to be *.*.</p>
+<hr align="left"/>
+<p class="define_head_1">Returns</p>
+<p class="body_text">An association list containing filenames and their  corresponding sizes in bytes if successful. Note, file sizes are returned as  real numbers.<br/>
+<strong>nil</strong> on error.</p>
+<hr align="left"/>
+<p class="define_head_1">Example</p><table class="table-desc">
+<tr>
+<th>Code </th>
+<th>Result </th>
+</tr>
+<tr>
+<td>
+    (<strong>dos_filesize</strong> "C:\\Program Files\\ZWCAD 2012\\Support\\*.lsp")</td>
+<td>
+    (("ZWCAD2012.lsp"    . 59) <br/>("ZWCAD2012doc.lsp" . 1452) <br/>("ZWmvsetup.lsp" .    87103))</td>
+</tr>
+</table>
+
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

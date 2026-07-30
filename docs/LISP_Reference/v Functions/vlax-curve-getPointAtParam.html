@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>vlax-curve-getPointAtParam</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">vlax-curve-getPointAtParam</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(vlax-curve-getPointAtParam curve-obj param)</p>
+<p class="body_text">Returns the point at the specified parameter value along the curve.</p>
+<p class="body_text">If the specified parameter is less than or equal to the EndParam(return by the <b>vlax-curve-getEndParam</b> function) of the curve, this function returns a 3D point list representing a point on the curve, otherwise nil. </p>
+<p class="body_text">The function accepts two arguments:</p>
+<table class="table-desc">
+<tr>
+<th>Argument</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td>
+<b>curve-obj</b>
+</td>
+<td>
+
+A VLA-object. 
+</td>
+</tr>
+<tr>
+<td>
+<b>param</b>
+</td>
+<td>
+
+A number specifying a parameter on the curve. 
+</td>
+</tr>
+</table>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+
+(command "spline" "0,0" "6,7" "12,2" "22,8" "" "" "")<br/>
+(setq vla_object (vlax-ename-&gt;vla-object (entlast)))<br/>
+(setq length (vlax-curve-getEndParam vla_object))<br/>
+(command "ucs" "O" "100,100")<br/>
+(<b><font color="#0e85e4">vlax-curve-getPointAtParam</font></b> vla_object (/ length 2.0))
+</td>
+<td>
+(9.84327 3.74107 0.000000) (the middle point of the spline)
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Note</p>
+<p class="body_text">
+
+This function provides the XYZ coordinates of a point in the World Coordinate System (WCS) regardless of the currently active UCS configuration.</p><div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

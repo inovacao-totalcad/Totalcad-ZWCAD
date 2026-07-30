@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>dos_getdir</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">dos_getdir</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">  (dos_getdir [title [path [message [T]]]]) </p>
+<p class="body_text">Show the "Browse Folder" dialog of Windows. dos_getdir can create new folder.</p>
+<hr align="left"/>
+<p class="define_head_1">Parameters</p>
+<p class="body_text">title<br/>
+  The title of dialog.</p>
+<p class="body_text">path<br/>
+  Set an existing dir. Use current dir if nil.</p>
+<p class="body_text">message<br/>
+  Selective message.</p>
+<p class="body_text">T<br/>
+  Show "Create new folder" button.</p>
+<hr align="left"/>
+<p class="define_head_1">Returns</p>
+<p class="body_text"><strong>Full path user selected</strong> if  successful.<br/>
+<strong>nil</strong> on cancel or error.</p>
+<hr align="left"/>
+<p class="define_head_1">Example</p><table class="table-desc">
+<tr>
+<th>Code </th>
+<th>Result </th>
+</tr>
+<tr>
+<td>(<strong>dos_getdir </strong> "Browse for folder" "C:\\Program Files\\ZWCAD 2025\\" "Select a folder to use" T)</td>
+<td>"C:\\Program Files\\ZWCAD 2025\\Support\\"</td>
+</tr>
+</table>
+
+<!---bottom...
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="command.htm">(command cmd [arguments] ...)</A></P>
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

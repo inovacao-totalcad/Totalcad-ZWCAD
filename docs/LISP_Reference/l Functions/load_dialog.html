@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>load_dialog</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">load_dialog</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(load_dialog dcl_filename)</p>
+<p class="body_text">Initializes a dialog interface definition from specified DCL file.</p>
+<p class="body_text">This routine registers a Dialog Control Language (DCL) configuration with ZWCAD's interface system. Successful execution is a prerequisite for displaying custom dialog components within the application. The dcl_filename parameter should specify the target definition file including its extension.</p>
+<p class="body_text">The function yields these status indicators:</p>
+<table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><b>1</b></td>
+<td>DCL configuration loaded successfully</td>
+</tr>
+<tr>
+<td><b>-1</b></td>
+<td>File access failure (invalid path or missing permissions)</td>
+</tr>
+</table>
+<p class="note">Note: Multiple DCL files require separate load operations. Ensure file paths comply with ZWCAD's security protocols.</p>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">load_dialog</font> </b>"gpdialog.dcl"<b>)</b>
+</td>
+<td>
+
+1
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Note</p>
+<p class="body_text">
+
+The sequence for invoking a dialog window in ZWCAD's LISP functions follows this procedure:</p>
+<p class="body_text">
+
+Guidelines for utilizing the **load_dialog** function in ZWCAD LISP:  
+
+1. Verify DCL file path validity before loading.  
+2. Ensure dialog resource management aligns with runtime lifecycle.  
+3. Handle error codes to prevent ungraceful termination.  
+4. Avoid redundant calls to optimize memory allocation.  
+5. Cross-check platform-specific syntax for compatibility.</p>
+<p class="body_text">
+
+3. new_dialog  
+
+When utilizing the new_dialog function in ZWCAD LISP, ensure proper initialization of the dialog by verifying the validity of the specified dialog_name and filename parameters. Confirm successful loading of the DCL file and handle potential errors through status code checks. Always pair the function with corresponding cleanup routines like unload_dialog to prevent resource leaks. Validate user input interactions before processing data, and test dialog behavior across different screen resolutions to maintain interface consistency.</p>
+<p class="body_text">
+
+3. Handle dialog setup tasks like linking actions to tiles, rendering graphical elements, and populating list box content through functions such as action_tile, start_image, and start_list.</p>
+<p class="body_text">
+
+4. start_dialog  
+Activates modal dialog interaction, requiring prior dialog definition. Controls input focus flow until termination. Validate data before closure. Handle dialog closure events through assigned callbacks. Ensure proper memory cleanup post-interaction. Support both modeless and application-modal states. Returns status code indicating closure method.</p>
+<!---bottom...
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="command.htm">(command cmd [arguments] ...)</A></P>
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

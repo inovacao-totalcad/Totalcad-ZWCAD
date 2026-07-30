@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>vlax-release-object</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">vlax-release-object</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(vlax-release-object obj)</p>
+<p class="body_text">Releases a argument with VLA object data type.</p>
+<p class="body_text">If obj argument represents a VLA object, this function releases the object and returns 0, otherwise ZWCAD reports "error: bad argument type". When the obj argument is released, it can' t be used to access the VLA object again (its value is #&lt;VLA-OBJECT 00000000&gt;), but the VLA object  still exists. Before invoking vlax-release-object function to release VLA object, you'd better invoke vlax-object-released-p function to check if this object has been released already.</p>
+<p class="body_text">The function accepts one argument:</p>
+<table class="table-desc">
+<tr>
+<th>Argument</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td>
+<b>obj</b>
+</td>
+<td>
+
+A VLA  object.</td>
+</tr>
+</table>
+<hr align="left"/>
+<p class="define_head_1">NOTE</p>
+<p class="define_text_1">vlax-release-object function only releases the argument representing a VLA object, and the VLA object still exists.</p>
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

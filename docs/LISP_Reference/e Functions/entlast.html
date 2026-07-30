@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>entlast</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">entlast</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(entlast)</p>
+<p class="body_text">Returns the most recently created entity in the drawing.</p>
+<p class="body_text">This function accesses the newest non-deleted database record, ideal for operations requiring immediate use of the latest drawn object.</p>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(</b><font color="#0e85e4">command</font> "line" '<b>(</b>2 3<b>)</b> '<b>(</b>6 9<b>)</b> ""<b>)</b><br/>
+<b>(<font color="#0e85e4">entlast</font> )</b>
+</td>
+<td>
+
+&lt;Entity name: 49d2bf0 &gt;
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Note</p>
+<ul class="command_ul"><li>The entity does not need to be currently on screen, unthawed, or unlocked to be selected. This behavior differs from the Last selection set option.</li><br/>
+<li>To find the first entity in the database, use the entnext function with no arguments. </li><br/>
+</ul>
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="entdel.htm">(entdel entity-name)</a></p>
+<p class="body_text"><a href="entget.htm">(entget entity-name [application-list])</a></p>
+<p class="body_text"><a href="entmod.htm">(entmod entity-list)</a></p>
+<p class="body_text"><a href="entmake.htm">(entmake [entity-list])</a></p>
+<p class="body_text"><a href="entnext.htm">(entnext [entity-name])</a></p>
+<p class="body_text"><a href="handent.htm">(handent handle)</a></p>
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

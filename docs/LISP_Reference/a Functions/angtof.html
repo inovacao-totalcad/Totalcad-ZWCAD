@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>angtof</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">angtof</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(angtof str_val [unit_mode])</p>
+<div>
+<p class="body_text">Converts angular string representations to floating-point radians.</p>
+<p class="body_text">Transforms a formatted angular measurement string into a radian value. The unit_mode parameter specifies the angular format convention:</p>
+</div>
+<table class="unit-conversion">
+<thead>
+<tr>
+<th>Mode</th>
+<th>Input Pattern</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>0</strong></td>
+<td>Decimal degrees (DD.DDD)</td>
+</tr>
+<tr>
+<td><strong>1</strong></td>
+<td>Degrees-minutes-seconds (DD MM'SS")</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>Gradians (400g circle)</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>Radians</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>Surveyor bearings (N/S...d E/W)</td>
+</tr>
+</tbody>
+</table>
+<div>
+<p class="body_text">Conversion will terminate with error if the input string contains invalid angular notation.</p>
+</div>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">angtof</font> </b>"89"<b>)</b>
+</td>
+<td>
+
+1.55334
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">angtof</font> </b>"44" 3<b>)</b>
+</td>
+<td>
+
+0.0177028</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">angtof</font> </b>"73" 2<b>)</b>
+</td>
+<td>
+
+1.14668</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Note</p>
+<ul class="command_ul"><li><p>The backslash denotes that there is a quote within the string. When LISP sees the second quote, it knows this is the end of the string.</p></li></ul>
+<ul class="command_ul"><li><p>The angtof function is the opposite of the angtos function. </p></li></ul>
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="angtos.htm">(angtos angle [mode [precision]])</a></p>
+<!---bottom...
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

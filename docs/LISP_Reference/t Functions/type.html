@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>type</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">type</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(type obj)</p>
+<p class="body_text">Identifies the data classification of a given object.</p>
+<p class="body_text">Returns the data type classification (such as floating-point value, whole number, collection, graphic reference, etc.) for the specified object. The table below defines recognized type identifiers:</p>
+<table class="table-desc">
+<tr>
+<th>Type Code</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><b>ENAME</b></td>
+<td>Graphical entity reference</td>
+</tr>
+<tr>
+<td><b>EXSUBR</b></td>
+<td>External SDS routine module</td>
+</tr>
+<tr>
+<td><b>FILE</b></td>
+<td>Open resource handler</td>
+</tr>
+<tr>
+<td><b>INT</b></td>
+<td>Whole numeric value</td>
+</tr>
+<tr>
+<td><b>LIST</b></td>
+<td>Sequence container or custom operation</td>
+</tr>
+<tr>
+<td><b>PAGETB</b></td>
+<td>Memory management registry</td>
+</tr>
+<tr>
+<td><b>PICKSET</b></td>
+<td>Object selection group</td>
+</tr>
+<tr>
+<td><b>REAL</b></td>
+<td>Decimal numeric value</td>
+</tr>
+<tr>
+<td><b>STR</b></td>
+<td>Character sequence</td>
+</tr>
+<tr>
+<td><b>SUBR</b></td>
+<td>Built-in LISP operation</td>
+</tr>
+<tr>
+<td><b>SYM</b></td>
+<td>Named variable identifier</td>
+</tr>
+</table>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">type</font> </b>10<b>)</b>
+</td>
+<td>
+
+INT
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">type</font> </b>"zwcad"<b>)</b>
+</td>
+<td>
+
+STR
+</td>
+</tr>
+</table>
+
+<!---bottom...
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="command.htm">(command cmd [arguments] ...)</A></P>
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

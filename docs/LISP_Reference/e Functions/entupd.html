@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>entupd</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">entupd</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<div class="prompt">(entupd entity-name)</div>
+<div class="body_text">Forces a graphical refresh of modified entities.</div>
+<div class="body_text">When editing nested elements like block attributes or polyline vertices, visual updates are deferred to enhance performance. This function manually triggers a regeneration of complex entities after making modifications.</div>
+<div class="body_text">Providing the entity-name of any sub-component within a block definition or polyline structure will refresh the entire parent entity's display representation in the drawing space.</div>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(</b><font color="#0e85e4">command </font>"circle" '<b>(</b>5 11<b>)</b> 5<b>)</b><br/>
+<b>(</b><font color="#0e85e4">setq</font> ent <b>(</b><font color="#0e85e4">entlast</font><b>))</b><br/>
+<b>(</b><font color="#0e85e4">setq</font> ed
+<b>(</b><font color="#0e85e4">entget</font> ent<b>))</b><br/>
+<b>(</b><font color="#0e85e4">setq</font> ed<b>(</b><font color="#0e85e4">subst</font> <b>(</b><font color="#0e85e4">cons</font> 40 20<b>)</b><b>(</b><font color="#0e85e4">assoc</font> 40 ed<b>)</b> ed<b>))</b><br/>
+<b>(</b><font color="#0e85e4">entmod</font> ed<b>)</b><br/>
+<b>(<font color="#0e85e4">entupd</font></b> ent<b>)</b><br/>
+</td>
+<td>
+
+&lt;Entity name: 64c5380 &gt;
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Note</p>
+<p class="body_text">
+
+Use the (command "regen") function to refresh all displayed entities on the screen.</p>
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="entget.htm">(entget entity-name [application-list])</a></p>
+<p class="body_text"><a href="entmake.htm">(entmake [entity-list])</a></p>
+<p class="body_text"><a href="entnext.htm">(entnext [entity-name])</a></p>
+<p class="body_text"><a href="initget.htm">(initget [bits] [string])</a></p>
+<p class="body_text"><a href="handent.htm">(handent handle)</a></p>
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

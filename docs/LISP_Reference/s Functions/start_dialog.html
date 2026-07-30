@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>start_dialog</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">start_dialog</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(start_dialog)</p>
+<p class="body_text">Launches the color selection dialog interface.</p>
+<p class="body_text">This routine activates a graphical dialog and processes user interactions such as button clicks. The exit status is determined by values received from done_dialog:</p>
+<table class="table-desc">
+<tr>
+<th>Status Code</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>
+<b>1</b>
+</td>
+<td>
+Action confirmed with OK selection
+</td>
+</tr>
+<tr>
+<td>
+<b>0</b>
+</td>
+<td>
+Operation canceled by user
+</td>
+</tr>
+<tr>
+<td>
+<b>-1</b>
+</td>
+<td>
+Dialog terminated via term_dialog function
+</td>
+</tr>
+</table>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">start_dialog</font> </b><b>)</b>
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Note</p>
+<ul class="command_ul">
+<li><p>A dialog box is first initialized by the new_dialog function.</p></li>
+<li><p>The order of calling a dialog box is as follows: </p></li>
+<li><p>load_dialog</p></li>
+<li><p>new_dialog </p></li>
+<li><p>action_tile, start_image, start_list, etc (perform all dialog box initialization, such as associating an action with a tiles, creating an image, and making the lists for list boxes) </p></li>
+<li><p>start_dialog </p></li></ul>
+<!---bottom...
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="command.htm">(command cmd [arguments] ...)</A></P>
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

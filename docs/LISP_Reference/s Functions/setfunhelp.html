@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>setfunhelp</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">setfunhelp</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(setfunhelp c:name [file [topic [command]]])</p>
+<p class="body_text">Links a custom command to the Help system, enabling context-sensitive assistance when users request support for the command.</p>
+<p class="define_head_1">Returns</p>
+<p class="body_text">The registered command name string if successful; nil otherwise.</p>
+<p class="define_head_1">Arguments</p>
+<p class="body_text"><span class="Access">c:name</span></p>
+<p class="body_text">Command definition string requiring the 'C:' prefix.</p>
+<p class="body_text"><span class="Access">file</span></p>
+<p class="body_text">Help documentation file path (CHM format recommended).</p>
+<p class="body_text"><span class="access">topic</span></p>
+<p class="body_text">Specific help section identifier within the file.</p>
+<p class="body_text"><span class="access">command</span></p>
+<p class="body_text">Command name string without 'C:' prefix.</p>
+<p class="body_text">After implementing your command and help resources, use this function to establish the connection. The sample below demonstrates loading assistance for a 'test' command:</p>
+<hr align="left"/>
+<p class="define_head_1">Usage Example</p>
+<table class="table-desc">
+<tr>
+<th>Implementation</th>
+<th>Outcome</th>
+</tr>
+<tr>
+<td>
+(defun c:test1()<br/>
+  (defun c:test()(getstring "\nTEST: ") (princ))<br/>
+  (<b style="color:#0e85e4">setfunhelp</b> "c:test" "ZWCAD_Dev.chm" "line")<br/>
+)
+</td>
+<td>Opens the 'line' help topic in ZWCAD_Dev.chm when assistance is requested during command execution.</td>
+</tr>
+</table>
+<hr align="left"/>
+<p class="define_head_1">Important</p>
+<p class="body_text">Ensure command definition (defun) precedes setfunhelp invocation in your code sequence.</p>
+<hr align="left"/>
+<p class="define_head_1">Related Functions</p>
+<p class="body_text"><a href="help.htm">(help [filename [topic [flag]]])</a></p>
+<div id="holding"></div>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+(defun c:test1()<br/>
+  (defun c:test()(getstring "\nTEST: ") (princ)) <br/>
+<b>(<font color="#0e85e4">setfunhelp</font></b> "c:test" "ZWCAD_Dev.chm" "line"<b>)</b><br/>
+  )</td>
+<td>
+
+Displays "line" index dialog box with "ZWCAD_Dev.chm" help file. </td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Note</p>
+<p class="body_text">
+
+When using custom commands in ZWCAD Lisp, ensure setfunhelp is invoked only after the corresponding defun statement that declares the command.</p>
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="help.htm">(help [filename [topic [flag]]])</a></p>
+<!---bottom...
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

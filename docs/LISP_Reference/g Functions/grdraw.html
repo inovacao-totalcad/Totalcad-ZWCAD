@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>grdraw</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">grdraw</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<div class="zw_prompt">(grdraw start_point end_point col_value [highlight_mode])</div>
+<div class="zw_content">Creates a temporary vector graphic between specified coordinates.</div>
+<div class="zw_content">This operation generates a visible connector line within the active drawing space using UCS coordinates. The start_point and end_point parameters accept either 2-dimensional or 3-dimensional coordinate lists. When segments extend beyond visible boundaries, the display intelligently truncates non-visible portions.</div>
+<div class="zw_content">col_value determines the line's chromatic representation using integer codes, where -1 activates inversion rendering (XOR mode) for contrast visualization and self-erasure capabilities.</div>
+<div class="zw_content">The highlight_mode parameter optionally controls emphasis display when supplied with non-zero integer values. Omission or zero value results in standard vector presentation without special highlighting effects.</div>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">grdraw</font> </b>'<b>(</b>2 6<b>)</b> '<b>(</b>3 8<b>)</b> 256 1<b>)</b>
+</td>
+<td>
+
+nil
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="grvecs.htm">(grvecs vector-lists [trans])</a></p>
+<!---bottom...
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

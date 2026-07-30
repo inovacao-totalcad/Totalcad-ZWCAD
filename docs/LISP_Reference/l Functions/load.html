@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>load</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">load</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(load filename [status-msg])</p>
+<p class="body_text">Loads and compiles LISP routines into active workspace.</p>
+<p class="body_text">ZWCAD requires LISP files to be explicitly loaded for execution. Parentheses must encapsulate the load statement to differentiate it from legacy script loading operations.</p>
+<p class="body_text">Specify the target file using the filename parameter without requiring .lsp extension. Full path specification is supported; when omitted, ZWCAD scans all directories in the current LISP loading path configuration.</p>
+<p class="body_text">Successful loading returns the final evaluated expression from the file. Unsuccessful attempts generate standard file-not-found diagnostics in the command interface.</p>
+<p class="body_text">The optional status-msg parameter enables customization of success/failure notifications through user-defined string returns.</p>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">load</font> </b>"invalid"<b>)</b>
+</td>
+<td>
+
+Load failed error 
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">load</font> </b>"valid"<b>)</b>
+</td>
+<td>
+
+LST-FUNCT 
+</td>
+</tr>
+</table>
+
+
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="defun.htm">(defun [c:] name ([arg1 arg2 ...] / [local-var1 local-var2 ...]) expression)
+</a></p>
+<!---bottom...
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

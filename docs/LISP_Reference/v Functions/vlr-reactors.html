@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>vlr-reactors</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">vlr-reactors</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(vlr-reactors<em> [reactor-type...]</em>)</p>
+<p class="body_text">If the reactor-type is existing, it returns the list of the reactor types you specified. And if you omit the reactor-type, it returns all the reactors existed in current graph space.</p>
+<hr align="left"/>
+<p class="define_head_1">parameters</p>
+<p class="body_text"></p><p class="prompt">reactor-type</p>
+<p class="body_text">the reactor type.</p>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">vlr-reactors</font></b><b>)</b></td>
+<td>
+
+Displays a list of all the list reactor types in current graph. </td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">vlr-reactors</font> </b>:vlr-object-reactor<b>)</b></td>
+<td>
+Returns ((:VLR-Object-Reactor #&lt;VLR-Object-Reactor&gt; #&lt;VLR-Object-Reactor&gt;)) if a object reactor has been attached to current graph space;returns nil if not. </td>
+</tr>
+</table>
+
+
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

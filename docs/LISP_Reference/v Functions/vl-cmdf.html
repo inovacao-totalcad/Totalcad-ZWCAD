@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>vl-cmdf</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">vl-cmdf</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(vl-cmdf  [arguments] ...)</p>
+<p class="body_text">Executes a ZWCAD command.</p>
+<p class="body_text">This function evaluates all the supplied arguments before executing the ZWCAD command, and will not execute the ZWCAD command if it detects an error during argument evaluation. <!--In contrast, the <b>command</b> function passes each argument in turn to ZWCAD, so the command may be partially executed before an error is detected. --></p>
+<p class="body_text">The function accepts some optional arguments:</p>
+<table class="table-desc">
+<tr>
+<th>Argument</th>
+<th>Meaning</th>
+<th>Note</th>
+</tr>
+<tr>
+<td>
+<b>arguments</b>
+</td>
+<td>
+
+ZWCAD commands and their options 
+</td>
+<td>
+
+They can be strings, reals, integers or points, as expected by the prompt sequence of the executed command. A null string ("") is equivalent to pressing ENTER on the keyboard. Invoking the function without any arguments is equivalent to pressing ESC and cancels most ZWCAD commands.
+</td>
+</tr>
+</table>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+<th>Note</th>
+</tr>
+<!--<TR>
+<td>
+(<B><font color="#0e85e4">command</font></B> "line" '(0 0) '(100 200) (200 300) "")
+</td>
+<td>
+
+10
+</td>
+</tr>-->
+<tr>
+<td>
+
+(<b><font color="#0e85e4">vl-cmdf</font></b> "line" '(0 0) '(100 200) (200 300) "")
+</td>
+<td>
+
+error: bad function
+</td>
+<td>
+
+Because vl-cmdf evaluates each argument before passing the command to ZWCAD, the invalid point list (200 300) is detected and the command is not executed.
+</td>
+</tr>
+</table>
+<!--<p class="body_text">The differences between <b>command</b> and <b>vl-cmdf</b> are easier to see if you enter the following calls at the ZWCAD Command prompt.</p>-->
+
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="command.htm">(command [arguments] ...)</a></p>
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

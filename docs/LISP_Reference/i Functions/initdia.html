@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>initdia</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">initdia</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(initdia [mode])</p>
+<p class="body_text">Controls the display behavior of command dialog interfaces.</p>
+<p class="body_text">This function activates dialog boxes for subsequent commands when enabled. Compatible operations include attribute definitions, hatch pattern selection, block management, layer configuration, plot settings, and other interactive commands requiring user input.</p>
+<p class="define_head_1">Arguments</p>
+<p class="body_text">mode</p>
+<p class="body_text">When set to 0, subsequent commands will use their standard command-line interface. Any non-zero value or omitting this parameter enables dialog display for the immediately following command execution.</p>
+<p class="define_head_1">Return Value</p>
+<p class="body_text">Always returns nil. Note that dialog availability depends on individual command implementation and user configuration settings.</p>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">initdia</font>)</b><br/>
+<b>(</b><font color="#0e85e4">command</font> "_.block"<b>)</b></td>
+<td>
+
+Displays the block command dialog. </td>
+</tr>
+<tr>
+<td>
+<b>(</b><font color="#0e85e4">command</font> "_.block"<b>)</b></td>
+<td>
+
+Displays the command line prompts.</td>
+</tr>
+</table>
+
+<!---bottom...
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="command.htm">(command cmd [arguments] ...)</A></P>
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

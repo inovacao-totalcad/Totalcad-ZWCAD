@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>vl-member-if-not</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">vl-member-if-not</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(vl-member-if-not  predicate-function list)</p>
+<p class="body_text">Tests each element in list by the predicate function.</p>
+<p class="body_text">This function tests each element in list by the predicate-function.</p>
+<p class="body_text">If predicate-function returns a nil value, this function returns a list. A list contains the element that first fails the test and all elements following this in the original argument. If this function returns nil, none of the elements passes the test condition. </p>
+<p class="body_text">The predicate-function value can take one of the following forms:</p>
+<table class="table-desc">
+<tr>
+<th>predicate-function value</th>
+</tr>
+<tr>
+<td>
+<b>A symbol (function name) </b>
+</td>
+</tr>
+<tr>
+<td>
+<b>'(LAMBDA (X Y) ...)</b>
+</td>
+</tr>
+<tr>
+<td>
+<b>(FUNCTION (LAMBDA (X Y) ...))</b>
+</td>
+</tr>
+</table>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">vl-member-if-not</font> </b>'<b>(</b><font color="#0e85e4">lambda</font> <b>(</b>x<b>)(</b>= <b>(</b><font color="#0e85e4">abs</font> x<b>)</b> 100<b>))</b> '<b>(</b>100 -100 -3 -4<b>))</b>
+</td>
+<td>
+
+(-3 -4)
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">vl-member-if-not</font> </b>'<b>(</b><font color="#0e85e4">lambda</font> <b>(</b>x<b>)(</b>= <b>(</b><font color="#0e85e4">abs</font> x<b>)</b> 100<b>))</b> '<b>(</b>100 -100<b>))</b>
+</td>
+<td>
+
+nil
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="vl-member-if.htm">(vl-member-if  predicate-function list)</a></p>
+<!---bottom...
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

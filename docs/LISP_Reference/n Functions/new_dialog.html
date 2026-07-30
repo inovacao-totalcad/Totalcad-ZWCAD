@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>new_dialog</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">new_dialog</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(new_dialog dialog dcl-id [action point])</p>
+<p class="body_text">Initializes and displays a DCL-based dialog interface.</p>
+<p class="body_text">This function activates a dialog box definition specified by the dialog name and DCL file identifier. The dcl-id parameter references a loaded DCL resource obtained through load_dialog.</p>
+<p class="body_text">An optional action argument may specify a LISP callback function triggered on initialization. Provide an empty string (" ") to disable callback execution while maintaining positional parameters. This placeholder is required when specifying screen coordinates without functional activation.</p>
+<p class="body_text">Positional coordinates for the dialog's upper-left corner can be defined using the point parameter. Negative coordinate values (e.g., '(0 0)) will center the dialog within the application's display area by default.</p>
+<p class="body_text">Returns boolean T for successful dialog initialization; nil if the operation fails.</p>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">new_dialog </font> </b>"basedcl" dcl_id<b>)</b>
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Note</p>
+<p class="body_text">
+
+The sequence for invoking a dialog interface in ZWCAD LISP follows these steps: 
+
+1. Initialize the dialog control parameters.  
+2. Define and configure dialog components.  
+3. Activate the dialog display and enable user interaction.  
+4. Process input events and validate responses.  
+5. Close the dialog and return relevant data to the calling function.</p>
+<p class="body_text">
+
+Key considerations when utilizing the load_dialog function in ZWCAD LISP:  
+Ensure proper dialog control lifecycle management and verify DCL file path accessibility.</p>
+<p class="body_text">
+
+3. new_dialog Guidelines  
+
+Key considerations when implementing this function: Validate input parameters prior to execution; prevent naming conflicts with existing dialog definitions; ensure proper handler functions are established for dynamic interface control; manage memory allocation/deallocation to prevent resource leaks during repeated operations; include error-checking routines for failed initialization attempts.</p>
+<p class="body_text">
+
+3. Functions (handle all dialog setup tasks including action assignments for tiles, image creation, and list population within list_box controls)</p>
+<p class="body_text">
+
+4. Ensure proper termination of dialog sessions after invoking start_dialog to maintain resource integrity.</p>
+<!---bottom...
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="command.htm">(command cmd [arguments] ...)</A></P>
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

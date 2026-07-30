@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>vlax-vla-object-&gt;ename</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">vlax-vla-object-&gt;ename</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(vlax-vla-object-&gt;ename obj)</p>
+<p class="body_text">Transforms a VLA-objectan to an entity .</p>
+<p class="body_text">If obj supplied is a valid ActiveX object, this function returns an autolisp's entity name, otherwise prompts "error: bad argument type". </p>
+<p class="body_text">The function accepts one argument:</p>
+<table class="table-desc">
+<tr>
+<th>Argument</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td>
+<b>obj</b>
+</td>
+<td>
+
+A VLA-object. 
+</td>
+</tr>
+</table>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+
+(setq curDoc (vlax-get-property (vlax-get-zwcad-object) 'ActiveDocument))<br/>
+(setq mSpace (vlax-get-property curDoc 'ModelSpace))<br/>
+(setq FirstVName (vlax-invoke-method mSpace 'Item 0))<br/>
+(<b><font color="#0e85e4">vlax-vla-object-&gt;ename</font></b> FirstVName)<br/>
+</td>
+<td>
+#&lt;Entity name: 5a01090&gt;
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="vlax-ename-vla-object.htm">(vlax-ename-&gt;vla-object entname)</a></p>
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

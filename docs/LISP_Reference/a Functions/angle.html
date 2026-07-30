@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>angle</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">angle</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(angle point1 point2)</p>
+<p class="body_text">Calculate the angle formed by two specified points.</p>
+<p class="body_text">Computes the angle from point1 to point2 within the current UCS. Point1 establishes the reference axis aligned with the UCS X-axis. The measured angle between the constructed line (point1 to point2) and the reference axis is output in radians.</p>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">angle</font> </b>'<b>(</b>8 9<b>)</b><b> </b>'<b>(</b>3 8<b>)</b><b>)</b>
+</td>
+<td>
+
+3.33899
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">angle</font> </b>'<b>(</b>4 8.7 6<b>)</b><b> </b>'<b>(</b>5 8 9<b>)</b><b>)</b>
+</td>
+<td>
+
+5.67246
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">angle</font> </b>'<b>(</b>0 0<b>)</b><b> </b>'<b>(</b>0 0<b>)</b><b>)</b>
+</td>
+<td>
+
+0.000000
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Note</p>
+<ul class="command_ul"><li><p>This function is different from the getangle function. Getangle prompts the user to select two points defining an angle. </p></li></ul>
+<ul class="command_ul"><li><p>LISP always measures all angles in radians. Use the following LISP function to convert degrees to radians:  </p></li></ul>
+<!---bottom...
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="command.htm">(command cmd [arguments] ...)</A></P>
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

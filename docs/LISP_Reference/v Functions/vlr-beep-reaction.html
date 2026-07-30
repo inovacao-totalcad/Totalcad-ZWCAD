@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>vlr-beep-reaction</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">vlr-beep-reaction</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(vlr-beep-reaction [args])</p>
+<p class="body_text">Produces a beep sound.</p>
+<p class="body_text">This is a predefined callback function that accepts a variable number of arguments, depending on the reactor type.</p>
+<!--introduce the arguments
+<p class="body_text">The function accepts one argument:</p>
+<table class="table-desc">
+<TR>
+<TH>Argument</TH>
+<TH>Meaning</TH>
+</TR>
+<TR>
+<td>
+
+<B>reactor</B>
+</td>
+<td>
+
+A reactor object. 
+</td>
+</tr>
+</TABLE>
+-->
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+
+(vl-load-com)<br/>
+(vlr-acdb-reactor nil '((:vlr-objectAppended . <b><font color="#0e85e4">vlr-beep-reaction</font></b>)))<br/>
+</td>
+<td>
+Whatever you draw, these codes produce a beep sound.
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Note</p>
+<p class="body_text">
+
+The function can be linked to an event-listener to assist with troubleshooting.</p><div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

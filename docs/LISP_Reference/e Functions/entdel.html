@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>entdel</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">entdel</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(entdel entity-name)</p>
+<p class="body_text">Removes the specified entity from the drawing.</p>
+<p class="body_text">This function eliminates an entity or group of entities identified by entity-name if present in the active document. Obtain entity names using entnext or entget functions.</p>
+<p class="body_text">Executing entdel on an entity deleted during the current session will revive it, effectively toggling its deletion state. This toggle behavior persists until closing the document. Entities erased in prior sessions become permanently removed after reloading the drawing and cannot be recovered through this function.</p>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(</b><font color="#0e85e4">command</font> "line" '<b>(</b>2 3<b>)</b> '<b>(</b>6 9<b>)</b> ""<b>)</b><br/>
+<b>(<font color="#0e85e4">entdel</font> </b><b>(</b><font color="#0e85e4">entlast</font><b>))</b>
+</td>
+<td>
+&lt;Entity name: 49d2bf0 &gt;
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Note</p>
+<ul class="command_ul"><li> Only entities can be deleted with entdel, not attributes or polyline vertices. To delete attributes and polyline vertices, use the command function with the AttEdit and PEdit commands.</li>
+<li> Entities within blocks may not be deleted. To delete entities within a block, use entmake to redefine the block without the entities you want erased.</li></ul>
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="handent.htm">(handent handle)</a></p>
+<!---bottom...
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>cond</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">cond</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(cond (test-expr1 consequent1 ...) ...)</p>
+<p class="body_text">Evaluates conditions sequentially and executes corresponding expressions.</p>
+<p class="body_text">This conditional branching construct processes each clause by evaluating the test expression. When a true value is encountered, subsequent expressions in that clause are executed, returning the value of the last evaluated expression.</p>
+<ul class="command_ul">
+<li><p>If the initial test-expr yields nil, the function evaluates the subsequent condition test-expr.</p></li>
+<li><p>Execution skips clauses with logically false test expressions until finding a true condition.</p></li>
+<li><p>Returns nil if all test expressions evaluate to nil.</p></li>
+<li><p>Clauses without consequent expressions return the evaluated value of their test-expr when selected.</p></li>
+</ul>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+</tr>
+<tr>
+<td>
+<b>(</b><font color="#0e85e4">setq</font> NUM  289)<br/>
+<b>(<font color="#0e85e4">cond</font></b> <br/>
+<b>((</b>&gt; NUM 200 <b>)</b> <b>(</b><font color="#0e85e4">alert</font> "Severe"<b>))</b><br/>
+<b>((</b>&gt; NUM 100 <b>)</b> <b>(</b><font color="#0e85e4">alert</font> "Very High"<b>))</b><br/>
+<b>((</b>&gt; NUM 50 <b>)</b> <b>(</b><font color="#0e85e4">alert</font> "High"<b>))</b><br/>
+<b>((</b>&gt; NUM 25 <b>)</b> <b>(</b><font color="#0e85e4">alert</font> "Medium"<b>))</b><br/>
+<b>)</b></td>
+</tr>
+</table>
+
+
+<!---bottom...
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="command.htm">(command cmd [arguments] ...)</A></P>
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

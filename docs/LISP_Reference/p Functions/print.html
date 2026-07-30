@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>print</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">print</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(print [expression [file-descriptor]])</p>
+<p class="body_text">Outputs expressions with structured formatting.</p>
+<ul class="command_ul">
+<li><p>Similar to prin1 but adds a newline character preceding the expression and a trailing space following it. Control characters are displayed literally without interpretation. This function does not execute escape sequences.</p></li>
+<li><p>When a file descriptor is provided, formatted output is redirected to the specified file with the same formatting rules applied.</p></li>
+</ul>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Prints</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">print</font> </b>"hello"<b>)</b>
+</td>
+<td>
+
+"hello"
+</td>
+<td>
+
+"hello"
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">print</font> </b>"\nName:"<b>)</b>
+</td>
+<td>
+
+"\nName:"
+</td>
+<td>
+
+"\nName:"
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">print</font> </b>"Thank you"<b>)</b>
+</td>
+<td>
+
+"Thank you"
+</td>
+<td>
+
+"Thank you"
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Note</p>
+<p class="body_text">
+
+The print function in LISP differs from similar output functions (such as prin1 or princ) by automatically inserting a newline character before the expression and a space following it.</p>
+<!---bottom...
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="command.htm">(command cmd [arguments] ...)</A></P>
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+.---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

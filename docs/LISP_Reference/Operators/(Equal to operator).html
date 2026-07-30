@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>(=)(Equal to operator)</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">(=)(Equal to operator)</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(= item1 item2 ...)</p>
+<p class="body_text">Returns T if all items are identical.</p>
+<p class="body_text">This operator evaluates value equivalence between multiple elements:</p>
+<ul class="command_ul">
+<li>Returns T when comparative elements match exactly</li>
+<li>Any discrepancy results in nil output</li>
+</ul>
+<p class="body_text">For multiple arguments, sequential comparison is performed where each element must equal its predecessor to maintain truth. Supports numeric values and string data types.</p>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">=</font> </b>20<b> </b>20<b>)</b>
+</td>
+<td>
+
+T
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">=</font> </b>5.0<b> </b>5<b> </b>5.0<b>)</b>
+</td>
+<td>
+
+T
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">=</font> </b>"ZWCAD"<b> </b>"zwcad"<b>)</b>
+</td>
+<td>
+
+nil
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">=</font> </b>4<b> </b>3.9<b>)</b>
+</td>
+<td>
+
+nil
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">=</font> </b>"Hello"<b> )</b>
+</td>
+<td>
+
+T</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Note</p>
+<p class="body_text">
+
+Differentiate between the = and equal functions: = evaluates numeric values and text strings, whereas equal handles comparisons of list data structures.</p>
+<p class="body_text">
+
+Both = and equal are comparison operators, not arithmetic evaluators for expressions like 1 + 2 = 3. In LISP, arithmetic operations are handled through functions like +, with comparisons performed separately, while setq assigns values to variables.</p>
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="eq.htm">(eq statement1 statement2)</a></p>
+<p class="body_text"><a href="equal.htm">(equal statement1 statement2 [tolerance])</a></p>
+<!---bottom...
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B203.htm">(equal statement1 statement2 [tolerance])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

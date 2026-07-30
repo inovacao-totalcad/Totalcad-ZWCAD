@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>initget</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">initget</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(initget [flags] [keywords])</p>
+<p class="body_text">Defines input constraints and keyword options for subsequent user interaction functions.</p>
+<p class="body_text">This function configures validation rules and keyword lists for commands like getkword. The flags parameter combines bit-coded restrictions using summation, while keywords specify allowable textual responses.</p>
+<p class="body_text">Input validation flags:</p>
+<table class="table-desc">
+<tr><th>Flag</th><th>Constraint</th></tr>
+<tr><td><b>1</b></td><td>Requires explicit input (disables empty Enter response)</td></tr>
+<tr><td><b>2</b></td><td>Excludes zero values</td></tr>
+<tr><td><b>4</b></td><td>Blocks negative numbers</td></tr>
+<tr><td><b>8</b></td><td>Disables drawing limits check</td></tr>
+<tr><td><b>32</b></td><td>Enables dashed rubber-band visualization</td></tr>
+<tr><td><b>64</b></td><td>Restricts getdist to 2D input</td></tr>
+<tr><td><b>128</b></td><td>Overrides other constraints</td></tr>
+</table>
+<p class="body_text">Example: To enforce positive numbers with visual feedback (4+2+32), use flag 38 before calling input functions.</p>
+<p class="body_text">Keyword syntax rules:</p>
+<ul class="body_text">
+<li>Separate alternatives with spaces: "Yes No"</li>
+<li>Capitalize abbreviation hints: "WAll,WA DOor,DO" accepts "wa" for WAll</li>
+<li>Full caps require exact match: "TOTAL" mandates complete entry</li>
+<li>Prefix ~ hides menu items: "~Secret"</li>
+<li>Underscore links translations: "_FrenchMot FR" pairs localized/global terms</li>
+</ul>
+<p class="body_text">Supported functions with applicable flags:</p>
+<table class="table-desc">
+<tr><th>Function</th><th>Flags</th></tr>
+<tr><td>(getint)</td><td>1,2,4,128</td></tr>
+<tr><td>(getreal)</td><td>1,2,4,128</td></tr>
+<tr><td>(getdist)</td><td>1,2,4,32,64,128</td></tr>
+<tr><td>(getangle)</td><td>1,2,32,128</td></tr>
+<tr><td>(getorient)</td><td>1,2,32,128</td></tr>
+<tr><td>(getpoint)</td><td>1,2,32,128</td></tr>
+<tr><td>(getcorner)</td><td>1,8,32,128</td></tr>
+<tr><td>(getkword)</td><td>1,128</td></tr>
+<tr><td>(getstring)</td><td>-</td></tr>
+<tr><td>(entsel)</td><td>-</td></tr>
+<tr><td>(nentsel)</td><td>-</td></tr>
+<tr><td>(nentselp)</td><td>-</td></tr>
+<tr><td>Selection functions</td><td>Not supported</td></tr>
+</table>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">initget</font> </b>4<b>)</b><br/>
+<b>(</b><font color="#0e85e4">getreal</font> "enter a positive number"<b>)</b>
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="getint.htm">(getint [prompt])</a></p>
+<p class="body_text"><a href="getreal.htm">(getreal [prompt])</a></p>
+<p class="body_text"><a href="getdist.htm">(getdist [point] [prompt])</a></p>
+<p class="body_text"><a href="getangle.htm">(getangle [point] [prompt])</a></p>
+<p class="body_text"><a href="getorient.htm">(getorient [pt] [prompt])</a></p>
+<p class="body_text"><a href="getcorner.htm">(getcorner point [prompt])</a></p>
+<p class="body_text"><a href="getkword.htm">(getkword [prompt])</a></p>
+<p class="body_text"><a href="getstring.htm">(getstring [flag] [prompt]) </a></p>
+<p class="body_text"><a href="entsel.htm">(entsel [prompt])</a></p>
+<p class="body_text"><a href="nentsel.htm">(nentsel [prompt])</a></p>
+<p class="body_text"><a href="nentselp.htm">(nentselp [prompt] [point])</a></p>
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

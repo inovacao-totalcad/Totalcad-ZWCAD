@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>dos_filesys</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">dos_filesys</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt"> (dos_filesys [drive])</p>
+<p class="body_text">Returns the file system of the specified drive; either  FAT, FAT32, NTFS, HPFS, CDFS, or a network drive.</p>
+<hr align="left"/>
+<p class="define_head_1">Parameters</p>
+<p class="body_text">drive<br/>
+  The drive name (for example, C:, D:). If not  specified, the current drive is used.</p>
+<hr align="left"/>
+<p class="define_head_1">Returns</p>
+<p class="body_text">A string identifying the file system if successful.<br/>
+<strong>nil</strong> on error.</p>
+<hr align="left"/>
+<p class="define_head_1">Example</p><table class="table-desc">
+<tr>
+<th>Code </th>
+<th>Result </th>
+</tr>
+<tr>
+<td>
+    (<strong>dos_filesys</strong>)</td>
+<td>"NTFS"</td>
+</tr>
+<tr>
+<td>
+    (<strong>dos_ filesys</strong> "F:")</td>
+<td>"CDFS"</td>
+</tr>
+</table>
+
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

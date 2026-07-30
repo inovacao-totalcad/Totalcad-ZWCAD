@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>defun</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">defun</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(defun [c:] name ([arg1 arg2 ...] / [local-var1 local-var2 ...]) expression)</p>
+<p class="body_text">Defines a custom LISP routine for ZWCAD.</p>
+<p class="body_text">A LISP file acts as a container for multiple functions, which become accessible within ZWCAD after loading the file via the <i>load</i> command. Each function must be declared individually using <i>defun</i>.</p>
+<p class="body_text">The <i>defun</i> keyword initiates the function definition, followed by the function name and parameter structure. Three declaration approaches are available:</p>
+<ul class="command_ul">
+<li><p><b>Global variables:</b> Empty parentheses indicate all variables retain values after execution. Example:
+</p><p class="body_text">(defun demoFunc ( )<br/>
+??(setq val 42)<br/>
+)</p>
+Other functions in the file will recognize <i>val</i> as 42.</li>
+<li><p><b>Local variables:</b> Variables declared after a slash (/) reset after function completion. Example:
+</p><p class="body_text">(defun demoFunc ( / temp)<br/>
+??(setq temp 24)<br/>
+)</p>
+<i>temp</i> will only exist during <i>demoFunc</i>'s execution.</li>
+<li><p><b>Input parameters:</b> Variables before the slash receive external values. Example:
+</p><p class="body_text">(defun demoFunc (input / result)<br/>
+??(setq result (* input 2))<br/>
+)</p>
+Call using <i>(demoFunc 5)</i> to process the argument.</li>
+</ul>
+<p class="body_text">Adding <i>C:</i> before the function name enables command-line execution without parentheses. This integrates your function with native ZWCAD commands like Polyline or Hatch:</p>
+<p class="body_text">(defun C:myCmd ( / settings)<br/>
+??(initget 1)<br/>
+??(setq settings (getreal "\nEnter scale factor: "))<br/>
+)</p>
+<p class="define_head_1">Implementation Note</p>
+<p class="body_text">The <i>C:</i> prefix denotes a command-line accessible routine, unrelated to drive letters. Ensure all local variables are declared after the slash to prevent unintended value retention between function calls. Expressions within the definition execute sequentially until the final closing parenthesis.</p>
+<hr align="left"/>
+<p class="define_head_1">Examples</p>
+<table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">defun </font> </b>demoFunc ?<b>( )</b>...<b>)</b>
+</td>
+<td>
+
+demoFunc accepts no input and has no local variable. 
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">defun </font> </b>demoFunc ?<b>(</b>input / result<b>)</b>. . . <b>)</b>
+</td>
+<td>
+
+demoFunc accepts one input and has one local variable. 
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">defun </font> </b>demoFunc ?<b>(</b> / temp<b>)</b>. . . <b>)</b>
+</td>
+<td>
+
+demoFunc has no input and one local variable. 
+</td>
+</tr>
+</table>
+<!---bottom...
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="command.htm">(command cmd [arguments] ...)</A></P>
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>angtof</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link type="text/css" href="../../styles/style.css" rel="StyleSheet" />
+<link type="text/css" href="../../styles/zwcadcss.css" rel="stylesheet" />
+<link type="text/css" href="../../styles/zwcad_dev.css" rel="StyleSheet" />
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script> 
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div id="main" class="main">
+    <div class="Tophead"><span class="Tophead_text">angtof</span></div>
+<div class="clr"></div>
+<div id="content" class="content">
+    <div class="content_resize">
+    <div class="article">
+    <div class="clr"></div>
+<!--main-->
+<p class="prompt">(angtof string [mode])</p>
+<p class="body_text">Change this angle to a real number.</p>
+
+<p class="body_text">This function converts a string that contains an angle to a real number in radian format. The optional mode specifies the format of the "number" in the string:</p>
+<table class="table-desc">
+<TR>
+<TH>Mode Value</TH>
+<TH>String format </TH>
+</TR>
+<TR>
+<td>
+
+<b>0</B>
+</TD>
+<td>
+
+Decimal degrees  
+</TD>
+</tr>
+<TR>
+<td>
+
+<b>1</B>
+</TD>
+<td>
+
+Degrees-minutes-seconds 
+</TD>
+</tr>
+<TR>
+<td>
+
+<b>2</B>
+</TD>
+<td>
+
+Grad  
+</TD>
+</tr>
+<TR>
+<td>
+
+<b>3</B>
+</TD>
+<td>
+
+Radian  
+</TD>
+</tr>
+<TR>
+<td>
+
+<b>4</B>
+</TD>
+<td>
+
+Surveyor's units 
+</TD>
+</tr>
+</TABLE>
+<hr align="left" />
+<p class="define_head_1">Note</p>
+<p class="body_text">This command fails if the text of the string is not recognizable as an angle measurement.</p>
+<hr align="left" />
+<p class="define_head_1">Examples</P>
+<table class="table-desc">
+<TR>
+<TH>Code</TH>
+<TH>Result</TH>
+</TR>
+<TR>
+<td>
+
+<b>(<font color="#0e85e4">angtof</FONT> </B>&nbsp;"89"<B>)</B>
+</TD>
+<td>
+
+1.55334
+</TD>
+</tr>
+<TR>
+<td>
+
+<b>(<font color="#0e85e4">angtof</FONT> </B>&nbsp;"44" 3<B>)</B>
+</TD>
+<td>
+
+0.0177028</TD>
+</tr>
+<TR>
+<td>
+
+<b>(<font color="#0e85e4">angtof</FONT> </B>&nbsp;"73" 2<B>)</B>
+</TD>
+<td>
+
+1.14668</TD>
+</tr>
+</TABLE>
+<hr align="left" />
+<p class="define_head_1">Note</p>
+<ul class="command_ul"><li><p>The backslash denotes that there is a quote within the string. When LISP sees the second quote, it knows this is the end of the string.</p></li></ul>
+<ul class="command_ul"><li><p>The angtof function is the opposite of the angtos function. </p></li></ul>
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="angtos.htm">(angtos angle [mode [precision]])</A></P>
+<!---bottom...
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div ID="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

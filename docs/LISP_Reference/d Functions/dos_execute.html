@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>dos_execute</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">dos_execute</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt"> (dos_execute command [show])</p>
+<p class="body_text">Executes an external program. The PATH  environment variable is used to find the program to be executed.</p>
+<hr align="left"/>
+<p class="define_head_1">Parameters</p>
+<p class="body_text">command<br/>
+  The command to run, including arguments.<br/>
+  show<br/>
+  How the newly opened window is to be shown.  The default value is Normal (0).</p>
+<table class="table-desc">
+<tr>
+<td class="table-item-odd">0</td>
+<td class="table-item-odd">Normal. Activates and displays a window. If the    window is minimized or maximized, the system restores it to its original size    and position. An application should specify this flag when displaying the    window for the first time.</td>
+</tr>
+<tr>
+<td class="table-item-double">1</td>
+<td class="table-item-double">Not Active. Displays a window in its most recent    size and position. This value is similar option 0, except the window is not    active.</td>
+</tr>
+<tr>
+<td class="table-item-odd">2</td>
+<td class="table-item-odd">Minimized. Activates the window and displays it    as a minimized window.</td>
+</tr>
+<tr>
+<td class="table-item-double">3</td>
+<td class="table-item-double">Minimized Not Active. Displays the window as a    minimized window. This value is similar to option 2, except the window is not    activated.</td>
+</tr>
+<tr>
+<td class="table-item-odd">4</td>
+<td class="table-item-odd">Maximized. Activates the window and displays it    as a maximized window.</td>
+</tr>
+</table>
+<hr align="left"/>
+<p class="define_head_1">Returns</p>
+<p class="body_text">Returns command if successful.<br/>
+<strong>nil</strong> on  error.</p>
+<hr align="left"/>
+<p class="define_head_1">Example</p><table class="table-desc">
+<tr>
+<th>Code </th>
+<th>Result </th>
+</tr>
+<tr>
+<td>(<strong>dos_execute</strong> "Notepad.exe")</td>
+<td>
+"Notepad.exe"</td>
+</tr>
+</table>
+
+<!---...top---->
+<!---bottom...
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="command.htm">(command cmd [arguments] ...)</A></P>
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

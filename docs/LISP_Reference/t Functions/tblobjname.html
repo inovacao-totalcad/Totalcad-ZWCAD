@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>tblobjname</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">tblobjname</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(tblobjname table-name symbol)</p>
+<p class="body_text">Retrieve the entity name linked to a specific symbol in a symbol table.</p>
+<p class="body_text">This function identifies the entity name corresponding to a given symbol within a specified symbol table. By providing the symbol table name and the symbol, tblobjname locates and returns the associated entity name. Supported symbol table names include:</p>
+<table class="table-desc">
+<tr>
+<th>Table-name</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td>
+<b>"appid"</b>
+</td>
+<td>
+Application identification.
+</td>
+</tr>
+<tr>
+<td>
+<b>"block"</b>
+</td>
+<td>
+Block names.
+</td>
+</tr>
+<tr>
+<td>
+<b>"dimstyle"</b>
+</td>
+<td>
+Dimension style names. 
+</td>
+</tr>
+<tr>
+<td>
+<b>"layer"</b>
+</td>
+<td>
+Layer names. 
+</td>
+</tr>
+<tr>
+<td>
+<b>"ltype"</b>
+</td>
+<td>
+Linetype names. 
+</td>
+</tr>
+<tr>
+<td>
+<b>"style"</b>
+</td>
+<td>
+Text style names.  
+</td>
+</tr>
+<tr>
+<td>
+<b>"ucs"</b>
+</td>
+<td>
+UCS names.
+</td>
+</tr>
+<tr>
+<td>
+<b>"view"</b>
+</td>
+<td>
+View names.  
+</td>
+</tr>
+<tr>
+<td>
+<b>"vport"</b>
+</td>
+<td>
+Viewport names. 
+</td>
+</tr>
+</table>
+<p class="body_text">Standard symbol names by default are:</p>
+<table class="table-desc">
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td>
+<b>"CONTINUOUS"</b>
+</td>
+<td>
+Default linetype. 
+</td>
+</tr>
+<tr>
+<td>
+<b>"0"</b>
+</td>
+<td>
+Default layer.
+</td>
+</tr>
+<tr>
+<td>
+<b>"STANDARD"</b>
+</td>
+<td>
+Default text style. 
+</td>
+</tr>
+<tr>
+<td>
+<b>"STANDARD"</b>
+</td>
+<td>
+Default dimension style. 
+</td>
+</tr>
+</table>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">tblobjname</font> </b>"style" "standard"<b>)</b>
+</td>
+<td>
+&lt;Entity name: 6525520 &gt;
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">tblobjname</font> </b>"layer" "0"<b>)</b>
+</td>
+<td>
+&lt;Entity name: 6525270 &gt;
+</td>
+</tr>
+</table>
+
+<!---bottom...
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="command.htm">(command cmd [arguments] ...)</A></P>
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>vlax-safearray-type</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">vlax-safearray-type</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(vlax-safearray-type var)</p>
+<p class="body_text">Returns the data type of a safearray.</p>
+<p class="body_text">If the specified var argument represents a safearray, this funtion returns an integer whose meaning can be inquired in the following table:</p>
+<table class="table-desc">
+<tr>
+<th>Integer constant</th>
+<th>String constant</th>
+</tr>
+<tr>
+<td>
+<b>2</b>
+</td>
+<td>
+
+Integer (vlax-vbInteger)
+</td>
+</tr>
+<tr>
+<td>
+<b>3</b>
+</td>
+<td>
+
+Long integer (vlax-vbLong)
+</td>
+</tr>
+<tr>
+<td>
+<b>4</b>
+</td>
+<td>
+
+Single-precision floating-point number (vlax-vbSingle)
+</td>
+</tr>
+<tr>
+<td>
+<b>5</b>
+</td>
+<td>
+
+Double-precision floating-point number (vlax-vbDouble)
+</td>
+</tr>
+<tr>
+<td>
+<b>8</b>
+</td>
+<td>
+
+String (vlax-vbString)
+</td>
+</tr>
+<!--2009.07.30(11052);vlax-vbObject瀵瑰簲镄勫�间负13
+<TR>
+<td>
+<B>9</B>
+</td>
+<td>
+
+Object (vlax-vbObject)
+</td>
+</tr>
+-->
+<tr>
+<td>
+<b>11</b>
+</td>
+<td>
+
+Boolean (vlax-vbBoolean) 
+</td>
+</tr>
+<tr>
+<td>
+<b>12</b>
+</td>
+<td>
+
+Variant (vlax-vbVariant) 
+</td>
+</tr>
+</table>
+<p class="body_text">The function accepts two arguments at least and some optional argument:</p>
+<table class="table-desc">
+<tr>
+<th>Argument</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td>
+<b>var</b>
+</td>
+<td>
+
+A safearray.
+</td>
+</tr>
+</table>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+
+(setq 3dpoint (<b><font color="#0e85e4">vlax-make-safearray</font></b> vlax-vbSingle '(0 . 2)))<br/>
+(vlax-safearray-type 3dpoint)
+</td>
+<td>
+4
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="vlax-make-safearray.htm">(vlax-make-safearray type '(l-bound . u-bound) ['(l-bound . u-bound)...])</a></p>
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

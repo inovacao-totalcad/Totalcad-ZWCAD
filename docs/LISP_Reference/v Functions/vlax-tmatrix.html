@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>vlax-tmatrix</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">vlax-tmatrix</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(vlax-tmatrix list)</p>
+<p class="body_text">Returns a 4 x 4 transformation matrix which can be used by tranformby VLA-method.</p>
+<p class="body_text">If the specified list's format is undesirable, this function prompts "Error: bad argument", otherwise returns a variant of type safearray, representing a 4 x 4 transformation matrix.</p>
+<p class="body_text">The function accepts one argument:</p>
+<table class="table-desc">
+<tr>
+<th>Argument</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td>
+<b>list</b>
+</td>
+<td>
+
+A list containing four elements, and each element is a list containing four numbers. 
+</td>
+</tr>
+</table>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+
+(vl-load-com)<br/>
+(setq var_tmatrix (<b><font color="#0e85e4">vlax-tmatrix</font></b> '((10 0 0 0) (0 10 0 0) (0 0 10 0) (0 0 0 1))))<br/>
+(setq arr_tmatrix (vlax-variant-value var_tmatrix))<br/>
+(vlax-safearray-&gt;list arr_tmatrix)
+</td>
+<td>
+((10.0000 0.000000 0.000000 0.000000)<br/>(0.000000 10.0000 0.000000 0.000000)<br/>(0.000000 0.000000 10.0000 0.000000)<br/>(0.000000 0.000000 0.000000 1.00000))
+</td>
+</tr>
+<!--
+<TR>
+<td>
+
+(defun c:Scale_TransformBy (/ el vl matList transmat)<br>&nbsp;&nbsp;(vl-load-com)&nbsp;&nbsp;&nbsp;&nbsp;; Load ActiveX support<br>&nbsp;&nbsp;;; Select a line<br>&nbsp;&nbsp;(setq el (car (entsel "\nSelect a line: ")))<br>&nbsp;&nbsp;(setq vl (vlax-ename->vla-object el))<br>&nbsp;&nbsp;(princ<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(strcat "\nBefore transformBy, the Length of the line is: "<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(rtos (vlax-get-property vl 'Length) 2 3)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br>&nbsp;&nbsp;)<br>&nbsp;&nbsp;;;; Initialize the transMat variable with a transformation matrix<br>&nbsp;&nbsp;;;; that will scale an object scale by 10,10 at point 0,0,0.<br>&nbsp;&nbsp;(setq matList (list '(10 0 0 0) '(0 10 0 0) '(0 0 10 0) '(0 0 0 1)))<br>&nbsp;&nbsp;;;; Use vlax-tmatrix to convert the list to a variant.<br>&nbsp;&nbsp;(setq transmat (<B><font color="#0e85e4">vlax-tmatrix</font></B> matlist))<br>&nbsp;&nbsp;;;;  Transform the line using the defined transformation matrix<br>&nbsp;&nbsp;(vlax-invoke-method vl 'Transformby transMat)<br>&nbsp;&nbsp;(setvar "cmdecho" 0)<br>&nbsp;&nbsp;(command "zoom" "all")<br>&nbsp;&nbsp;(princ<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(strcat "\nAfter transformBy, the Length of the line is: "<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(rtos (vlax-get-property vl 'Length) 2 3)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br>&nbsp;&nbsp;)<br>&nbsp;&nbsp;(princ)<br>
+)
+</td>
+<td>
+Before transformBy, the Length of the line is: 1053.245<br>
+After transformBy, the Length of the line is: 10532.448
+</td>
+</tr>
+-->
+</table>
+
+<!---Tell me about
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="vlax-ldata-get.htm">(vlax-ldata-get dict key [default-data])</A></P>
+<p class="body_text"><A HREF="vlax-ldata-list.htm">(vlax-ldata-list dict)</A></P>
+<p class="body_text"><A HREF="vlax-ldata-put.htm">(vlax-ldata-put dict key data)</A></P>
+-->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

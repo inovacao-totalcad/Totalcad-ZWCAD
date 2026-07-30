@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>vlax-curve-getSecondDeriv</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">vlax-curve-getSecondDeriv</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(vlax-curve-getSecondDeriv curve-obj param)</p>
+<p class="body_text">Returns the second derivative (in WCS) of a curve at the specified param.</p>
+<p class="body_text">If the value of param argument is between the startparam (got with vlax-curve-getStartParam function) and endparam (got with vlax-curve-getEndParam function), this function returns a 3D point list representing the second derivative of the curve at the param, otherwise nil. </p>
+<p class="body_text">The function accepts two  arguments:</p>
+<table class="table-desc">
+<tr>
+<th>Argument</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td>
+<b>curve-obj</b>
+</td>
+<td>
+
+A VLA-object. 
+</td>
+</tr>
+<tr>
+<td>
+<b>param</b>
+</td>
+<td>
+
+A real number, and its available value is between startparam and endparam of the measured curve.</td>
+</tr>
+</table>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<pre>
+(<span class="keyfunc">vlax-curve-getSecondDeriv</span>
+  curve-obj
+  (/ (-	(vlax-curve-getEndParam curve-obj)
+	(vlax-curve-getStartParam curve-obj)
+     )
+     2.0
+  )
+)</pre>
+</td>
+<td>
+  (0.000756251 0.0116285 0.000000)<br/>
+  Returns the second derivative of the spline at its middle point.</td>
+</tr>
+<tr>
+<td>
+
+  (<span class="keyfunc">vlax-curve-getSecondDeriv</span> curve-obj 40.2)
+  </td>
+<td>
+  nil<br/>
+  The value of param argument is more than the endparam of the curve, this expression returns nil. </td>
+</tr>
+</table>
+
+
+
+
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

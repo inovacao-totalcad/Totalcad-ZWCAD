@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>angtos</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">angtos</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(angtos angle [mode [precision]])</p>
+<div class="definition">
+<p>Transforms a radian angle measurement into a human-readable angular string representation, respecting system angular base settings.</p>
+</div>
+<div class="function-details">
+<p>The angular-to-string conversion utility supports multiple notation formats through mode specification. While sharing conceptual similarities with numerical conversion functions, this routine specifically handles angular measurement interpretations. Format options include:</p>
+<table class="format-options">
+<thead>
+<tr>
+<th>Mode</th>
+<th>Format Style</th>
+<th>Sample Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>0</strong></td>
+<td>Degree decimal notation</td>
+<td>142.75°</td>
+</tr>
+<tr>
+<td><strong>1</strong></td>
+<td>Sexagesimal degree format</td>
+<td>122°15'30"</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>Gradian measurement</td>
+<td>200.00g</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>Radial measurement</td>
+<td>3.14r</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>Directional bearing format</td>
+<td>S 45° E</td>
+</tr>
+</tbody>
+</table>
+<div class="param-note">
+<p><em>Decimal Control:</em> The precision parameter (0-15) determines fractional display resolution when applicable.</p>
+</div>
+</div>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">angtos</font> </b>0.4503<b>)</b>
+</td>
+<td>
+
+"25.783"
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">angtos</font> </b>0.4513<b>)</b>
+</td>
+<td>
+
+"0.45r"</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">angtos</font> </b>0.4533<b>)</b>
+</td>
+<td>
+
+"25d46'59\""</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="angtof.htm">(angtof string [mode])</a></p>
+<!---bottom...
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>V Functions</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">V Functions</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="body_text">Topics in this section:</p>
+<ul class="command_ul">
+<li>
+<a href="vector_image.html" title="vector_image">vector_image</a></li>
+<li>
+<a href="ver.html" title="ver">ver</a></li>
+<li>
+<a href="vl-acad-defun.html" title="vl-acad-defun">vl-acad-defun</a></li>
+<li>
+<a href="vl-acad-undefun.html" title="vl-acad-undefun">vl-acad-undefun</a></li>
+<li>
+<a href="vl-arx-import.html" title="vl-arx-import">vl-arx-import</a></li>
+<li>
+<a href="vl-bb-ref.html" title="vl-bb-ref">vl-bb-ref</a></li>
+<li>
+<a href="vl-bb-set.html" title="vl-bb-set">vl-bb-set</a></li>
+<li>
+<a href="vl-catch-all-apply.html" title="vl-catch-all-apply">vl-catch-all-apply</a></li>
+<li>
+<a href="vl-catch-all-error-message.html" title="vl-catch-all-error-message">vl-catch-all-error-message</a></li>
+<li>
+<a href="vl-catch-all-error-p.html" title="vl-catch-all-error-p">vl-catch-all-error-p</a></li>
+<li>
+<a href="vl-cmdf.html" title="vl-cmdf">vl-cmdf</a></li>
+<li>
+<a href="vl-consp.html" title="vl-consp">vl-consp</a></li>
+<li>
+<a href="vl-directory-files.html" title="vl-directory-files">vl-directory-files</a></li>
+<li>
+<a href="vl-doc-export.html" title="vl-doc-export">vl-doc-export</a></li>
+<li>
+<a href="vl-doc-import.html" title="vl-doc-import">vl-doc-import</a></li>
+<li>
+<a href="vl-doc-ref.html" title="vl-doc-ref">vl-doc-ref</a></li>
+<li>
+<a href="vl-doc-set.html" title="vl-doc-set">vl-doc-set</a></li>
+<li>
+<a href="vl-every.html" title="vl-every">vl-every</a></li>
+<li>
+<a href="vl-exit-with-error.html" title="vl-exit-with-error">vl-exit-with-error</a></li>
+<li>
+<a href="vl-exit-with-value.html" title="vl-exit-with-value">vl-exit-with-value</a></li>
+<li>
+<a href="vl-file-copy.html" title="vl-file-copy">vl-file-copy</a></li>
+<li>
+<a href="vl-file-delete.html" title="vl-file-delete">vl-file-delete</a></li>
+<li>
+<a href="vl-file-directory-p.html" title="vl-file-directory-p">vl-file-directory-p</a></li>
+<li>
+<a href="vl-file-rename.html" title="vl-file-rename">vl-file-rename</a></li>
+<li>
+<a href="vl-file-size.html" title="vl-file-size">vl-file-size</a></li>
+<li>
+<a href="vl-file-systime.html" title="vl-file-systime">vl-file-systime</a></li>
+<li>
+<a href="vl-filename-base.html" title="vl-filename-base">vl-filename-base</a></li>
+<li>
+<a href="vl-filename-directory.html" title="vl-filename-directory">vl-filename-directory</a></li>
+<li>
+<a href="vl-filename-extension.html" title="vl-filename-extension">vl-filename-extension</a></li>
+<li>
+<a href="vl-filename-mktemp.html" title="vl-filename-mktemp">vl-filename-mktemp</a></li>
+<li>
+<a href="vl-get-resource.html" title="vl-get-resource">vl-get-resource</a></li>
+<li>
+<a href="vl-list.html" title="vl-list*">vl-list*</a></li>
+<li>
+<a href="vl-list-string.html" title="vl-list-&gt;string">vl-list-&gt;string</a></li>
+<li>
+<a href="vl-list-exported-functions.html" title="vl-list-exported-functions">vl-list-exported-functions</a></li>
+<li>
+<a href="vl-list-length.html" title="vl-list-length">vl-list-length</a></li>
+<li>
+<a href="vl-list-loaded-vlx.html" title="vl-list-loaded-vlx">vl-list-loaded-vlx</a></li>
+<li>
+<a href="vl-load-all.html" title="vl-load-all">vl-load-all</a></li>
+<li>
+<a href="vl-load-com.html" title="vl-load-com">vl-load-com</a></li>
+<li>
+<a href="vl-load-reactors.html" title="vl-load-reactors">vl-load-reactors</a></li>
+<li>
+<a href="vl-mkdir.html" title="vl-mkdir">vl-mkdir</a></li>
+<li>
+<a href="vl-member-if.html" title="vl-member-if">vl-member-if</a></li>
+<li>
+<a href="vl-member-if-not.html" title="vl-member-if-not">vl-member-if-not</a></li>
+<li>
+<a href="vl-position.html" title="vl-position">vl-position</a></li>
+<li>
+<a href="vl-prin1-to-string.html" title="vl-prin1-to-string">vl-prin1-to-string</a></li>
+<li>
+<a href="vl-princ-to-string.html" title="vl-princ-to-string">vl-princ-to-string</a></li>
+<li>
+<a href="vl-propagate.html" title="vl-propagate">vl-propagate</a></li>
+<li>
+<a href="vl-registry-delete.html" title="vl-registry-delete">vl-registry-delete</a></li>
+<li>
+<a href="vl-registry-descendents.html" title="vl-registry-descendents">vl-registry-descendents</a></li>
+<li>
+<a href="vl-registry-read.html" title="vl-registry-read">vl-registry-read</a></li>
+<li>
+<a href="vl-registry-write.html" title="vl-registry-write">vl-registry-write</a></li>
+<li>
+<a href="vl-remove.html" title="vl-remove">vl-remove</a></li>
+<li>
+<a href="vl-remove-if.html" title="vl-remove-if">vl-remove-if</a></li>
+<li>
+<a href="vl-remove-if-not.html" title="vl-remove-if-not">vl-remove-if-not</a></li>
+<li>
+<a href="vl-some.html" title="vl-some">vl-some</a></li>
+<li>
+<a href="vl-sort.html" title="vl-sort">vl-sort</a></li>
+<li>
+<a href="vl-sort-i.html" title="vl-sort-i">vl-sort-i</a></li>
+<li>
+<a href="vl-string-list.html" title="vl-string-&gt;list">vl-string-&gt;list</a></li>
+<li>
+<a href="vl-string-elt.html" title="vl-string-elt">vl-string-elt</a></li>
+<li>
+<a href="vl-string-left-trim.html" title="vl-string-left-trim">vl-string-left-trim</a></li>
+<li>
+<a href="vl-string-mismatch.html" title="vl-string-mismatch">vl-string-mismatch</a></li>
+<li>
+<a href="vl-string-position.html" title="vl-string-position">vl-string-position</a></li>
+<li>
+<a href="vl-string-right-trim.html" title="vl-string-right-trim">vl-string-right-trim</a></li>
+<li>
+<a href="vl-string-search.html" title="vl-string-search">vl-string-search</a></li>
+<li>
+<a href="vl-string-subst.html" title="vl-string-subst">vl-string-subst</a></li>
+<li>
+<a href="vl-string-translate.html" title="vl-string-translate">vl-string-translate</a></li>
+<li>
+<a href="vl-string-trim.html" title="vl-string-trim">vl-string-trim</a></li>
+<li>
+<a href="vl-symbol-name.html" title="vl-symbol-name">vl-symbol-name</a></li>
+<li>
+<a href="vl-symbol-value.html" title="vl-symbol-value">vl-symbol-value</a></li>
+<li>
+<a href="vl-symbolp.html" title="vl-symbolp">vl-symbolp</a></li>
+<li>
+<a href="vl-unload-vlx.html" title="vl-unload-vlx">vl-unload-vlx</a></li>
+<li>
+<a href="vl-vbaload.html" title="vl-vbaload">vl-vbaload</a></li>
+<li>
+<a href="vl-vbarun.html" title="vl-vbarun">vl-vbarun</a></li>
+<li>
+<a href="vl-vlx-loaded-p.html" title="vl-vlx-loaded-p">vl-vlx-loaded-p</a></li>
+<li>
+<a href="vlax-3D-point.html" title="vlax-3D-point">vlax-3D-point</a></li>
+<li>
+<a href="vlax-add-cmd.html" title="vlax-add-cmd">vlax-add-cmd</a></li>
+<li>
+<a href="vlax-create-object.html" title="vlax-create-object">vlax-create-object</a></li>
+<li>
+<a href="vlax-curve-getArea.html" title="vlax-curve-getArea">vlax-curve-getArea</a></li>
+<li>
+<a href="vlax-curve-getClosestPointTo.html" title="vlax-curve-getClosestPointTo">vlax-curve-getClosestPointTo</a></li>
+<li>
+<a href="vlax-curve-getClosestPointToProjection.html" title="vlax-curve-getClosestPointToProjection">vlax-curve-getClosestPointToProjection</a>
+</li>
+<li>
+<a href="vlax-curve-getDistAtParam.html" title="vlax-curve-getDistAtParam">vlax-curve-getDistAtParam</a></li>
+<li>
+<a href="vlax-curve-getDistAtPoint.html" title="vlax-curve-getDistAtPoint">vlax-curve-getDistAtPoint</a></li>
+<li>
+<a href="vlax-curve-getEndParam.html" title="vlax-curve-getEndParam">vlax-curve-getEndParam</a></li>
+<li>
+<a href="vlax-curve-getEndPoint.html" title="vlax-curve-getEndPoint">vlax-curve-getEndPoint</a></li>
+<li>
+<a href="vlax-curve-getFirstDeriv.html" title="vlax-curve-getFirstDeriv">vlax-curve-getFirstDeriv</a></li>
+<li>
+<a href="vlax-curve-getParamAtDist.html" title="vlax-curve-getParamAtDist">vlax-curve-getParamAtDist</a></li>
+<li>
+<a href="vlax-curve-getParamAtPoint.html" title="vlax-curve-getParamAtPoint">vlax-curve-getParamAtPoint</a></li>
+<li>
+<a href="vlax-curve-getPointAtDist.html" title="vlax-curve-getPointAtDist">vlax-curve-getPointAtDist</a></li>
+<li>
+<a href="vlax-curve-getPointAtParam.html" title="vlax-curve-getPointAtParam">vlax-curve-getPointAtParam</a></li>
+<li>
+<a href="vlax-curve-getSecondDeriv.html" title="vlax-curve-getSecondDeriv">vlax-curve-getSecondDeriv</a></li>
+<li>
+<a href="vlax-curve-getStartParam.html" title="vlax-curve-getStartParam">vlax-curve-getStartParam</a></li>
+<li>
+<a href="vlax-curve-getStartPoint.html" title="vlax-curve-getStartPoint">vlax-curve-getStartPoint</a></li>
+<li>
+<a href="vlax-curve-isClosed.html" title="vlax-curve-isClosed">vlax-curve-isClosed</a></li>
+<li>
+<a href="vlax-curve-isPeriodic.html" title="vlax-curve-isPeriodic">vlax-curve-isPeriodic</a></li>
+<li>
+<a href="vlax-curve-isPlanar.html" title="vlax-curve-isPlanar">vlax-curve-isPlanar</a></li>
+<li>
+<a href="vlax-dump-object.html" title="vlax-dump-object">vlax-dump-object</a></li>
+<li>
+<a href="vlax-ename-vla-object.html" title="vlax-ename-vla-object">vlax-ename-&gt;vla-object</a></li>
+<li>
+<a href="vlax-erased-p.html" title="vlax-erased-p">vlax-erased-p</a></li>
+<li>
+<a href="vlax-for.html" title="vlax-for">vlax-for</a></li>
+<li>
+<a href="vlax-get-object.html" title="vlax-get-object">vlax-get-object</a></li>
+<li>
+<a href="vlax-get-or-create-object.html" title="vlax-get-or-create-object">vlax-get-or-create-object</a></li>
+<li>
+<a href="vlax-get-property.html" title="vlax-get-property">vlax-get-property</a></li>
+<li>
+<a href="vlax-get-acad-object.html" title="vlax-get-acad-object">vlax-get-acad-object</a></li>
+<li>
+<a href="vlax-import-type-library.html" title="vlax-import-type-library">vlax-import-type-library</a></li>
+<li>
+<a href="vlax-invoke-method.html" title="vlax-invoke-method">vlax-invoke-method</a></li>
+<li>
+<a href="vlax-ldata-delete.html" title="vlax-ldata-delete">vlax-ldata-delete</a></li>
+<li>
+<a href="vlax-ldata-get.html" title="vlax-ldata-get">vlax-ldata-get</a></li>
+<li>
+<a href="vlax-ldata-list.html" title="vlax-ldata-list">vlax-ldata-list</a></li>
+<li>
+<a href="vlax-ldata-put.html" title="vlax-ldata-put">vlax-ldata-put</a></li>
+<li>
+<a href="vlax-ldata-test.html" title="vlax-ldata-test">vlax-ldata-test</a></li>
+<li>
+<a href="vlax-make-safearray.html" title="vlax-make-safearray">vlax-make-safearray</a></li>
+<li>
+<a href="vlax-make-variant.html" title="vlax-make-variant">vlax-make-variant</a></li>
+<li>
+<a href="vlax-map-collection.html" title="vlax-map-collection">vlax-map-collection</a></li>
+<li>
+<a href="vlax-method-applicable-p.html" title="vlax-method-applicable-p">vlax-method-applicable-p</a></li>
+<!--<li>
+<a title="vlax-object-released-p" href="vlax-object-released-p.html">vlax-object-released-p</a></li>-->
+<li>
+<a href="vlax-product-key.html" title="vlax-product-key">vlax-product-key</a></li>
+<li>
+<a href="vlax-property-available-p.html" title="vlax-property-available-p">vlax-property-available-p</a></li>
+<li>
+<a href="vlax-put-property.html" title="vlax-put-property">vlax-put-property</a></li>
+<li>
+<a href="vlax-read-enabled-p.html" title="vlax-read-enabled-p">vlax-read-enabled-p</a></li>
+<li>
+<a href="vlax-release-object.html" title="vlax-release-object">vlax-release-object</a></li>
+<li>
+<a href="vlax-remove-cmd.html" title="vlax-remove-cmd">vlax-remove-cmd</a></li>
+<li>
+<a href="vlax-safearray-fill.html" title="vlax-safearray-fill">vlax-safearray-fill</a></li>
+<li>
+<a href="vlax-safearray-get-dim.html" title="vlax-safearray-get-dim">vlax-safearray-get-dim</a></li>
+<li>
+<a href="vlax-safearray-get-element.html" title="vlax-safearray-get-element">vlax-safearray-get-element</a></li>
+<li>
+<a href="vlax-safearray-get-l-bound.html" title="vlax-safearray-get-l-bound">vlax-safearray-get-l-bound</a></li>
+<li>
+<a href="vlax-safearray-get-u-bound.html" title="vlax-safearray-get-u-bound">vlax-safearray-get-u-bound</a></li>
+<li>
+<a href="vlax-safearray-put-element.html" title="vlax-safearray-put-element">vlax-safearray-put-element</a></li>
+<li>
+<a href="vlax-safearray-type.html" title="vlax-safearray-type">vlax-safearray-type</a></li>
+<li>
+<a href="vlax-safearray-list.html" title="vlax-safearray-list">vlax-safearray-&amp;GT;list</a></li>
+<li>
+<a href="vlax-tmatrix.html" title="vlax-tmatrix">vlax-tmatrix</a></li>
+<li>
+<a href="vlax-typeinfo-available-p.html" title="vlax-typeinfo-available-p">vlax-typeinfo-available-p</a></li>
+<li>
+<a href="vlax-variant-change-type.html" title="vlax-variant-change-type">vlax-variant-change-type</a></li>
+<li>
+<a href="vlax-variant-type.html" title="vlax-variant-type">vlax-variant-type</a></li>
+<li>
+<a href="vlax-variant-value.html" title="vlax-variant-value">vlax-variant-value</a></li>
+<li>
+<a href="vlax-vla-object-ename.html" title="vlax-vla-object-ename">vlax-vla-object-&amp;GT;ename</a></li>
+<li>
+<a href="vlax-write-enabled-p.html" title="vlax-write-enabled-p">vlax-write-enabled-p</a></li>
+<li>
+<a href="vlr-acdb-reactor.html" title="vlr-acdb-reactor">vlr-acdb-reactor</a></li>
+<li>
+<a href="vlr-add.html" title="vlr-add">vlr-add</a></li>
+<li>
+<a href="vlr-added-p.html" title="vlr-added-p">vlr-added-p</a></li>
+<li>
+<a href="vlr-beep-reaction.html" title="vlr-beep-reaction">vlr-beep-reaction</a></li>
+<li>
+<a href="vlr-command-reactor.html" title="vlr-command-reactor">vlr-command-reactor</a></li>
+<!--<li>
+<a title="vlr-current-reaction-name" href="vlr-current-reaction-name.html">vlr-current-reaction-name</a></li>
+<li>
+<a title="vlr-data" href="vlr-data.html">vlr-data</a></li>
+-->
+<li>
+<a href="vlr-data-set.html" title="vlr-data-set">vlr-data-set</a></li>
+<!--<li>
+<a title="vlr-deepclone-reactor" href="vlr-deepclone-reactor.html">vlr-deepclone-reactor</a></li>
+-->
+<li>
+<a href="vlr-docmanager-reactor.html" title="vlr-docmanager-reactor">vlr-docmanager-reactor</a></li>
+<li>
+<a href="vlr-dwg-reactor.html" title="vlr-dwg-reactor">vlr-dwg-reactor</a></li>
+<li>
+<a href="vlr-dxf-reactor.html" title="vlr-dxf-reactor">vlr-dxf-reactor</a></li>
+<li>
+<a href="vlr-editor-reactor.html" title="vlr-editor-reactor">vlr-editor-reactor</a></li>
+<li>
+<a href="vlr-insert-reactor.html" title="vlr-insert-reactor">vlr-insert-reactor</a></li>
+<li>
+<a href="vlr-linker-reactor.html" title="vlr-linker-reactor">vlr-linker-reactor</a></li>
+<li>
+<a href="vlr-lisp-reactor.html" title="vlr-lisp-reactor">vlr-lisp-reactor</a></li>
+<li>
+<a href="vlr-miscellaneous-reactor.html" title="vlr-miscellaneous-reactor">vlr-miscellaneous-reactor</a></li>
+<li>
+<a href="vlr-mouse-reactor.html" title="vlr-mouse-reactor">vlr-mouse-reactor</a></li>
+<li>
+<a href="vlr-notification.html" title="vlr-notification">vlr-notification</a></li>
+<li>
+<a href="vlr-object-reactor.html" title="vlr-object-reactor">vlr-object-reactor</a></li>
+<li>
+<a href="vlr-owner-add.html" title="vlr-owner-add">vlr-owner-add</a></li>
+<li>
+<a href="vlr-owner-remove.html" title="vlr-owner-remove">vlr-owner-remove</a></li>
+<li>
+<a href="vlr-owners.html" title="vlr-owners">vlr-owners</a></li>
+<li>
+<a href="vlr-pers.html" title="vlr-pers">vlr-pers</a></li>
+<li>
+<a href="vlr-pers-list.html" title="vlr-pers-list">vlr-pers-list</a></li>
+<li>
+<a href="vlr-pers-p.html" title="vlr-pers-p">vlr-pers-p</a></li>
+<li>
+<a href="vlr-pers-release.html" title="vlr-pers-release">vlr-pers-release</a></li>
+<li>
+<a href="vlr-reaction-names.html" title="vlr-reaction-names">vlr-reaction-names</a></li>
+<li>
+<a href="vlr-reaction-set.html" title="vlr-reaction-set">vlr-reaction-set</a></li>
+<li>
+<a href="vlr-reactions.html" title="vlr-reactions">vlr-reactions</a></li>
+<li>
+<a href="vlr-reactors.html" title="vlr-reactors">vlr-reactors</a></li>
+<li>
+<a href="vlr-remove.html" title="vlr-remove">vlr-remove</a></li>
+<li>
+<a href="vlr-remove-all.html" title="vlr-remove-all">vlr-remove-all</a></li>
+<li>
+<a href="vlr-set-notification.html" title="vlr-set-notification">vlr-set-notification</a></li>
+<li>
+<a href="vlr-sysvar-reactor.html" title="vlr-sysvar-reactor">vlr-sysvar-reactor</a></li>
+<li>
+<a href="vlr-toolbar-reactor.html" title="vlr-toolbar-reactor">vlr-toolbar-reactor</a></li>
+<li>
+<a href="vlr-type.html" title="vlr-type">vlr-type</a></li>
+<li>
+<a href="vlr-types.html" title="vlr-types">vlr-types</a></li>
+<li>
+<a href="vlr-undo-reactor.html" title="vlr-undo-reactor">vlr-undo-reactor</a></li>
+<li>
+<a href="vlr-wblock-reactor.html" title="vlr-wblock-reactor">vlr-wblock-reactor</a></li>
+<li>
+<a href="vlr-window-reactor.html" title="vlr-window-reactor">vlr-window-reactor</a></li>
+<li>
+<a href="vlr-xref-reactor.html" title="vlr-xref-reactor">vlr-xref-reactor</a></li>
+<li>
+<a href="vports.html" title="vports">vports</a></li>
+</ul>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>acad_colordlg</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">acad_colordlg</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(acad_colordlg color-number [flag])</p>
+<p class="body_text">Display the Select Color dialog box.</p>
+<p class="body_text">This function displays the Color dialog box. This function returns the color number that the user selects from the dialog box or nil when the user clicks the Cancel button. </p>
+<p class="body_text">The function accepts two optional arguments:</p>
+<table class="table-desc">
+<tr>
+<th>Argument</th>
+<th>Meaning</th>
+<th>Example</th>
+<th>Range</th>
+</tr>
+<tr>
+<td>
+<b>color-number</b>
+</td>
+<td>
+
+Color Number 
+</td>
+<td>
+
+1
+</td>
+<td>
+
+0 - 256
+</td>
+</tr>
+<tr>
+<td>
+<b>flag</b>
+</td>
+<td>
+
+Flag 
+</td>
+<td>
+
+nil
+</td>
+<td>
+
+nil or true (which is the same as not using the flag)
+</td>
+</tr>
+</table>
+<p class="body_text"><b>NOTES</b></p>
+<ul class="command_ul"><ul class="command_ul">
+<li>The <i>color-number</i> argument lets you provide a default color. When <i>clrno</i> is 0, the default is BYBLOCK; when <i>clrno</i> is 256, the default is BYLAYER.</li>
+<li>When nil, the dialog box disables the BYBLOCK and BYLAYER buttons.</li>
+</ul>
+</ul>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">acad_colordlg</font> </b>1<b>)</b>
+</td>
+<td>
+
+Displays dialog box with color 1 (red) selected as the default.
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">acad_colordlg</font> </b>1 nil<b>)</b>
+</td>
+<td>
+
+Displays dialog box with color 1 (red) selected as the default, and the BYBLOCK and BYLAYER buttons are disabled.
+</td>
+</tr>
+</table>
+
+
+<hr align="left"/>
+<p class="define_head_1">Note  The first eight color numbers have the following meanings:</p>
+<table class="table-desc">
+<tr>
+<th>Number</th>
+<th>Color</th>
+</tr>
+<tr>
+<td>
+
+1
+</td>
+<td>
+
+Red
+</td>
+</tr>
+<tr>
+<td>
+
+2
+</td>
+<td>
+
+Yellow
+</td>
+</tr>
+<tr>
+<td>
+
+3
+</td>
+<td>
+
+Green
+</td>
+</tr>
+<tr>
+<td>
+
+4
+</td>
+<td>
+
+Cyan (light blue)
+</td>
+</tr>
+<tr>
+<td>
+
+5
+</td>
+<td>
+
+Blue
+</td>
+</tr>
+<tr>
+<td>
+
+6
+</td>
+<td>
+
+Magenta (pink)
+</td>
+</tr>
+<tr>
+<td>
+
+7
+</td>
+<td>
+
+Black
+</td>
+</tr>
+<tr>
+<td>
+
+8
+</td>
+<td>
+
+Gray
+</td>
+</tr>
+</table>
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="command.htm">(command cmd [arguments] ...)</a></p>
+<p class="body_text"><a href="getvar.htm">(getvar sysvar)</a></p>
+<p class="body_text"><a href="help.htm">(help [filename [topic [flag]]])</a></p>
+<p class="body_text"><a href="setvar.htm">(setvar sysvar value)</a></p>
+<!--<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>-->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>vl-catch-all-error-message</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">vl-catch-all-error-message</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(vl-catch-all-error-message error-obj)</p>
+<p class="body_text">Returns a string from an error object.</p>
+<p class="body_text">The vl-catch-all-apply function traps the error and returns an error object. Use vl-catch-all-error-message to see the error message contained in the error object. </p>
+<p class="body_text">The function accepts one argument:</p>
+<table class="table-desc">
+<tr>
+<th>Argument</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td>
+<b>error-obj</b>
+</td>
+<td>
+
+An error object returned by vl-catch-all-apply 
+</td>
+</tr>
+</table>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+(setq catchit (vl-catch-all-apply '/ (list 100 0)))<br/>
+  (<b><font color="#0e85e4">vl-catch-all-error-message</font></b> catchit)
+</td>
+<td>
+"divide by zero"</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="error.htm">(*error* string)</a></p>
+<p class="body_text"><a href="vl-catch-all-apply.htm">(vl-catch-all-apply 'function list)</a></p>
+<p class="body_text"><a href="vl-catch-all-error-p.htm">(vl-catch-all-error-p arg)</a></p>
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

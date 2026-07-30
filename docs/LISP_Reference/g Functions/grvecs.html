@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>grvecs</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">grvecs</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(grvecs vector-lists [trans])</p>
+<p class="body_text">Renders temporary guideline vectors in the active viewport.</p>
+<p class="body_text">Similar to grdraw but optimized for batch operations, this function displays multiple transient vectors that clear automatically during viewport refreshes or command executions.</p>
+<p class="body_text">The vector-lists parameter accepts nested lists defining line segments with color attributes. Each vector entry requires sequential coordinate pairs preceded by an optional color code:</p>
+<table class="table-desc">
+<tr>
+<th width="20%">Color Code</th>
+<th width="80%">Visual Effect</th>
+</tr>
+<tr>
+<td><b>Unspecified</b></td>
+<td>Uses current context color</td>
+</tr>
+<tr>
+<td><b>-1</b></td>
+<td>High-contrast selection indicator</td>
+</tr>
+<tr>
+<td><b>0-255</b></td>
+<td>ZWCAD color index values</td>
+</tr>
+<tr>
+<td><b>≥256</b></td>
+<td>XOR overlay (invert background pixels)</td>
+</tr>
+</table>
+<p class="note">Note: All coordinates are interpreted in the current UCS unless modified by an optional transformation matrix.</p>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">grvecs</font> </b>'<b>(</b> 5 <b>(</b>0.0 0.0<b>) (</b>1.0 1.0<b>)))</b>
+</td>
+<td>
+
+nil
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">grvecs</font> </b>'<b>(</b> 2 <b>(</b>5.0 6.0<b>) (</b>5.5 16.5<b>)</b>  4 <b>(</b>5.5 16.5<b>) (</b>10.0 10.0<b>)))</b>
+</td>
+<td>
+
+nil</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="nentselp.htm">(nentselp [prompt] [point])</a></p>
+<p class="body_text"><a href="grdraw.htm">(grdraw point1 point2 color [highlight])</a></p>
+<!---bottom...
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>vlax-ename-&gt;vla-object</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">vlax-ename-&gt;vla-object</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(vlax-ename-&gt;vla-object entname)</p>
+<p class="body_text">Transforms an entity to a VLA-object.</p>
+<p class="body_text">If entname supplied is a valid autolisp object's name, this function returns a VLA-object's name, otherwise displays an error message. </p>
+<p class="body_text">The function accepts one argument:</p>
+<table class="table-desc">
+<tr>
+<th>Argument</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td>
+<b>entname</b>
+</td>
+<td>
+
+An autolisp object's name (returned by entget, entsel or entlast functions). 
+</td>
+</tr>
+</table>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+
+(command "pline" "0,0" "20,30" "60,15" "70,-20" "C")<br/>
+(setq ename (entlast))<br/>
+(setq vla_object (<b><font color="#0e85e4">vlax-ename-&gt;vla-object</font></b> ename))<br/>
+</td>
+<td>
+#&lt;VLA-OBJECT IZWCADLightWeightPolyline 59e7e58&gt;
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="vlax-vla-object-ename.htm">(vlax-vla-object-&gt;ename obj)</a></p>
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

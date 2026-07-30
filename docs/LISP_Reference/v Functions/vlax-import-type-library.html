@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>vlax-import-type-library</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">vlax-import-type-library</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(vlax-import-type-library :tlb-filename filename [:methods-prefix mprefix  :properties-prefix pprefix :constants-prefix cprefix])</p>
+<p class="body_text">Imports information from a type library.</p>
+<p class="body_text">If the specified type library is valid, this function imports the information from the type library and returns T, otherwise nil. </p>
+<hr align="left"/>
+<p class="define_head_1">Parameters</p>
+<p class="body_text"><span class="Access">filename</span></p>
+<p class="body_text">A string naming the type library. And the files can be divided as the following type:</p>
+<ul class="command_ul">
+<li><p>type library (.tlb) and object library (.olb) files.</p>
+</li>
+<li><p>the .exe files.</p>
+</li>
+<li><p>the libraries files (.dll) included type libraries resources.</p>
+</li>
+<li><p>the compound files that include type libraries.</p>
+</li>
+<li><p>the files style that can be explained by the LoadTypeLib API.</p>
+</li>
+</ul>
+<p class="body_text">The function accepts one argument with a symbol at least:</p>
+<table class="table-desc">
+<tr>
+<th>Argument</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td><b>filename</b>
+</td>
+<td>
+
+A string naming the type library.
+</td>
+</tr>
+<tr>
+<td><b>mprefix</b>
+</td>
+<td>
+
+Prefix to be used for method wrapper functions.
+</td>
+</tr>
+<tr>
+<td><b>pprefix</b>
+</td>
+<td>
+
+Prefix to be used for property wrapper functions.
+</td>
+</tr>
+<tr>
+<td><b>cprefix</b>
+</td>
+<td>
+
+Prefix to be used for constants contained in the type library.
+</td>
+</tr>
+</table>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+
+(setq sysdrv (getenv "systemdrive"))<br/>
+(setq tlbfile (findfile (strcat sysdrv "\\Program Files\\Microsoft Office\\Office12\\Excel.exe")))<br/>
+(<b><font color="#0e85e4">vlax-import-type-library</font></b><br/>:tlb-filename tlbfile<br/>:methods-prefix "msxl-"<br/>:properties-prefix "msxl-"<br/>:constants-prefix "msxl-")<br/>
+(if msxl-xl24HourClock<br/>(princ "\nLoading Microsoft Excel type library complete.")<br/>(princ "\nLoading Microsoft Excel type library error."))
+</td>
+<td>
+If you have installed Microsoft Excel 2007 to your system drive with default directory, executing these codes displays "Loading Microsoft Excel type library complete", otherwise displays "Error: bad argument".
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="vlax-typeinfo-available-p.htm">(vlax-typeinfo-available-p obj)</a></p>
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>vlax-create-object</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">vlax-create-object</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(vlax-create-object prog-id)</p>
+<p class="body_text">Creates a new instance of a specified application object.</p>
+<p class="body_text">Use this function when you want to start a new instance of an application, and an object of the type specified by &lt;Component&gt; (see the argument description) to be created. If an application object has registered itself as a single-instance object, only one instance of the object is created, no matter how many times you call this function. If prog-id is a registered ActiveX object, this function returns the application object (VLA-object), otherwise nil. </p>
+<p class="body_text">The function accepts one argument:</p>
+<table class="table-desc">
+<tr>
+<th>Argument</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td><b>prog-id</b>
+</td>
+<td>
+
+A string containing the programmatic identifier of the desired ActiveX object, its format is as following:<br/>
+&lt;Vendor&gt;.&lt;Component&gt;.&lt;Version&gt;<br/>
+eg: excel.application.12
+</td>
+</tr>
+</table>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+(<b><font color="#0e85e4">vlax-create-object</font></b> "ZwCAD.Drawing")
+</td>
+<td>
+
+#&lt;VLA-OBJECT IZcadDocument 231ee255198&gt;</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="vlax-get-object.htm">(vlax-get-object prog-id)</a></p>
+<p class="body_text"><a href="vlax-get-or-create-object.htm">(vlax-get-or-create-object prog-id)</a></p>
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>(&gt;)(greater than or equal to operator)</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">(&gt;=)(greater than or equal to operator)</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="zw_prompt">(&gt;=item1 item2 ...)</p>
+<p class="zw_body">Evaluates whether each preceding item is at least as large as the subsequent ones.</p>
+<p class="zw_func">This comparison operator checks numeric or string relationships in sequence:</p>
+<ul class="zw_ul">
+<li>Returns T if item1 is numerically/lexically ≥ item2 for pairwise comparisons</li>
+<li>For multiple arguments, verifies non-increasing sequence (item1 ≥ item2 ≥ ...)</li>
+<li>Yields nil if any right-hand item exceeds its immediate left neighbor</li>
+</ul>
+<p class="zw_note">Supports both numerical values and case-sensitive string comparisons.</p>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">&gt;=</font> </b>45<b> </b>27<b> )</b>
+</td>
+<td>
+
+T
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">&gt;=</font> </b>"A"<b> </b>"B"<b>)</b>
+</td>
+<td>
+
+nil
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">&gt;=</font> </b>-3<b> </b>-15<b>)</b>
+</td>
+<td>
+
+T
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">&gt;=</font> </b>90<b> </b>90<b> </b>9<b>)</b>
+</td>
+<td>
+
+T
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">&gt;=</font> </b>17<b>)</b>
+</td>
+<td>
+
+T
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Note</p>
+<p class="body_text">
+
+This function evaluates whether a value is not smaller than another, reversing the logic of the &lt; (Less Than) operator.</p>
+<!---bottom...
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="command.htm">(command cmd [arguments] ...)</A></P>
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>write-char</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">write-char</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(write-char character [file-descriptor])</p>
+<p class="body_text">Outputs a single ASCII character to a specified file or interface.</p>
+<p class="body_text">The character argument must be an integer ASCII code. When a valid file-descriptor (obtained through the open function) is provided, the character is written to that file. If omitted, the output is directed to both the command line and Prompt History window.</p>
+<p class="body_text">Use the (ascii string)(IDR_128) function to convert characters to their corresponding ASCII codes. For string-based operations, consider using write-line instead for improved efficiency.</p>
+<p class="define_head_1">Implementation Note</p>
+<p class="body_text">While write-char provides low-level character control, most text operations benefit from using write-line for handling complete strings with automatic line termination.</p>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">write-char</font> </b>97<b>)</b>
+</td>
+<td>
+
+a97
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">write-char</font> </b>109<b>)</b>
+</td>
+<td>
+
+m109
+</td>
+</tr>
+</table>
+
+<!---bottom...
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="command.htm">(command cmd [arguments] ...)</A></P>
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<hr align="left"/>
+<p class="define_head_1">Unicode support</p>
+<p class="define_text_1">The result of this function is affected by the LISPSYS system variable.</p>
+<p class="define_text_1"><strong>Example: </strong>(setq f (open "D:\\write-line.txt" "w")) (write-char 20320 f) (close f)</p>
+<ul class="define_text_2">
+<li>When LISPSYS is 1, the result is writing "你".</li>
+<li>When LISPSYS is 0, the result may not be as expected.</li>
+</ul>
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

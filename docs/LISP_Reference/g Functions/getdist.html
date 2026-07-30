@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>getdist</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">getdist</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(getdist [point] [prompt])</p>
+<p class="body_text">Prompts the user to determine a distance by entering a numerical value or selecting two points.</p>
+<p class="body_text">This function enables the user to specify a distance either through keyboard input or by picking two locations in the drawing. The returned value is always a real number, unaffected by the measurement units set in the Units dialog. An optional prompt can display instructions to the user. Input responses are restricted to numerical values or point selections; LISP expressions are not permitted.</p>
+<hr align="left"/>
+<p class="define_head_1">Examples</p>
+<p class="body_text">The examples in this section demonstrate the two ways to use the getdist function.</p>
+<ul class="command_ul"><li><p>Two-point method: leave out the point argument. The getpoint function prompts the user for two points. The prompt for the first point is specified by prompt; </p>
+<p>ZWCAD prompts, "Second point:" for the second pick point. A guide line stretches from the first point to the target to visually help in picking the second point.</p>
+<table class="table-desc_inLine">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">getdist</font> </b><b>)</b>
+</td>
+<td>
+
+input:1,2<br/>
+input:3,4<br/>
+2.82843
+</td>
+</tr>
+</table>
+</li>
+<li><p>One-point method: include the point argument. The getpoint function prompts the user for one point. The prompt for the second point is specified by prompt. A guide line stretches from the first point to the target to visually help in picking the second point.</p></li>
+<table class="table-desc_inLine">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">getdist</font> </b>'<b>(</b>3.0 2.0<b>)</b> "Input a distance: "<b>))</b>
+
+</td>
+<td>
+
+Input a distance:4,5<br/>
+2.82843
+</td>
+</tr>
+</table>
+</ul>
+<hr align="left"/>
+<p class="define_head_1">Note</p>
+<p class="body_text">
+
+For additional details, consult the initget function documentation.</p>
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="initget.htm">(initget [bits] [string])</a></p>
+<!---bottom...
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

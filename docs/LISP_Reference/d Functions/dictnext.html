@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>dictnext</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">dictnext</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(dictnext ename [rewill])</p>
+<p class="body_text">Retrieves subsequent entries from a dictionary object.</p>
+<p class="body_text">This function sequentially accesses elements within a specified dictionary (ename). When the rewill parameter is supplied with a non-nil value, it resets the iteration pointer and returns the initial entry of the dictionary.</p>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+</tr>
+<tr>
+<td>
+<b>(</b><font color="#0e85e4">setq</font> dict  <b>(</b><font color="#0e85e4">list</font> '<b>(</b>0 . "DICTIONARY"<b>)</b>'<b>(</b>100 . "AcDbDictionary"<b>)))</b><br/><br/>
+<b>(</b><font color="#0e85e4">setq</font> new_name  <b>(</b><font color="#0e85e4">entmakes</font> dict<b>))</b>
+<b>(</b><font color="#0e85e4">setq</font> nmdict  <b>(</b><font color="#0e85e4">namedobjdict</font> <b>))</b>
+<b>(</b><font color="#0e85e4">setq</font> newdict  <b>(</b><font color="#0e85e4">dictadd</font>nmdict"NEW_DICTIONARY"new_name <b>))</b>
+<b>(</b><font color="#0e85e4">setq</font> datalist <b>(</b><font color="#0e85e4">append</font> <b>(</b><font color="#0e85e4">list</font> '<b>(</b>0 . "XRECORD"<b>)</b>'<b>(</b>100 .   "AcDbXrecord"<b>))</b> '<b>((</b>1 . "new_data"<b>)</b> <b>(</b>10 1. 2. 3.<b>)</b> <b>(</b>70 . 33<b>))))</b><br/><br/>
+<b>(</b><font color="#0e85e4">setq</font> new_name <b>(</b><font color="#0e85e4">entmakex</font>   datalist<b>))</b>
+<b>(</b><font color="#0e85e4">dictadd</font> newdict "FIRST__DATA_RECORD"   new_name<b>)</b>
+<b>(</b><font color="#0e85e4">setq</font> new_name <b>(</b><font color="#0e85e4">entmakex</font>   datalist<b>))</b>
+<b>(</b><font color="#0e85e4">dictadd</font> newdict "SECOND_DATA_RECORD"   new_name<b>)</b>
+<b>(</b><font color="#0e85e4">cdr</font> <b>(</b><font color="#0e85e4">car</font> <b>(<font color="#0e85e4">dictnext</font></b> newdict<b>)))</b>
+</td>
+</tr>
+</table>
+
+
+
+
+
+
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="dictadd.htm">(dictadd ename symbol newobj)</a></p>
+<p class="body_text"><a href="dictremove.htm">(dictremove ename symbol)</a></p>
+<p class="body_text"><a href="dictrename.htm">(dictrename ename oldsym newsym)</a></p>
+<p class="body_text"><a href="dictsearch.htm">(dictsearch ename symbol [setnext])</a></p>
+<p class="body_text"><a href="namedobjdict.htm">(namedobjdict)</a></p>
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

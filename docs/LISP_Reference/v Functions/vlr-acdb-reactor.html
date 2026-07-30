@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>vlr-acdb-reactor</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">vlr-acdb-reactor</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(vlr-acdb-reactor data callbacks)</p>
+<p class="body_text">Constructs a database reactor object that notifies when an object is added to, modified in, or erased from a drawing database.</p>
+<p class="body_text">This function returns a database reactor object.</p>
+<p class="body_text">The function accepts two arguments:</p>
+<table class="table-desc">
+<tr>
+<th>Argument</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td>
+<b>data</b>
+</td>
+<td>
+
+Any AutoLisp data, if there is no data, it can be nil. 
+</td>
+</tr>
+<tr>
+<td>
+<b>callbacks</b>
+</td>
+<td>
+
+A list of pairs of the following form:<br/>
+(event-name . callback_function)<br/>
+<font color="#C40000"><b>event-name</b></font> is one of the symbols listed below:
+<li><b>:vlr-objectAppended</b>An object has been appended to the drawing database.
+</li><li><b>:vlr-objectOpenedForModify</b>An object is about to be changed.
+</li><li><b>:vlr-objectModified</b>An object has been changed.
+</li><li><b>:vlr-objectErased</b>An object has been flagged as being erased.
+</li><li><b>:vlr-objectUnErased</b>An object's erased-flag has been removed.
+<br/>
+<font color="#C40000"><b>callback_function</b></font> is a symbol representing a function to be called when the event fires. Each callback function accepts two arguments:<br/>
+</li><li><b>reactor_object</b>The reactor object that called the callback function.
+</li><li><b>obj</b>A list containing a single element, the string identifying the AutoLISP entity.
+</li></td>
+</tr>
+</table>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+
+(vl-load-com)<br/>
+(<b><font color="#0e85e4">vlr-acdb-reactor</font></b> nil '((:vlr-objectAppended . objectAppended)))<br/>
+;;;define the callback function<br/>
+(defun objectAppended(reactor_object obj)<br/>(alert (vl-princ-to-string obj))<br/>)
+</td>
+<td>
+When you draw any entity, ZWCAD will open a dialog as following automatically:<br/>
+<img border="0" src="../pics/vlr-acdb-reactor.bmp"/>
+</td>
+</tr>
+</table>
+
+<!---Tell me about
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="vlax-ldata-get.htm">(vlax-ldata-get dict key [default-data])</A></P>
+<p class="body_text"><A HREF="vlax-ldata-list.htm">(vlax-ldata-list dict)</A></P>
+<p class="body_text"><A HREF="vlax-ldata-put.htm">(vlax-ldata-put dict key data)</A></P>
+-->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

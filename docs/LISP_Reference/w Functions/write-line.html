@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>write-line</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">write-line</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(write-line string [file-descriptor])</p>
+<p class="body_text">Outputs a string to a file or interface.</p>
+<p class="body_text">This function provides enhanced performance compared to write-char and supports all string-formatted data. Specify a target file using a file-descriptor returned by the open function. If no file-descriptor is supplied, the string displays in both the command line and the Prompt History panel.</p>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(</b><font color="#0e85e4">setq</font> f <b>(</b><font color="#0e85e4">open</font> "sample_file.txt" "w"<b>))</b><br/>
+<b>(<font color="#0e85e4">write-line</font></b> "First Line Content" fil<b>)</b><br/>
+<b>(</b><font color="#0e85e4">close</font> f<b>)</b>
+</td>
+<td>
+#<file-stream>
+"First Line Content"
+nil
+</file-stream></td>
+</tr>
+</table>
+
+<!---bottom...
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="command.htm">(command cmd [arguments] ...)</A></P>
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<hr align="left"/>
+<p class="define_head_1">Unicode support</p>
+<p class="define_text_1">The result of this function is affected by the LISPSYS system variable.</p>
+<p class="define_text_1"><strong>Example: </strong>(setq f (open "D:\\write-line.txt" "a")) (write-line "?????" f) (close f)</p>
+<ul class="define_text_2">
+<li>When LISPSYS is 1, the result is writing "?????".</li>
+<li>When LISPSYS is 0, the result may not be as expected.</li>
+</ul>
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

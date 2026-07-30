@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>getfiled</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">getfiled</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(getfiled title default_filename extension mode_bits)</p>
+<p class="body_text">Opens a platform-specific file selection dialog for user input.</p>
+<p class="body_text">This routine launches the system's native file picker interface enabling users to navigate and select files from storage.</p>
+<p class="body_text">The title parameter defines the window caption text. Use empty quotes (" ") for no title - this argument cannot be omitted.</p>
+<p class="body_text">default_filename sets the initially highlighted filename in the input field. Pass " " to start with an empty field, but null values are prohibited.</p>
+<p class="body_text">extension filters visible files: specify formats like "dwg" or "lsp". Use "*" to show all files, or " " for no extension filter.</p>
+<p class="body_text">mode_bits combines numeric options through bitwise addition to control dialog behavior:</p>
+<table class="table-desc">
+<tr>
+<th>Bit Value</th>
+<th>Functionality</th>
+</tr>
+<tr>
+<td><b>1</b></td>
+<td>Display overwrite confirmation for existing files</td>
+</tr>
+<tr>
+<td><b>2</b></td>
+<td>Hide the command-line alternative button</td>
+</tr>
+<tr>
+<td><b>16</b></td>
+<td>Enable extension modification in input field</td>
+</tr>
+<tr>
+<td><b>32</b></td>
+<td>Resolve file path using ZWCAD support directories</td>
+</tr>
+</table>
+<p class="body_text">Combine values for multiple features. Example: Setting 17 (1+16) enables overwrite warnings and extension editing capabilities.</p>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">getfiled</font> </b>"Drawing Files" " " "DWG" 2<b>)</b>
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">getfiled</font> </b>"Lisp Files" "sample.lsp" "LSP" 6<b>)</b>
+</td>
+</tr>
+</table>
+
+<!---bottom...
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="command.htm">(command cmd [arguments] ...)</A></P>
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

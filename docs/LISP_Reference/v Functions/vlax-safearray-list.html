@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>vlax-safearray-&gt;list</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">vlax-safearray-&gt;list</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(vlax-safearray-&gt;list var)</p>
+<p class="body_text">Returns the elements of a safearray in list form.</p>
+<p class="body_text">If var doesn't represent a safearray, this function returns an error message, otherwise a list contains all elements of the array.</p>
+<p class="body_text">The function accepts one argument:</p>
+<table class="table-desc">
+<tr>
+<th>Argument</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td>
+<b>var</b>
+</td>
+<td>
+
+A safearray. 
+</td>
+</tr>
+</table>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+
+(setq var (vlax-make-safearray vlax-vbsingle '(0 . 2) '(0 . 2)))<br/>
+(vlax-safearray-fill matrix '(("00" "01" "02") ("10" "11" "12") ("20" "21" "22")))<br/>
+(<b><font color="#0e85e4">vlax-safearray-&gt;list</font></b> matrix)
+</td>
+<td>
+(("00" "01" "02") ("10" "11" "12") ("20" "21" "22"))
+</td>
+</tr>
+</table>
+
+<!--
+<hr align="left" />
+<p class="define_head_1">Note</p>
+<p class="body_text">
+If the var is a multi-dimension array, element-values must be a list of lists, with each list corresponding to a dimension of the array.
+-->
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="vlax-make-safearray.htm">(vlax-make-safearray type '(l-bound . u-bound) ['(l-bound . u-bound)...])</a></p>
+<p class="body_text"><a href="vlax-safearray-fill.htm">(vlax-safearray-fill var 'element-values)</a></p>
+<p class="body_text"><a href="vlax-safearray-put-element.htm">(vlax-safearray-put-element var index... value)</a></p>
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>osnap</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">osnap</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(osnap point mode)</p>
+<p class="body_text">Calculates 3D coordinates using ZWCAD's geometric snap features.</p>
+<p class="body_text">This function locates precise points on drawing entities through specified snap types. Multiple snap modes can be combined in the mode parameter for concurrent detection.</p>
+<table class="table-desc">
+<tr>
+<th>Mode Code</th>
+<th>Snap Target</th>
+</tr>
+<tr>
+<td><b>"ext"</b></td>
+<td>EXTension path alignment</td>
+</tr>
+<tr>
+<td><b>"gcen"</b></td>
+<td>Geometric CENTer of polygons</td>
+</tr>
+<tr>
+<td><b>"app"</b></td>
+<td>APParent intersection in current view</td>
+</tr>
+<tr>
+<td><b>"nod"</b></td>
+<td>NODe points</td>
+</tr>
+<tr>
+<td><b>"para"</b></td>
+<td>PARAllel trajectory</td>
+</tr>
+<tr>
+<td><b>"mid"</b></td>
+<td>MIDdle of linear objects</td>
+</tr>
+<tr>
+<td><b>"tan"</b></td>
+<td>TANgent to curves</td>
+</tr>
+<tr>
+<td><b>"qua"</b></td>
+<td>QUAdrant of circles</td>
+</tr>
+<tr>
+<td><b>"int"</b></td>
+<td>True 3D INTersection</td>
+</tr>
+<tr>
+<td><b>"cen"</b></td>
+<td>CENter of arcs/circles</td>
+</tr>
+<tr>
+<td><b>"end"</b></td>
+<td>END points</td>
+</tr>
+<tr>
+<td><b>"ins"</b></td>
+<td>INSertion base points</td>
+</tr>
+<tr>
+<td><b>"off"</b></td>
+<td>Disable active snaps</td>
+</tr>
+</table>
+<p class="body_text">Provide approximate coordinates near the target geometry through the point parameter. Returns nil if no valid snap point matches the criteria.</p>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">osnap</font> </b>'<b>(</b>5 5<b>)</b>"mid"<b>)</b>
+</td>
+<td>
+
+(8.00000 8.00000 0.000000)</td>
+</tr>
+<tr>
+<td>
+</td></tr>
+</table>
+
+
+<hr align="left"/>
+<p class="define_head_1">Note</p>
+<p class="body_text">
+
+The permissible gap between the initial selection point and the object is controlled by the APERTURE system variable, adjustable within a 1-50 pixel range.</p>
+<!---bottom...
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="command.htm">(command cmd [arguments] ...)</A></P>
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

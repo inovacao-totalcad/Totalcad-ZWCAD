@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>vlax-for</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">vlax-for</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(vlax-for symbol collection [expression1 [expression2 ...]])</p>
+<p class="body_text">Iterates through a collection of VLA-objects, evaluating each expression.</p>
+<p class="body_text">This function returns the value of the last expression evaluated for the last object in the collection. </p>
+<p class="body_text">The function accepts two arguments at least and some optional arguments:</p>
+<table class="table-desc">
+<tr>
+<th>Argument</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td>
+<b>symbol</b>
+</td>
+<td>
+
+A symbol to be assigned to each VLA-object in a collection. 
+</td>
+</tr>
+<tr>
+<td>
+<b>collection</b>
+</td>
+<td>
+
+A collection of VLA-objects. 
+</td>
+</tr>
+<tr>
+<td>
+<b>expression1, expression2...</b>
+</td>
+<td>
+
+The expressions to be evaluated. 
+</td>
+</tr>
+</table>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+
+(vl-load-com)<br/>
+(setq mycad (vlax-get-acad-object))<br/>
+(setq mydoc (vlax-get-property mycad 'ActiveDocument))<br/>
+(setq textstyles (vlax-get-property mydoc 'TextStyles))<br/>
+(<b><font color="#0e85e4">vlax-for</font></b> EachStyle textstyles (terpri) (princ (vlax-get-property EachStyle 'Name)))
+</td>
+<td>
+Standard<br/>
+...
+</td>
+</tr>
+</table>
+
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

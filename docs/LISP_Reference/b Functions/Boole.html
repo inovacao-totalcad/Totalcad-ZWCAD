@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>boole</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">boole</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(boole function int1 int2 ...)</p>
+<p class="body_text">Executes a bitwise Boolean operation using a function code.</p>
+<p class="body_text">The <i>function</i> parameter accepts integers 0-15, encoding 16 possible two-variable Boolean operations. Corresponding bits from input integers are processed according to the selected function.</p>
+<p class="body_text">Bit result values are determined as follows:</p>
+<table class="table-desc">
+<tr>
+<th>Bit1</th>
+<th>Bit2</th>
+<th>Weight</th>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>2</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>8</td>
+</tr>
+</table>
+<p class="body_text">Common function codes and their effects:</p>
+<table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Logic</th>
+<th>Condition</th>
+</tr>
+<tr>
+<td>1</td>
+<td>AND</td>
+<td>Both bits set</td>
+</tr>
+<tr>
+<td>6</td>
+<td>XOR</td>
+<td>One bit differs</td>
+</tr>
+<tr>
+<td>7</td>
+<td>OR</td>
+<td>At least one bit set</td>
+</tr>
+<tr>
+<td>8</td>
+<td>NOR</td>
+<td>No bits set</td>
+</tr>
+</table>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<td>
+<b>(<font color="#0e85e4">boole</font> </b>1  2  3<b>)</b>
+</td>
+<td>
+
+2</td>
+<tr>
+<td>
+<b>(<font color="#0e85e4">boole</font> </b>6  9  7<b>)</b>
+</td>
+<td>
+
+14</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">boole</font> </b>8  8  9<b>)</b>
+</td>
+<td>
+
+-10</td>
+</tr>
+</table>
+
+<!---bottom...
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="command.htm">(command cmd [arguments] ...)</A></P>
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

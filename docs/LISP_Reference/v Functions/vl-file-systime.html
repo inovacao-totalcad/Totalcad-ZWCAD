@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>vl-file-systime</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">vl-file-systime</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(vl-file-systime filename)</p>
+<p class="body_text">Retrieves timestamp details for the most recent update of a given file.</p>
+<p class="body_text">The function outputs a six-element list in this order: year (YYYY), month (MM), weekday number, day of month (DD), hours (HH), minutes (MM), and seconds (SS).</p>
+<p class="body_text">Returns nil if the file cannot be accessed or doesn't exist.</p>
+<hr align="left"/>
+<p class="define_head_1">Usage Example</p>
+<p class="body_text">Sample output for an existing file sample.dwg:</p>
+<table class="table-desc">
+<tr>
+<th>Expression</th>
+<th>Output</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">vl-file-systime</font> </b>"c:/designs/sample.dwg"<b>)</b>
+</td>
+<td>
+(2023 11 2 15 9 30)
+</td>
+</tr>
+</table>
+<hr align="left"/>
+<p class="define_head_1">Interpretation</p>
+<p class="body_text">The timestamp indicates the file was last updated on November 15th, 2023 (Wednesday) at 09:09:30 AM.</p>
+<div id="holding"></div>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">vl-file-systime</font> </b>"d:/test.txt"<b>)</b>
+</td>
+<td>
+(2012 8 3 5 16 17 24)
+</td>
+</tr>
+</table>
+
+
+<hr align="left"/>
+<p class="define_head_1">Note</p>
+<p class="body_text">
+
+The file's last modification occurred on August 5, 2012, a Wednesday (the third weekday), at 16:17:24.</p>
+<!---bottom...
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="command.htm">(command cmd [arguments] ...)</A></P>
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

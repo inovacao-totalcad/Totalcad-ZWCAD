@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>(&gt;=)(greater than operator)</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">(&gt;)(greater than operator)</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(&gt;arg1 arg2 ...)</p>
+<p class="body_text">Evaluates whether the initial argument exceeds all subsequent arguments in value.</p>
+<p class="body_text">This comparison operator returns either T (true) or nil (false) based on these rules:</p>
+<ul class="command_ul">
+<li>Returns T only if arg1 &gt; arg2, and arg2 &gt; arg3 (where applicable), continuing this pattern through all provided arguments.</li>
+<li>Returns nil immediately when encountering any argument that equals or exceeds its predecessor in the sequence.</li>
+</ul>
+<p class="body_text">Supports numeric comparisons and lexicographical string comparisons. For multiple arguments, strict descending order is required for a T result.</p>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">&gt;</font> </b>45<b> </b>27<b> )</b>
+</td>
+<td>
+
+T
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">&gt;</font> </b>"A"<b> </b>"B"<b>)</b>
+</td>
+<td>
+
+nil
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">&gt;</font> </b>-3<b> </b>-15<b>)</b>
+</td>
+<td>
+
+T
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">&gt;</font> </b>90<b> </b>23<b> </b>9<b>)</b>
+</td>
+<td>
+
+T
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">&gt;</font> </b>17<b>)</b>
+</td>
+<td>
+
+T
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Note</p>
+<p class="body_text">
+
+This function returns the logical inverse result of the &lt;= (Less Than or Equal To) operation.</p>
+<!---bottom...
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="command.htm">(command cmd [arguments] ...)</A></P>
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

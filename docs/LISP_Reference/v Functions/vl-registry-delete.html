@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>vl-registry-delete</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">vl-registry-delete</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(vl-registry-delete reg-key [val-name])</p>
+<p class="body_text">Deletes Windows registry key.</p>
+<p class="body_text">This function deletes Windows registry key. If the val-name is existed and is not a nil, this function deletes the specified value in the registry. If the val-name is not existed or is a nil, this function deletes the specified Windows registry key.</p>
+<p class="body_text">If this function returns a T, it is successful; otherwise this function returns a nil.</p>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(</b><font color="#0e85e4">vl-registry-write</font> "HKEY_CURRENT_USER\\Software\\Test"<b>)</b><br/>
+<b>(<font color="#0e85e4">vl-registry-delete</font></b> "HKEY_CURRENT_USER\\Software\\Test"<b>)</b>
+</td>
+<td>
+
+T
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="vl-registry-read.htm">(vl-registry-read reg-key [val-name])</a></p>
+<p class="body_text"><a href="vl-registry-descendents.htm">(vl-registry-descendents reg-key [val-names])</a></p>
+<p class="body_text"><a href="vl-registry-write.htm">(vl-registry-write reg-key [val-name val-data])</a></p>
+<!---bottom...
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

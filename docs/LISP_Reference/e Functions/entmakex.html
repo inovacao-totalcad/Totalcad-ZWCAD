@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>entmakex</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">entmakex</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(entmakex [elist])</p>
+<p class="body_text">Creates a new entity or object in the drawing database, assigns it a unique handle and entity name, then returns the entity name upon success.</p>
+<p class="body_text">The <i>elist</i> argument specifies the entity's properties through a definition list. Mandatory fields must be included to validate the entity; omitting them results in a nil return and creation failure. Optional fields (e.g., layer, color) will use current defaults if unspecified. The function returns nil if entity generation fails due to invalid or incomplete data.</p>
+<p class="body_text">Newly created entities require ownership for persistence in DWG/DXF formats. Use functions like dictadd to assign the entity to a dictionary or other ownership structures after creation. Unowned entities exist temporarily but won’t save to disk.</p>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">entmakex</font> </b>'<b>((</b>0 . "LINE"<b>)(</b>62 . 3<b>)(</b>10 4.0 4.0 0.0<b>)(</b>11 1.0 1.0 0.0<b>)))</b>
+</td>
+<td>
+&lt;Entity name: 64ca670 &gt;
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Tell me about...</p>
+<p class="body_text"><a href="entmake.htm">(entmake [entity-list])</a></p>
+<p class="body_text"><a href="handent.htm">(handent handle)</a></p>
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

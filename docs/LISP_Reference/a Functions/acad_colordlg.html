@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>acad_colordlg</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">acad_colordlg</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(acad_colordlg clr_index [options])</p>
+<p class="body_text">Launches the color selection dialog interface.</p>
+<p class="body_text">This routine opens the standard color picker and returns the numerical index of the chosen color. Returns nil if operation is canceled.</p>
+<table>
+<caption>Parameters</caption>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Sample</th>
+<th>Valid Input</th>
+</tr>
+</thead>
+<tr>
+<td><b>clr_index</b></td>
+<td>Preselected color identifier</td>
+<td>62</td>
+<td>0 (BYBLOCK) - 256 (BYLAYER)</td>
+</tr>
+<tr>
+<td><b>options</b></td>
+<td>Control special color modes</td>
+<td>t</td>
+<td>Non-nil: Enable all options<br/>Nil: Hide BY* selections</td>
+</tr>
+</table>
+<div>
+<p><strong>Implementation Details:</strong></p>
+<ul>
+<li>Passing 256 as clr_index preselects the active layer's color (BYLAYER)</li>
+<li>When options parameter is omitted or non-nil, both BYBLOCK and BYLAYER choices remain accessible</li>
+<li>Setting clr_index to 1-255 selects corresponding ACI colors</li>
+</ul>
+</div>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">acad_colordlg</font> </b>5<b>)</b>
+</td>
+<td>
+
+Displays dialog box with default value 5 (blue).
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">acad_colordlg</font> </b>5 nil<b>)</b>
+</td>
+<td>
+
+Displays dialog box with default value 5 (blue), without BYBLOCK and BYLAYER buttons.
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Note</p>
+<p class="body_text">
+
+In ZWCAD's LISP functions, the initial eight color indices are assigned as follows:</p>
+<table class="table-desc">
+<tr>
+<th>Number</th>
+<th>Color</th>
+</tr>
+<tr>
+<td>
+
+1
+</td>
+<td>
+
+Red
+</td>
+</tr>
+<tr>
+<td>
+
+2
+</td>
+<td>
+
+Yellow
+</td>
+</tr>
+<tr>
+<td>
+
+3
+</td>
+<td>
+
+Green
+</td>
+</tr>
+<tr>
+<td>
+
+4
+</td>
+<td>
+
+Cyan (light blue)
+</td>
+</tr>
+<tr>
+<td>
+
+5
+</td>
+<td>
+
+Blue
+</td>
+</tr>
+<tr>
+<td>
+
+6
+</td>
+<td>
+
+Magenta (pink)
+</td>
+</tr>
+<tr>
+<td>
+
+7
+</td>
+<td>
+
+White
+</td>
+</tr>
+<tr>
+<td>
+
+8
+</td>
+<td>
+
+Gray
+</td>
+</tr>
+</table>
+<!---bottom...
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="command.htm">(command cmd [arguments] ...)</A></P>
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

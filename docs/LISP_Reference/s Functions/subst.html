@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>subst</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">subst</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="zw_prompt">(subst new old list)</p>
+<p class="zw_desc">Performs element replacement within list structures.</p>
+<p class="zw_text">This list operation replaces all instances of the 'old' element with the 'new' element throughout the specified list. While conceptually similar to pattern replacement in text processing, subst exclusively operates on nested list elements rather than string values.</p>
+<p class="zw_text">Frequently employed in conjunction with the assoc function, subst enables dynamic modification of association list entries, particularly when working with CAD-specific data structures containing dotted pairs.</p>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">subst</font> </b>'2 '3 '<b>(</b>3  10<b>))</b>
+</td>
+<td>
+
+(2 10)
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">subst</font> </b>'w 'o '<b>(</b>o our<b>))</b>
+</td>
+<td>
+
+(W OUR)
+</td>
+</tr>
+</table>
+
+<!---bottom...
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="command.htm">(command cmd [arguments] ...)</A></P>
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>(/=)(Not equal to operator)</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">(/=)(Not equal to operator)</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(/= item1 item2 ...)</p>
+<p class="body_text">Evaluates inequality between elements.</p>
+<p class="body_text">This function checks for non-equality across arguments:</p>
+<ul class="command_ul">
+<li>Returns T when the first argument differs from the second.</li>
+<li>All subsequent comparisons must remain unequal for T to be returned.</li>
+<li>Returns nil if any two consecutive elements match.</li>
+</ul>
+<p class="body_text">For multiple arguments, T requires complete uniqueness across all elements. Compatible with numerical values and text strings.</p>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">/=</font> </b>2.4<b> </b>2.4<b> </b>2.4<b>)</b>
+</td>
+<td>
+
+nil
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">/=</font> </b>"ME"<b> </b>"me"<b>)</b>
+</td>
+<td>
+
+T
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">/=</font> </b>"*"<b> </b>"*"<b>)</b>
+</td>
+<td>
+
+nil
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">/=</font> </b>-6<b> </b>-6<b>)</b>
+</td>
+<td>
+
+nil
+</td>
+</tr>
+<tr>
+<td>
+<b>(<font color="#0e85e4">/=</font> </b>7<b>)</b>
+</td>
+<td>
+
+T
+</td>
+</tr>
+</table>
+
+<hr align="left"/>
+<p class="define_head_1">Note</p>
+<p class="body_text">
+
+Comparison operators like = (equality operator) and &lt; (less-than operator) are frequently combined with control structures such as if, while, and cond expressions. These operators help evaluate logical conditions (e.g., checking whether a variable reaches zero) to control program flow, such as terminating a loop when a value exceeds a threshold (e.g., while maintaining i &lt; 5).</p>
+<!---bottom...
+<hr align="left" />
+<p class="define_head_1">Tell me about...</P>
+<p class="body_text"><A HREF="command.htm">(command cmd [arguments] ...)</A></P>
+<p class="body_text"><A HREF="getvar.htm">(getvar sysvar)</A></P>
+<p class="body_text"><A HREF="help.htm">(help [filename [topic [flag]]])</A></P>
+<p class="body_text"><A HREF="setvar.htm">(setvar sysvar value)</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B100.htm">LISP Compatibility</A></P>
+<p class="body_text"><A HREF="mk:@MSITStore:ITC_IDR.chm::/html/IDR_LISP_B99.htm">Programming Overview of LISP (LISt Processing) Language</A></P>
+
+---->
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>

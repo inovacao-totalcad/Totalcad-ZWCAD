@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>vl-every</title>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type"/>
+<link href="../../styles/style.css" rel="StyleSheet" type="text/css"/>
+<link href="../../styles/zwcadcss.css" rel="stylesheet" type="text/css"/>
+<link href="../../styles/zwcad_dev.css" rel="StyleSheet" type="text/css"/>
+<script language="JavaScript" src="../../scripts/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="../../scripts/table-odd-even.js"></script>
+</head>
+<body>
+<div class="main" id="main">
+<div class="Tophead"><span class="Tophead_text">vl-every</span></div>
+<div class="clr"></div>
+<div class="content" id="content">
+<div class="content_resize">
+<div class="article">
+<div class="clr"></div>
+<!--main-->
+<p class="prompt">(vl-every  predicate-function list [list]...)</p>
+<p class="body_text">Checks whether the predicate is true for every element combination.</p>
+<p class="body_text">This function passes the first element of each supplied list as an argument to the test function, followed by the next element from each list, and so on. Evaluation stops as soon as one of the lists runs out. If predicate-function returns a non-nil value for every element combination, vl-every function returns T, otherwise nil</p>
+<p class="body_text">The function accepts two arguments at least and some other optional arguments:</p>
+<table class="table-desc">
+<tr>
+<th>Argument</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td>
+<b>predicate-function</b>
+</td>
+<td>
+
+The test function. This can be any function that accepts as many arguments as there are lists provided with vl-every, and returns T on any user-specified condition. The predicate-function value can take one of the following forms:
+<li>A symbol (function name)
+</li><li>'(LAMBDA (A B) ...)
+</li><li>(FUNCTION (LAMBDA (A B) ...)) 
+</li></td>
+</tr>
+<tr>
+<td>
+<b>list</b>
+</td>
+<td>
+
+A list to be tested 
+</td>
+</tr>
+</table>
+<hr align="left"/>
+<p class="define_head_1">Examples</p><table class="table-desc">
+<tr>
+<th>Code</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>
+(<b><font color="#0e85e4">vl-every</font></b> '(lambda (fnm) (&gt; (vl-file-size fnm) 0))<br/>(vl-directory-files "C:\\WINDOWS\\Help" nil 1))
+</td>
+<td>
+T
+</td>
+</tr>
+<tr>
+<td>
+
+(setq alist (list 1 2 3 4))<br/>
+(setq temp nil)<br/>
+(<b><font color="#0e85e4">vl-every</font></b> '= temp alist)
+</td>
+<td>
+T
+</td>
+</tr>
+</table>
+
+<div id="holding"></div>
+<!--main-->
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="blank"></div>
+</div>
+</body>
+</html>
