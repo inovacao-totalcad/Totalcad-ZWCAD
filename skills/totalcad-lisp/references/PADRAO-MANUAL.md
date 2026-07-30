@@ -1,6 +1,6 @@
 # Padrão de Geração de Manual HTML para LISP
 
-Este documento serve como **PROMPT PADRÃO** para gerar manuais HTML para plugins LISP. Sempre que for solicitado criar um manual para uma nova LISP, utilize a estrutura HTML e CSS abaixo como base imutável, alterando apenas o conteúdo de texto para se adequar ao plugin específico.
+Este documento serve como **PROMPT PADRÃO** para gerar manuais HTML para LISPs LISP. Sempre que for solicitado criar um manual para uma nova LISP, utilize a estrutura HTML e CSS abaixo como base imutável, alterando apenas o conteúdo de texto para se adequar à LISP específico.
 
 ## Instruções para a IA
 
@@ -20,7 +20,7 @@ Este documento serve como **PROMPT PADRÃO** para gerar manuais HTML para plugin
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- SUBST: Título da Aba -->
-    <title>{{NOME_DO_PLUGIN}} | Guia Visual</title>
+    <title>{{NOME_DA_ROTINA}} | Guia Visual</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -104,7 +104,7 @@ Este documento serve como **PROMPT PADRÃO** para gerar manuais HTML para plugin
             <div class="font-black text-white text-3xl tracking-tightest">
                 B<span class="text-neon">.</span>
             </div>
-            <!-- SUBST: Nome curto do plugin (FIXO: Bali.CAD) -->
+            <!-- SUBST: Nome curto da LISP (FIXO: Bali.CAD) -->
             <span class="font-mono uppercase text-xl text-txtBody opacity-80 tracking-widest border-l border-stroke pl-4 ml-3">
                 Bali<span class="text-neon">.CAD</span>
             </span>
@@ -126,7 +126,7 @@ Este documento serve como **PROMPT PADRÃO** para gerar manuais HTML para plugin
                   <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon opacity-75"></span>
                   <span class="relative inline-flex rounded-full h-2 w-2 bg-neon"></span>
                 </span>
-                {{NOME_TECNICO_PLUGIN}} v{{VERSAO}}
+                {{NOME_TECNICO}} v{{VERSAO}}
             </div>
             
             <h1 class="text-5xl md:text-7xl font-black text-white tracking-tightest mb-6 leading-[0.9]">
@@ -183,7 +183,7 @@ Este documento serve como **PROMPT PADRÃO** para gerar manuais HTML para plugin
                         <p class="text-sm text-txtBody mb-4">Na janela que abrir, procure pelo ícone de uma <strong>Maleta</strong> ou botão "Conteúdo" (Startup Suite).</p>
                         <div class="bg-warning/10 border border-warning/20 p-3 rounded">
                             <p class="text-warning text-xs flex gap-2 items-start">
-                                <span><strong>Importante:</strong> Se não colocar aqui, o plugin vai sumir quando fechar o ZWCAD.</span>
+                                <span><strong>Importante:</strong> Se não colocar aqui, a LISP vai sumir quando fechar o ZWCAD.</span>
                             </p>
                         </div>
                     </div>

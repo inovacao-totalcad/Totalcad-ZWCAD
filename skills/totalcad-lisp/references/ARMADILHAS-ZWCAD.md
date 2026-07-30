@@ -22,7 +22,7 @@ comando **`COMPILE`**:
 
 **Formato de distribuição: `.zelx`.** É binário, criptografado, e não se edita.
 
-⚠️ **O `.zelx` é via de mão única.** Se o usuário perder o `.lsp` de origem, o plugin morre — não há
+⚠️ **O `.zelx` é via de mão única.** Se o usuário perder o `.lsp` de origem, a LISP morre — não há
 como voltar do `.zelx` para o fonte. Diga isso na entrega e mande ele guardar a pasta `Source/`.
 
 ⚠️ **Não existe função LISP que compile.** Se você escrever qualquer chamada de compilação dentro do
@@ -32,7 +32,7 @@ código, vai falhar. O `COMPILE` é comando digitado pelo usuário, uma vez, no 
 
 ## 2. Funções que não existem no ZWCAD
 
-Se você usar qualquer uma destas, o plugin quebra:
+Se você usar qualquer uma destas, a LISP quebra:
 
 | Função | O que fazer no lugar |
 |---|---|
@@ -54,7 +54,7 @@ acusa `undefined function - ACET-...`, essa é a causa.
 ## 3. Identificadores COM: erra o nome e recebe `nil` **sem aviso**
 
 🔴 **A falha mais traiçoeira.** `vlax-create-object` com identificador de outra plataforma **não dá
-erro** — devolve `nil`, e o plugin estoura depois, num ponto que não tem relação com a causa.
+erro** — devolve `nil`, e a LISP estoura depois, num ponto que não tem relação com a causa.
 
 Os identificadores do ZWCAD:
 
@@ -70,7 +70,7 @@ Os identificadores do ZWCAD:
 (vlax-create-object "ZWCAD.ZcCmColor.2026")
 ```
 
-⚠️ **O ano no fim amarra o código a uma versão.** Se o plugin vai rodar em máquinas diferentes,
+⚠️ **O ano no fim amarra o código a uma versão.** Se a LISP vai rodar em máquinas diferentes,
 tente os anos em sequência em vez de fixar um:
 
 ```lisp
@@ -128,7 +128,7 @@ Duas causas, nesta ordem:
 
 ## 8. Comandos nativos: confirme antes de encadear
 
-A ordem e o nome das opções de um comando nativo podem não ser o que você supõe. Se o plugin depende
+A ordem e o nome das opções de um comando nativo podem não ser o que você supõe. Se a LISP depende
 de `(command "_.ALGUM" opt1 opt2 opt3 ...)` com muitas opções encadeadas:
 
 - **Consulte `docs/LISP_Reference/`** antes de escrever
@@ -146,7 +146,7 @@ de `(command "_.ALGUM" opt1 opt2 opt3 ...)` com muitas opções encadeadas:
 | `ZWCAD variable setting rejected` | `setvar` com valor fora de faixa, tipo errado, ou variável inexistente |
 | `misplaced right/left paren` | Parêntese sobrando ou faltando |
 | `quit / exit abort` | `quit`/`exit` chamado onde não devia — reveja a lógica |
-| Plugin roda, não reclama e não funciona | Suspeite de `vlax-create-object` devolvendo `nil` (item 3) |
+| LISP roda, não reclama e não funciona | Suspeite de `vlax-create-object` devolvendo `nil` (item 3) |
 
 ---
 
@@ -168,7 +168,7 @@ Cada arquivo tem ~6 KB. **Ler um é mais barato que errar um.**
 | Afirmação | Onde está |
 |---|---|
 | `COMPILE` gera `.lsp` cifrado e `.zelx` | `docs/LISP_Migration/LISP Encryption.md` |
-| Formatos de plugin | `docs/LISP_Migration/LISP Plug-in Format.md` |
+| Formatos de LISP | `docs/LISP_Migration/LISP Plug-in Format.md` |
 | `base.dcl` / `primitives.dcl` | `docs/LISP_Migration/FAQ.md`, Q4 |
 | `ACET-*` ausente | `docs/LISP_Migration/FAQ.md`, Q5 |
 | Identificadores COM e arquivos de recurso | `docs/LISP_Migration/2-1-Differences Introduction.md` |

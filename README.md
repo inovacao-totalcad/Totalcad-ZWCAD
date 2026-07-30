@@ -4,8 +4,8 @@
 
 # Totalcad&#8209;ZWCAD
 
-**Crie seus próprios plugins para o ZWCAD conversando em português.**<br>
-Do problema que te faz perder tempo ao plugin criptografado e pronto para distribuir — sem escrever
+**Crie suas próprias rotinas LISP para o ZWCAD conversando em português.**<br>
+Da tarefa que te faz perder tempo à rotina criptografada e pronta para distribuir — sem escrever
 uma linha de código.
 
 <br>
@@ -29,7 +29,7 @@ uma linha de código.
 
 ## O problema
 
-Peça a uma IA genérica um plugin LISP para o ZWCAD. Ela responde rápido, o código sai bonito e
+Peça a uma IA genérica uma LISP para o ZWCAD. Ela responde rápido, o código sai bonito e
 comentado — e não roda. Ou pior: roda, não reclama, e não faz nada.
 
 **O que ela não tem é conhecimento do ZWCAD.**
@@ -50,7 +50,7 @@ código é o comando `COMPILE`. Você descreve o problema, ela pergunta o que fa
 
 ## O processo
 
-Entra do jeito que você conseguir descrever. Sai criptografado e pronto para distribuir.
+Entra do jeito que você conseguir descrever. Sai criptografada e pronta para distribuir.
 
 ```mermaid
 flowchart LR
@@ -78,7 +78,7 @@ flowchart LR
     class X freio
 ```
 
-**A regra-mãe:** não automatize o que já é nativo. Construir plugin para o que o ZWCAD já faz custa
+**A regra-mãe:** não automatize o que já é nativo. Escrever uma LISP para o que o ZWCAD já faz custa
 o seu tempo, mais um arquivo para manter, e quebra na próxima versão.
 
 <br>
@@ -92,7 +92,7 @@ o seu tempo, mais um arquivo para manter, e quebra na próxima versão.
 ### 🔍 Verifica o nativo antes de construir
 
 Antes de qualquer entrevista, a skill checa **22 recursos nativos** do ZWCAD que costumam ser
-reinventados como plugin.
+reinventados como LISP sem necessidade.
 
 Se já existe, ela **para e te ensina o comando** — em vez de gastar sua tarde construindo o que
 veio de fábrica.
@@ -120,7 +120,7 @@ Em dúvida, ela lê o arquivo da função. Ler um custa 6 KB — errar custa a s
 </td>
 <td width="50%" valign="top">
 
-### 🔒 Sai pronto para distribuir
+### 🔒 Sai pronta para distribuir
 
 Não para no código que roda na sua máquina. Termina no **`.zelx` criptografado**, gerado pelo
 `COMPILE`, que você compartilha sem entregar o fonte.
@@ -210,12 +210,12 @@ perco 40 minutos arrumando os layers de todo arquivo que recebo do cliente
 |---|---|
 | Só a dor — *"perco tempo com X"* | Pergunta como você faz hoje, na mão, e propõe a solução |
 | A ideia já pronta | Preenche só os buracos — 2 a 4 perguntas |
-| Um pedido que já é nativo | **Para**, mostra o comando, e explica por que plugin seria pior |
+| Um pedido que já é nativo | **Para**, mostra o comando, e explica por que uma LISP seria pior |
 | A mensagem de erro do console | Diz qual era a causa e devolve o arquivo inteiro corrigido |
 | *"mudei de ideia, quero também..."* | Sobe a versão e mantém o padrão |
 
-**Ela nunca:** escreve código antes de fechar a entrevista · aplica default em silêncio · assina o
-plugin com o nome dela · usa função que não existe no ZWCAD · entrega sem tratar ESC e seleção vazia.
+**Ela nunca:** escreve código antes de fechar a entrevista · aplica default em silêncio · assina a
+rotina com o nome dela · usa função que não existe no ZWCAD · entrega sem tratar ESC e seleção vazia.
 
 <br>
 
@@ -224,15 +224,15 @@ plugin com o nome dela · usa função que não existe no ZWCAD · entrega sem t
 Você não escreve nada. Responde perguntas e testa. O que sai segue um padrão fixo:
 
 ```
-MeuPlugin/
-  Source/         LISP_MeuPlugin.lsp     ← fonte, para editar depois
-  Distribution/   MeuPlugin.zelx         ← o que você compartilha
+ArrumaLayer/
+  Source/         LISP_ArrumaLayer.lsp   ← fonte, para editar depois
+  Distribution/   ArrumaLayer.zelx       ← o que você compartilha
 ```
 
 | | |
 |---|---|
 | **Comando com o seu prefixo** | `AC_`, `JM_`, o que você escolher — nunca o de outra pessoa |
-| **Interface DCL** | Gerada dentro do próprio LISP e apagada no fim. Sem `.dcl` solto |
+| **Interface DCL** | Gerada dentro do próprio `.lsp` e apagada no fim. Sem `.dcl` solto |
 | **Ajuda embutida** | No botão `[Ajuda]`, dentro do arquivo. Sem depender de internet |
 | **Acesso duplo** | Botão na janela **e** comando direto, para quem tem pressa |
 | **Trata ESC** | Restaura o que mexeu e não deixa o desenho sujo |
@@ -247,7 +247,7 @@ MeuPlugin/
 **Proteger código é o comando `COMPILE`**, que gera `.zelx`. Não existe função LISP de compilação —
 quem inventa uma, falha.
 
-**Funções que não existem no ZWCAD** e derrubam o plugin:
+**Funções que não existem no ZWCAD** e derrubam a LISP:
 
 | Função | O que fazer no lugar |
 |---|---|
@@ -260,7 +260,7 @@ quem inventa uma, falha.
 
 > ⚠️ **`vlax-create-object` com o identificador errado devolve `nil` sem dar erro.** No ZWCAD é
 > `ZWCAD.Application.<ano>`, `ZWCAD.ZcCmColor.<ano>` — com o ano da versão no fim. É a falha mais
-> traiçoeira: o plugin roda, não reclama, e estoura longe da causa.
+> traiçoeira: a LISP roda, não reclama, e estoura longe da causa.
 
 - **A janela DCL não abre?** Faltam `base.dcl` e `primitives.dcl` no caminho de suporte
 - **`ZWCAD variable setting rejected`?** É `setvar` com valor fora de faixa ou variável inexistente
@@ -282,7 +282,7 @@ O `.zelx` é binário e criptografado — quem recebe usa, não lê o seu códig
 ```
 
 > ⚠️ **É via de mão única.** Não existe caminho de volta do `.zelx` para o fonte. **Guarde a pasta
-> `Source/`** — se perder o `.lsp`, o plugin morre.
+> `Source/`** — se perder o `.lsp`, a LISP morre.
 
 <br>
 

@@ -1,4 +1,4 @@
-# Padrão de código — plugin LISP para ZWCAD
+# Padrão de código — rotina LISP para ZWCAD
 
 Estrutura fixa. Não improvise a arquitetura; troque só o conteúdo entre os marcadores
 `;; >>> LÓGICA` e `;; <<< LÓGICA`.
@@ -12,12 +12,12 @@ Substitua os placeholders pelos dados de `IDENTIDADE.md`:
 | `<AUTOR>` | `AUTOR` | `Alison Cruz` |
 | `<CONTATO>` | `CONTATO` | `fulano@email.com` |
 | `<SOCIAL>` | `SOCIAL` | `@fulano` |
-| `<NomePlugin>` | do plugin | `ArrumaLayer` |
+| `<NomeRotina>` | da LISP | `ArrumaLayer` |
 
 ## Regras de nomenclatura
 
-- Arquivo: `LISP_<NomePlugin>.lsp`
-- Comando principal: `<PREFIXO>_<NomePlugin>` — **sem espaço, sem acento**
+- Arquivo: `LISP_<NomeRotina>.lsp`
+- Comando principal: `<PREFIXO>_<NomeRotina>` — **sem espaço, sem acento**
 - Título da janela: `<MARCA> - <Nome legível>` — **nunca com número de versão**
 - Versão: SemVer, começa em `1.0.0`
 
@@ -27,7 +27,7 @@ Substitua os placeholders pelos dados de `IDENTIDADE.md`:
 
 ```lisp
 ;;; ==========================================================================
-;;;  PLUGIN: <MARCA> - <Nome legível>
+;;;  LISP: <MARCA> - <Nome legível>
 ;;;  AUTOR: <AUTOR>
 ;;;  VERSAO: 1.0.0
 ;;;  DESCRICAO: <uma linha sobre o que faz>
@@ -36,89 +36,88 @@ Substitua os placeholders pelos dados de `IDENTIDADE.md`:
 (vl-load-com)
 
 ;;; --- IDENTIFICACAO -------------------------------------------------------
-(setq *plg-nome*  "<Nome legível>")
-(setq *plg-cmd*   "<PREFIXO>_<NomePlugin>")   ;; comando, sem espaco
-(setq *plg-ver*   "1.0.0")
-(setq *plg-autor* "<AUTOR>")
-(setq *plg-cont*  "<CONTATO>")
-(setq *plg-socl*  "<SOCIAL>")
-(setq *plg-marca* "<MARCA>")
-(setq *plg-reg*   "HKEY_CURRENT_USER\\Software\\<MARCA>\\<NomePlugin>")
-(setq *plg-help*  nil)   ;; caminho do manual .html, definido no passo de instalacao
+(setq *rot-nome*  "<Nome legível>")
+(setq *rot-cmd*   "<PREFIXO>_<NomeRotina>")   ;; comando, sem espaco
+(setq *rot-ver*   "1.0.0")
+(setq *rot-autor* "<AUTOR>")
+(setq *rot-cont*  "<CONTATO>")
+(setq *rot-socl*  "<SOCIAL>")
+(setq *rot-marca* "<MARCA>")
+(setq *rot-reg*   "HKEY_CURRENT_USER\\Software\\<MARCA>\\<NomeRotina>")
 
 ;;; --- ALERT DE CARREGAMENTO ----------------------------------------------
-(defun plg-startup ()
+(defun rot-startup ()
   (alert
     (strcat
-      "PLUGIN CARREGADO\n\n"
-      "Nome: "    *plg-marca* " - " *plg-nome* "\n"
-      "Versao: "  *plg-ver*   "\n"
-      "Autor: "   *plg-autor* "\n\n"
-      "DIGITE PARA INICIAR:  " *plg-cmd*
+      "LISP CARREGADO\n\n"
+      "Nome: "    *rot-marca* " - " *rot-nome* "\n"
+      "Versao: "  *rot-ver*   "\n"
+      "Autor: "   *rot-autor* "\n\n"
+      "DIGITE PARA INICIAR:  " *rot-cmd*
     )
   )
-  (princ (strcat "\n" *plg-marca* ": " *plg-nome* " v" *plg-ver*
-                 " carregado. Digite " *plg-cmd* " para iniciar."))
+  (princ (strcat "\n" *rot-marca* ": " *rot-nome* " v" *rot-ver*
+                 " carregado. Digite " *rot-cmd* " para iniciar."))
   (princ)
 )
-(plg-startup)
+(rot-startup)
 
 ;;; --- TRATAMENTO DE ERRO --------------------------------------------------
 ;;; Guarda o que mexeu e devolve no lugar, inclusive quando o usuario da ESC.
-(setq *plg-cmdecho* nil)
+(setq *rot-cmdecho* nil)
 
 (defun *error* (msg)
   (if (not (wcmatch (strcase msg t) "*break*,*cancel*,*exit*"))
-    (princ (strcat "\nErro em " *plg-nome* ": " msg))
+    (princ (strcat "\nErro em " *rot-nome* ": " msg))
     (princ "\nCancelado pelo usuario.")
   )
-  (if *plg-cmdecho* (setvar "CMDECHO" *plg-cmdecho*))
-  (plg-undo-fim)
+  (if *rot-cmdecho* (setvar "CMDECHO" *rot-cmdecho*))
+  (rot-undo-fim)
   (princ)
 )
 
 ;;; --- UNDO EM UM PASSO ----------------------------------------------------
 ;;; Sem isto o usuario precisa apertar Ctrl+Z dez vezes para desfazer.
-(defun plg-undo-ini () (command "_.UNDO" "_Begin") (princ))
-(defun plg-undo-fim ()
+(defun rot-undo-ini () (command "_.UNDO" "_Begin") (princ))
+(defun rot-undo-fim ()
   (if (= 0 (getvar "CMDACTIVE")) (command "_.UNDO" "_End"))
   (princ)
 )
 
 ;;; --- PERSISTENCIA --------------------------------------------------------
-(defun plg-salva (chave valor)
-  (vl-registry-write *plg-reg* chave valor)
+(defun rot-salva (chave valor)
+  (vl-registry-write *rot-reg* chave valor)
 )
-(defun plg-le (chave default / v)
-  (setq v (vl-registry-read *plg-reg* chave))
+(defun rot-le (chave default / v)
+  (setq v (vl-registry-read *rot-reg* chave))
   (if (or (null v) (= v "")) default v)
 )
 
 ;;; --- SOBRE E AJUDA -------------------------------------------------------
-(defun plg-sobre ()
+(defun rot-sobre ()
   (alert
     (strcat
-      *plg-marca* " - " *plg-nome* "\n"
-      "Versao: " *plg-ver* "\n\n"
-      "Autor: "  *plg-autor* "\n"
-      "Contato: " *plg-cont* "\n"
-      (if (and *plg-socl* (/= *plg-socl* "")) (strcat *plg-socl* "\n") "")
+      *rot-marca* " - " *rot-nome* "\n"
+      "Versao: " *rot-ver* "\n\n"
+      "Autor: "  *rot-autor* "\n"
+      "Contato: " *rot-cont* "\n"
+      (if (and *rot-socl* (/= *rot-socl* "")) (strcat *rot-socl* "\n") "")
       "\nTodos os direitos reservados."
     )
   )
 )
 
-;;; A ajuda vive DENTRO do plugin. Sem arquivo externo, sem site, sem internet.
+;;; A ajuda vive DENTRO da LISP. Sem arquivo externo, sem site, sem internet.
 ;;; Escreva o texto na hora de gerar o codigo, a partir da entrevista.
-(defun plg-ajuda ()
+(defun rot-ajuda ()
   (alert
     (strcat
-      "COMO USAR — " *plg-nome* "\n\n"
-      "1. Digite " *plg-cmd* "\n"
+      "COMO USAR — " *rot-nome* "\n\n"
+      "1. Digite " *rot-cmd* "\n"
       "2. <o que o usuario faz — vem da pergunta 2 da entrevista>\n"
       "3. <o que acontece — vem da pergunta 4>\n\n"
       "ATALHO DIRETO (sem a janela):\n"
-      "   " *plg-cmd* "_QUICK\n\n"
+      "   " *rot-cmd* "_QUICK\n\n"
       "OBSERVACOES:\n"
       "   - <limitacao que apareceu na entrevista>\n"
       "   - Ctrl+Z desfaz tudo de uma vez"
@@ -128,12 +127,12 @@ Substitua os placeholders pelos dados de `IDENTIDADE.md`:
 
 ;;; --- INTERFACE DCL (TEMPORARIA) -----------------------------------------
 ;;; PROIBIDO entregar .dcl solto. Gera, usa, apaga.
-(defun plg-escreve-dcl (arq / f)
+(defun rot-escreve-dcl (arq / f)
   (setq f (open arq "w"))
   (write-line
     (strcat
-      "plg_main : dialog {"
-      "  label = \"" *plg-marca* " - " *plg-nome* "\";"
+      "rot_main : dialog {"
+      "  label = \"" *rot-marca* " - " *rot-nome* "\";"
       "  : boxed_column { label = \"Opcoes\";"
       ;; >>> CONTROLES — trocar conforme a entrevista
       "     : edit_box { label = \"Valor:\"; key = \"in_valor\"; edit_width = 10; }"
@@ -160,15 +159,15 @@ Substitua os placeholders pelos dados de `IDENTIDADE.md`:
 
 ;;; --- COMANDO DIRETO (para quem nao quer a janela) -----------------------
 ;;; Acesso duplo: tudo que a janela faz tem que ter comando proprio.
-(defun c:<PREFIXO>_<NomePlugin>_QUICK ()
-  (plg-executa (plg-le "Valor" "10.0") (= "1" (plg-le "Congelado" "0")))
+(defun c:<PREFIXO>_<NomeRotina>_QUICK ()
+  (rot-executa (rot-le "Valor" "10.0") (= "1" (rot-le "Congelado" "0")))
 )
 
 ;;; --- LOGICA --------------------------------------------------------------
-(defun plg-executa (valor incluir-congelado / ss)
-  (setq *plg-cmdecho* (getvar "CMDECHO"))
+(defun rot-executa (valor incluir-congelado / ss)
+  (setq *rot-cmdecho* (getvar "CMDECHO"))
   (setvar "CMDECHO" 0)
-  (plg-undo-ini)
+  (rot-undo-ini)
 
   ;; >>> LOGICA
   (setq ss (ssget))                    ;; nil se o usuario nao selecionar nada
@@ -181,15 +180,15 @@ Substitua os placeholders pelos dados de `IDENTIDADE.md`:
   )
   ;; <<< LOGICA
 
-  (plg-undo-fim)
-  (setvar "CMDECHO" *plg-cmdecho*)
+  (rot-undo-fim)
+  (setvar "CMDECHO" *rot-cmdecho*)
   (princ)
 )
 
 ;;; --- COMANDO PRINCIPAL ---------------------------------------------------
-(defun c:<PREFIXO>_<NomePlugin> ( / dcl_arq dcl_id res valor congelado)
-  (setq dcl_arq (vl-filename-mktemp "plg_gui.dcl"))
-  (plg-escreve-dcl dcl_arq)
+(defun c:<PREFIXO>_<NomeRotina> ( / dcl_arq dcl_id res valor congelado)
+  (setq dcl_arq (vl-filename-mktemp "rot_gui.dcl"))
+  (rot-escreve-dcl dcl_arq)
   (setq dcl_id (load_dialog dcl_arq))
 
   (if (< dcl_id 0)
@@ -198,7 +197,7 @@ Substitua os placeholders pelos dados de `IDENTIDADE.md`:
       (vl-file-delete dcl_arq)
       (princ)
     )
-    (if (not (new_dialog "plg_main" dcl_id))
+    (if (not (new_dialog "rot_main" dcl_id))
       (progn
         (alert (strcat "Nao foi possivel abrir a janela.\n\n"
                        "Verifique se base.dcl e primitives.dcl estao\n"
@@ -209,8 +208,8 @@ Substitua os placeholders pelos dados de `IDENTIDADE.md`:
       )
       (progn
         ;; estado inicial vem do que ficou salvo da ultima vez
-        (set_tile "in_valor"     (plg-le "Valor" "10.0"))
-        (set_tile "tg_congelado" (plg-le "Congelado" "0"))
+        (set_tile "in_valor"     (rot-le "Valor" "10.0"))
+        (set_tile "tg_congelado" (rot-le "Congelado" "0"))
 
         ;; validacao ao vivo: nao deixe o usuario descobrir o erro no OK
         (action_tile "in_valor"
@@ -220,8 +219,8 @@ Substitua os placeholders pelos dados de `IDENTIDADE.md`:
              (progn (set_tile \"msg_erro\" \"\")
                     (mode_tile \"accept\" 0)))")
 
-        (action_tile "btn_ajuda" "(plg-ajuda)")
-        (action_tile "btn_sobre" "(plg-sobre)")
+        (action_tile "btn_ajuda" "(rot-ajuda)")
+        (action_tile "btn_sobre" "(rot-sobre)")
         (action_tile "accept"
           "(progn (setq valor (get_tile \"in_valor\")
                        congelado (get_tile \"tg_congelado\"))
@@ -234,9 +233,9 @@ Substitua os placeholders pelos dados de `IDENTIDADE.md`:
 
         (if (= res 1)
           (progn
-            (plg-salva "Valor" valor)
-            (plg-salva "Congelado" congelado)
-            (plg-executa (atof valor) (= congelado "1"))
+            (rot-salva "Valor" valor)
+            (rot-salva "Congelado" congelado)
+            (rot-executa (atof valor) (= congelado "1"))
           )
           (princ "\nCancelado.")
         )
@@ -258,14 +257,14 @@ Se você conhece a versão anterior deste template, estes pontos foram corrigido
 
 | Correção | Motivo |
 |---|---|
-| Comando vem de `*plg-cmd*`, não de `(strcase *plg-nome*)` | Nome com espaço gerava comando inválido: `"Count Plus"` → `AC_COUNT PLUS` |
+| Comando vem de `*rot-cmd*`, não de `(strcase *rot-nome*)` | Nome com espaço gerava comando inválido: `"Count Plus"` → `AC_COUNT PLUS` |
 | Linha `"Autor: "` aparecia duas vezes no alert | Erro de cópia |
-| `[Ajuda]` mostra o texto de uso **dentro do próprio plugin** | Antes abria um site. Um plugin de um arquivo não deve depender de internet nem de arquivo vizinho para explicar a si mesmo |
+| `[Ajuda]` mostra o texto de uso **dentro do próprio LISP** | Antes abria um site. Uma LISP de um arquivo não deve depender de internet nem de arquivo vizinho para explicar a si mesmo |
 | `*error*` presente, restaurando `CMDECHO` e fechando o UNDO | Sem isso, um ESC no meio deixa o desenho com `CMDECHO` desligado e o grupo de undo aberto |
-| `plg-undo-ini` / `plg-undo-fim` | Sem isso o usuário aperta Ctrl+Z dez vezes para desfazer uma execução |
+| `rot-undo-ini` / `rot-undo-fim` | Sem isso o usuário aperta Ctrl+Z dez vezes para desfazer uma execução |
 | `load_dialog` testa retorno negativo | `(exit)` dentro de `if` abortava sujo e deixava o `.dcl` temporário no disco |
 | Erro de janela cita `base.dcl`/`primitives.dcl` | É a causa nº 1 de DCL que não abre no ZWCAD |
-| `ssget` sem seleção é tratado | `(sslength nil)` derruba o plugin |
+| `ssget` sem seleção é tratado | `(sslength nil)` derruba a LISP |
 
 ## Testes obrigatórios antes de entregar
 

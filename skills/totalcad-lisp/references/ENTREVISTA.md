@@ -9,7 +9,7 @@ O usuário não sabe programar. Ele sabe **onde dói**. Sua função é transfor
 3. **Ofereça o default junto da pergunta.** *"Vai rodar na seleção que o usuário fizer, ou no desenho
    todo? (o mais comum é seleção)"* — assim ele responde "o comum" quando não sabe.
 4. **Máximo de 8 perguntas.** Se precisar de mais, o pedido é grande demais: proponha dividir em
-   dois plugins e construa o primeiro.
+   dois LISPs e construa o primeiro.
 5. **Linguagem de CAD, não de programação.** Diga "seleção", "layer", "bloco", "atributo". Nunca
    diga "array", "loop", "callback", "parsing".
 
@@ -44,14 +44,14 @@ Use como lista de verificação. Só pergunte o que está em branco.
 
 ### 1. Nome do comando
 *"Que nome você quer digitar para chamar? Sugiro `<PREFIXO>_<algo curto>`."*
-→ Default: derive do que o plugin faz. Comando curto, sem espaço, sem acento.
+→ Default: derive do que a LISP faz. Comando curto, sem espaço, sem acento.
 
 ### 2. O que o usuário faz ao rodar
 *"Quando rodar, ele vai selecionar objetos, clicar um ponto, digitar um valor — ou não faz nada e o
-plugin trabalha sozinho?"*
+LISP trabalha sozinho?"*
 → Default: seleção de objetos. É o caso mais comum.
 
-### 3. Onde o plugin age
+### 3. Onde a LISP age
 *"Só na seleção? No desenho aberto todo? Em todos os layouts? Em vários arquivos de uma pasta?"*
 → Default: na seleção.
 → ⚠️ Se ele disser **vários arquivos**, avise: LISP faz, mas fica lento e frágil. Pergunte quantos
@@ -69,12 +69,12 @@ arquivos são. Acima de ~50, registre como limitação no manual.
 for menos.
 
 ### 6. Memória
-*"O plugin deve lembrar a última configuração que você usou?"*
+*"A LISP deve lembrar a última configuração que você usou?"*
 → Default: sim, se houver campo de valor. Salve no registro.
 
 ### 7. Reversível
 *"Se você rodar e não gostar, precisa desfazer tudo com um Ctrl+Z só?"*
-→ Default: sim, sempre que o plugin altera desenho. Agrupe em um undo único.
+→ Default: sim, sempre que a LISP altera desenho. Agrupe em um undo único.
 
 ### 8. O que fazer quando der errado
 *"Se ele selecionar o objeto errado, ou nada, o que deve acontecer?"*

@@ -1,7 +1,7 @@
 # Já é nativo? — verifique antes de construir
 
-O erro mais caro do desenvolvimento assistido por IA em CAD é **construir um plugin para algo que o
-programa já faz.** O usuário perde a aula, ganha mais um arquivo para manter, e o plugin quebra na
+O erro mais caro do desenvolvimento assistido por IA em CAD é **construir uma LISP para algo que o
+programa já faz.** O usuário perde a aula, ganha mais um arquivo para manter, e a LISP quebra na
 próxima versão do ZWCAD.
 
 **Consulte esta lista antes da entrevista.** Se o pedido estiver aqui, pare e ensine o recurso.
@@ -48,27 +48,27 @@ Não diga apenas "já existe". Diga:
 
 1. **Qual recurso resolve** e em que versão apareceu
 2. **Como chegar nele** (comando ou onde fica)
-3. **Por que um plugin seria pior aqui:** mais um arquivo para instalar em cada máquina, mais uma
+3. **Por que uma LISP seria pior aqui:** mais um arquivo para instalar em cada máquina, mais uma
    coisa para manter, e alto risco de quebrar quando o ZWCAD atualizar
 
 Depois pergunte: **"isso resolve o seu caso?"**
 
 - **Resolveu** → ótimo, terminou. Não construa nada.
 - **Não resolveu** → pergunte **exatamente o que falta**. Essa resposta é o requisito mais
-  importante do plugin, e é o que diferencia o plugin do recurso nativo. Registre no manual.
+  importante da LISP, e é o que diferencia a LISP do recurso nativo. Registre no manual.
 
 ⚠️ **Atenção à versão do usuário.** Se ele está no ZWCAD 2025 e a solução nativa é de 2027, o
-recurso não existe na máquina dele. Aí o plugin **faz sentido** — mas registre no manual que a
-versão nova resolve nativamente, para ele saber que pode aposentar o plugin depois.
+recurso não existe na máquina dele. Aí a LISP **faz sentido** — mas registre no manual que a
+versão nova resolve nativamente, para ele saber que pode aposentar a LISP depois.
 
 ---
 
 ## Caso real, para usar como exemplo
 
-Existia um plugin LISP vendido comercialmente que gerava tabela de coordenadas UTM a partir de
+Existia uma LISP vendida comercialmente que gerava tabela de coordenadas UTM a partir de
 pontos no desenho — trabalho de meses, com contrato e manual.
 
 O ZWCAD 2027 lançou **Coordinate Extraction**: extrai os pontos de vários objetos com um clique e
 numera automaticamente numa tabela.
 
-O plugin não era ruim. Só deixou de ser necessário. **É por isso que este passo existe.**
+A LISP não era ruim. Só deixou de ser necessário. **É por isso que este passo existe.**

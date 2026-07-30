@@ -1,13 +1,13 @@
 ---
 name: totalcad-lisp
-description: Use quando o usuário quiser criar, corrigir, melhorar ou proteger um plugin LISP para ZWCAD — inclusive quando ele só descreve uma tarefa repetitiva de CAD que quer automatizar, sem saber que a resposta é um LISP. Cobre a entrevista de requisitos, o padrão de código com interface DCL, o manual HTML e a criptografia para distribuição.
+description: Use quando o usuário quiser criar, corrigir, melhorar ou proteger uma rotina LISP para ZWCAD — inclusive quando ele só descreve uma tarefa repetitiva de CAD que quer automatizar, sem saber que a resposta é uma LISP. Cobre a entrevista de requisitos, o padrão de código com interface DCL, o manual HTML e a criptografia para distribuição.
 ---
 
 # Fábrica de LISP para ZWCAD
 
-Você constrói plugins LISP para **ZWCAD** seguindo um padrão fixo, a partir de uma
+Você constrói LISPs LISP para **ZWCAD** seguindo um padrão fixo, a partir de uma
 entrevista com o usuário. O usuário **não sabe programar e não vai ler o código** — ele descreve o
-problema, testa o resultado e distribui o plugin.
+problema, testa o resultado e distribui a LISP.
 
 ## As 3 regras que não se quebram
 
@@ -17,9 +17,9 @@ problema, testa o resultado e distribui o plugin.
    erro aparece só na hora de rodar — ou nem aparece. Leia `references/ARMADILHAS-ZWCAD.md`
    **antes** de mexer em compilação, estado de layer ou objeto COM. Em dúvida sobre qualquer
    função, consulte `docs/LISP_Reference/`.
-3. **O plugin é um arquivo só.** A ajuda vive dentro dele, no botão `[Ajuda]`. Não gere manual em
+3. **A LISP é um arquivo só.** A ajuda vive dentro dele, no botão `[Ajuda]`. Não gere manual em
    arquivo separado, não aponte para site — o usuário perde arquivo avulso e pode estar sem internet.
-   *(Exceção: se ele for **vender** o plugin, existe um template de manual HTML em
+   *(Exceção: se ele for **vender** a LISP, existe um template de manual HTML em
    `references/PADRAO-MANUAL.md`. Só use se ele pedir.)*
 
 ## O fluxo
@@ -41,7 +41,7 @@ problema, testa o resultado e distribui o plugin.
 Se **não existir** `IDENTIDADE.md` na pasta de trabalho, pergunte e crie:
 
 ```markdown
-AUTOR: <nome completo de quem assina o plugin>
+AUTOR: <nome completo de quem assina a LISP>
 CONTATO: <e-mail ou telefone>
 SOCIAL: <@instagram ou site — opcional>
 PREFIXO: <2 a 3 letras para os comandos, ex.: AC, JM, RS>
@@ -62,7 +62,7 @@ Se já existir, **leia e use**. Não pergunte de novo.
 
 Se já for nativo:
 
-> **PARE. Não construa o plugin.** Diga qual comando resolve, como usar, e por que um plugin aqui
+> **PARE. Não construa a LISP.** Diga qual comando resolve, como usar, e por que uma LISP aqui
 > seria pior (mais uma coisa para instalar, manter, e que quebra na próxima versão).
 
 Só siga adiante se o usuário disser que o nativo não serve — e nesse caso **anote o porquê**, porque
@@ -123,7 +123,7 @@ Siga `references/PADRAO-CODIGO.md` sem improvisar a estrutura. O que é obrigat�
 - **Rodapé com [Ajuda] [Sobre] [Fechar]**
 - **`*error*`** que trata ESC sem sujar, e restaura o que mexeu
 - **Persistência** no registro, se houver configuração que valha lembrar
-- **Undo em um passo** se o plugin altera o desenho
+- **Undo em um passo** se a LISP altera o desenho
 - **`[Ajuda]` com o texto de uso escrito por você**, a partir das respostas da entrevista — não
   deixe o placeholder
 
@@ -147,7 +147,7 @@ Quando o erro voltar: leia, diga **qual** era a causa, corrija e devolva o arqui
 trecho — o usuário não sabe onde colar).
 
 ⚠️ Peça para testar também: **ESC no meio**, **seleção vazia** e **objeto do tipo errado**. É onde
-o LISP gerado por IA quebra mais.
+a LISP gerada por IA quebra mais.
 
 ---
 
@@ -171,12 +171,12 @@ Isso gera o arquivo **criptografado** — o código-fonte não é legível. É o
 Organize a entrega:
 
 ```
-<NomeDoPlugin>/
+<NomeRotina>/
   Source/         LISP_<Nome>.lsp        (fonte, para editar depois)
   Distribution/   <Nome>.zelx            (o que ele compartilha)
 ```
 
-⚠️ **O `.zelx` não se edita.** Se o usuário perder o `.lsp` da pasta `Source/`, o plugin morre —
+⚠️ **O `.zelx` não se edita.** Se o usuário perder o `.lsp` da pasta `Source/`, a LISP morre —
 avise isso na entrega.
 
 ---
@@ -188,11 +188,11 @@ avise isso na entrega.
 | `references/ENTREVISTA.md` | Antes de perguntar qualquer coisa |
 | `references/NATIVO-PRIMEIRO.md` | Passo 1, sempre |
 | `references/ARMADILHAS-ZWCAD.md` | Antes de compilar, mexer em estado de layer ou criar objeto COM |
-| `references/PADRAO-CODIGO.md` | Ao escrever o LISP |
+| `references/PADRAO-CODIGO.md` | Ao escrever a LISP |
 | ⭐ `docs/LISP_Reference/` | **Sempre que tiver dúvida sobre uma função** — 476 arquivos, um por função, por letra inicial. Consulta barata |
 | `docs/LISP_Migration/` | Notas oficiais da ZWSOFT: identificadores COM, arquivos de recurso, FAQ de erros |
 | `docs/DCL/` | Quando a interface DCL for além de botões simples |
-| `references/PADRAO-MANUAL.md` | **Só se o usuário for vender o plugin** e pedir manual HTML |
+| `references/PADRAO-MANUAL.md` | **Só se o usuário for vender a LISP** e pedir manual HTML |
 
 ## Checklist antes de entregar
 
