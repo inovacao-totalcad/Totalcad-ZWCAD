@@ -11,7 +11,7 @@ uma linha de código.
 <br>
 
 [![Skill](https://img.shields.io/badge/Claude_Code-Skill-F1986C?style=for-the-badge&labelColor=1c1c1c)](#instala%C3%A7%C3%A3o)
-[![ZWCAD](https://img.shields.io/badge/ZWCAD-2026_|_2027-F1986C?style=for-the-badge&labelColor=1c1c1c)](https://www.zwsoft.com/)
+[![ZWCAD](https://img.shields.io/badge/ZWCAD-Standard_ou_Professional-F1986C?style=for-the-badge&labelColor=1c1c1c)](https://www.zwsoft.com/)
 [![LISP](https://img.shields.io/badge/LISP_+_DCL-476_fun%C3%A7%C3%B5es-F1986C?style=for-the-badge&labelColor=1c1c1c)](#o-que-ela-sabe-do-zwcad)
 [![Debug](https://img.shields.io/badge/toda_vers%C3%A3o-em_modo_debug-F1986C?style=for-the-badge&labelColor=1c1c1c)](#o-processo)
 
@@ -142,9 +142,13 @@ correção vira chute.
 
 ## Instalação
 
-### 1. Tenha o ZWCAD 2026 ou 2027
+### 1. Tenha o ZWCAD
 
-Os recursos nativos que a skill consulta nasceram no **2026**. O trial de 30 dias serve.
+Funciona em **qualquer edição, Standard ou Professional** — LISP roda nas duas.
+
+A skill também verifica se o que você pediu já é recurso nativo. Boa parte desses recursos nasceu no
+**2026**, e alguns são exclusivos do **Professional** — quando for o seu caso, ela avisa que na sua
+versão o recurso não existe e a rotina faz sentido.
 
 ### 2. Instale a skill
 
