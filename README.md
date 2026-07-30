@@ -1,129 +1,248 @@
 <div align="center">
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/totalcad-branco.png">
-  <img src="assets/totalcad-escuro.png" alt="TotalCAD" width="300">
-</picture>
+<img src="assets/totalcad-symbol.png" alt="TotalCAD" width="110">
 
-<br><br>
+# Totalcad&#8209;ZWCAD
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/zwcad-branco.png">
-  <img src="assets/zwcad.png" alt="ZWCAD" width="150">
-</picture>
-
-<br><br>
-
-# Fábrica de LISP para ZWCAD
-
-**Descreva o problema. A IA entrevista, escreve o plugin e criptografa para você distribuir.**
-
-Uma skill de IA que conhece o ZWCAD de verdade — as funções que existem,<br>os recursos que já vêm de
-fábrica, e o comando que protege o seu código.
+**Crie seus próprios plugins para o ZWCAD conversando em português.**<br>
+Do problema que te faz perder tempo ao plugin criptografado e pronto para distribuir — sem escrever
+uma linha de código.
 
 <br>
 
-![ZWCAD](https://img.shields.io/badge/ZWCAD-2026%20%7C%202027-0C1B33?style=for-the-badge)
-![LISP](https://img.shields.io/badge/LISP%20%2B%20DCL-476%20fun%C3%A7%C3%B5es%20documentadas-ED4D1C?style=for-the-badge)
-![Skill](https://img.shields.io/badge/skill-Claude%20Code%20%C2%B7%20Antigravity%20%C2%B7%20Codex-315AE5?style=for-the-badge)
+[![Skill](https://img.shields.io/badge/Claude_Code-Skill-F1986C?style=for-the-badge&labelColor=1c1c1c)](#instala%C3%A7%C3%A3o)
+[![ZWCAD](https://img.shields.io/badge/ZWCAD-2026_|_2027-F1986C?style=for-the-badge&labelColor=1c1c1c)](https://www.zwsoft.com/)
+[![LISP](https://img.shields.io/badge/LISP_+_DCL-476_fun%C3%A7%C3%B5es-F1986C?style=for-the-badge&labelColor=1c1c1c)](#o-que-ela-sabe-do-zwcad)
+[![Distribuição](https://img.shields.io/badge/.zelx-criptografado-F1986C?style=for-the-badge&labelColor=1c1c1c)](#distribui%C3%A7%C3%A3o)
+
+<br>
+
+<sub>Criada por **Alison Cruz** · mantida e distribuída pela **TotalCAD**</sub>
 
 </div>
 
 <br>
 
+---
+
+<br>
+
 ## O problema
 
-Uma IA genérica escreve LISP que **parece** certo. Você carrega no ZWCAD e ele não roda — ou pior,
-roda, não reclama, e não faz nada.
+Peça a uma IA genérica um plugin LISP para o ZWCAD. Ela responde rápido, o código sai bonito e
+comentado — e não roda. Ou pior: roda, não reclama, e não faz nada.
 
-Porque ela chuta. Chuta função que não existe, chuta identificador de objeto COM, chuta a ordem das
-opções de um comando. E quando você pergunta como proteger o código, ela inventa.
+**O que ela não tem é conhecimento do ZWCAD.**
 
-Esta skill não chuta: ela carrega a **documentação oficial da ZWSOFT** e consulta antes de escrever.
+Ela chuta. Chuta função que não existe, chuta identificador de objeto COM, chuta a ordem das opções
+de um comando. Quando você pergunta como proteger o código, ela inventa um jeito. E quando você
+pede algo que o ZWCAD já faz de fábrica, ela constrói de qualquer jeito — porque não sabe que já
+existe.
 
-<br>
+> **A IA escreve. O conhecimento do ZWCAD é seu.**<br>
+> Esta skill é esse conhecimento, escrito uma vez e aplicado sempre.
 
-## Instalar
-
-```bash
-git clone https://github.com/inovacao-totalcad/Totalcad-ZWCAD.git ~/.claude/skills/totalcad-lisp
-```
-
-Usa outro agente? Peça a ele: *"instale esta skill que está na pasta Totalcad-ZWCAD"*.
-Antigravity, Codex, OpenCode e Cursor sabem onde colocar.
-
-### Testar se pegou
-
-Pergunte ao seu agente: **"como eu protejo uma LISP no ZWCAD?"**
-
-| Resposta | Significa |
-|---|---|
-| Cita o comando **`COMPILE`** e o formato **`.zelx`** | ✅ Instalada |
-| Inventa uma função de compilação, ou não sabe | ❌ Não carregou |
+Ela chega com a documentação oficial da ZWSOFT embutida: **476 funções LISP**, uma por arquivo, para
+consulta sob demanda. Já sabe o que não existe, já sabe qual recurso é nativo, já sabe que proteger
+código é o comando `COMPILE`. Você descreve o problema, ela pergunta o que falta, e o que sai roda.
 
 <br>
 
-## Como funciona
+## O processo
+
+Entra do jeito que você conseguir descrever. Sai criptografado e pronto para distribuir.
 
 ```mermaid
-flowchart TD
-    A["Você descreve o problema"] --> B{"Já é nativo<br>no ZWCAD?"}
-    B -->|Sim| C["A skill te ensina o comando<br>e não constrói nada"]
-    B -->|Não| D["Entrevista<br>2 a 8 perguntas"]
-    D --> E["Tabela de premissas<br>'posso construir?'"]
-    E --> F["LISP no padrão<br>+ interface + ajuda"]
-    F --> G["APPLOAD e testar"]
-    G -->|erro| H["Você cola o erro<br>a IA corrige"]
-    H --> G
-    G -->|funciona| I["COMPILE → .zelx<br>criptografado"]
+flowchart LR
+    A["💬 só o problema<br><i>'perco 40 min por dia'</i>"] --> N
+    B["💡 ideia pronta<br><i>'quero um botão que...'</i>"] --> N
 
-    style C fill:#315AE5,stroke:#0C1B33,color:#fff
-    style I fill:#ED4D1C,stroke:#0C1B33,color:#fff
-    style B fill:#0C1B33,stroke:#0C1B33,color:#fff
+    N{"🔍 já é nativo<br>no ZWCAD?"}
+    N -- "sim" --> X["✋ ensina o comando<br>e não constrói nada"]
+    N -- "não" --> D["❓ entrevista<br>2 a 8 perguntas"]
+
+    D --> G{{"PREMISSAS<br>tabela fechada + ok<br>informado vs. assumido"}}
+    G ==> H["⚙️ LISP + DCL no padrão"]
+    H --> T["🧪 APPLOAD e testar"]
+    T -- "erro" --> H
+    T -- "funciona" --> I["🔒 COMPILE → .zelx"]
+
+    classDef entrada fill:#1c1c1c,stroke:#F1986C,stroke-width:1px,color:#e8e8e8
+    classDef portao  fill:#F1986C,stroke:#F1986C,stroke-width:2px,color:#1c1c1c
+    classDef saida   fill:#1c1c1c,stroke:#8a8a8a,stroke-width:1px,color:#e8e8e8
+    classDef freio   fill:#1c1c1c,stroke:#315AE5,stroke-width:2px,color:#e8e8e8
+
+    class A,B entrada
+    class N,G portao
+    class D,H,T,I saida
+    class X freio
 ```
 
-O passo que economiza mais tempo é o **segundo**. Antes de construir qualquer coisa, a skill
-verifica se o ZWCAD já resolve — porque o erro mais caro em automação de CAD é escrever um plugin
-para algo que já vem de fábrica.
-
-> Um plugin comercial de tabela de coordenadas UTM, com contrato e manual, foi tornado desnecessário
-> pelo **Coordinate Extraction** do ZWCAD 2027. O plugin não era ruim. Só deixou de ser preciso.
+**A regra-mãe:** não automatize o que já é nativo. Construir plugin para o que o ZWCAD já faz custa
+o seu tempo, mais um arquivo para manter, e quebra na próxima versão.
 
 <br>
 
-## O que você não escreve
+## Por que importa
 
-Nada. Você responde perguntas e testa o resultado.
+<table>
+<tr>
+<td width="50%" valign="top">
 
-O que sai pronto, seguindo um padrão fixo:
+### 🔍 Verifica o nativo antes de construir
 
-- **Comando com o seu prefixo** — `AC_`, `JM_`, o que você escolher
-- **Interface DCL** gerada dentro do próprio LISP, sem arquivo solto
-- **Ajuda embutida** no botão `[Ajuda]`, sem depender de internet
-- **Acesso duplo** — botão na janela e comando direto para quem tem pressa
-- **Tratamento de ESC** que não deixa o desenho sujo
-- **Ctrl+Z único** desfaz a execução inteira
-- **Memória** da última configuração usada
-- **`.zelx` criptografado** para você compartilhar sem entregar o código
+Antes de qualquer entrevista, a skill checa **22 recursos nativos** do ZWCAD que costumam ser
+reinventados como plugin.
+
+Se já existe, ela **para e te ensina o comando** — em vez de gastar sua tarde construindo o que
+veio de fábrica.
+
+</td>
+<td width="50%" valign="top">
+
+### 🎯 Nada de premissa escondida
+
+Antes de escrever código, uma tabela fechada separa **o que você informou** do **que ela arbitrou**.
+
+Você vê de relance o que foi decidido nas suas costas e corrige **antes** de gastar tempo testando.
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### 📚 Consulta em vez de chutar
+
+A documentação oficial da ZWSOFT vem embutida: **476 funções**, uma por arquivo, mais o guia de DCL.
+
+Em dúvida, ela lê o arquivo da função. Ler um custa 6 KB — errar custa a sua tarde de teste.
+
+</td>
+<td width="50%" valign="top">
+
+### 🔒 Sai pronto para distribuir
+
+Não para no código que roda na sua máquina. Termina no **`.zelx` criptografado**, gerado pelo
+`COMPILE`, que você compartilha sem entregar o fonte.
+
+Interface, ajuda e tratamento de erro já vêm no padrão.
+
+</td>
+</tr>
+</table>
 
 <br>
 
-## O que tem dentro
+## Instalação
+
+### 1. Tenha o ZWCAD 2026 ou 2027
+
+Os recursos nativos que a skill consulta nasceram no **2026**. O trial de 30 dias serve.
+
+### 2. Instale a skill
+
+```bash
+git clone https://github.com/inovacao-totalcad/Totalcad-ZWCAD.git
+```
+
+**Claude Code — todos os projetos:**
+
+```bash
+cp -r Totalcad-ZWCAD/skills/totalcad-lisp ~/.claude/skills/
+```
+
+**Claude Code — só neste projeto:**
+
+```bash
+cp -r Totalcad-ZWCAD/skills/totalcad-lisp .claude/skills/
+```
+
+<details>
+<summary><b>Windows (PowerShell)</b></summary>
+
+<br>
+
+```powershell
+Copy-Item -Recurse Totalcad-ZWCAD\skills\totalcad-lisp "$env:USERPROFILE\.claude\skills\"
+```
+
+</details>
+
+<details>
+<summary><b>Outro agente (Antigravity, Codex, OpenCode, Cursor)</b></summary>
+
+<br>
+
+Peça ao próprio agente:
+
+```
+instale esta skill que está na pasta Totalcad-ZWCAD/skills/totalcad-lisp
+```
+
+Ele sabe onde a pasta de skills dele fica.
+
+</details>
+
+### 3. Confirme que pegou
+
+Pergunte ao seu agente:
+
+```
+como eu protejo uma LISP no ZWCAD?
+```
+
+Se ele citar o comando **`COMPILE`** e o formato **`.zelx`**, está instalada. Se inventar uma função
+de compilação, não carregou.
+
+### 4. Use
+
+Diga o que te dá trabalho, em linguagem normal, sem tentar descrever a solução:
+
+```
+perco 40 minutos arrumando os layers de todo arquivo que recebo do cliente
+```
+
+<br>
+
+## Como conversar com ela
+
+| Você manda | Ela faz |
+|---|---|
+| Só a dor — *"perco tempo com X"* | Pergunta como você faz hoje, na mão, e propõe a solução |
+| A ideia já pronta | Preenche só os buracos — 2 a 4 perguntas |
+| Um pedido que já é nativo | **Para**, mostra o comando, e explica por que plugin seria pior |
+| A mensagem de erro do console | Diz qual era a causa e devolve o arquivo inteiro corrigido |
+| *"mudei de ideia, quero também..."* | Sobe a versão e mantém o padrão |
+
+**Ela nunca:** escreve código antes de fechar a entrevista · aplica default em silêncio · assina o
+plugin com o nome dela · usa função que não existe no ZWCAD · entrega sem tratar ESC e seleção vazia.
+
+<br>
+
+## O que sai pronto
+
+Você não escreve nada. Responde perguntas e testa. O que sai segue um padrão fixo:
+
+```
+MeuPlugin/
+  Source/         LISP_MeuPlugin.lsp     ← fonte, para editar depois
+  Distribution/   MeuPlugin.zelx         ← o que você compartilha
+```
 
 | | |
 |---|---|
-| **`SKILL.md`** | O fluxo de 7 passos. É o que o agente lê primeiro |
-| **`references/ENTREVISTA.md`** | Dois caminhos de entrada e as 8 perguntas que definem um plugin |
-| **`references/NATIVO-PRIMEIRO.md`** | 22 pedidos comuns que o ZWCAD já resolve — e desde qual versão |
-| **`references/ARMADILHAS-ZWCAD.md`** | Onde a IA erra: funções inexistentes, identificadores COM, DCL que não abre |
-| **`references/PADRAO-CODIGO.md`** | O esqueleto LISP + DCL, com os erros clássicos já corrigidos |
-| **`docs/LISP_Reference/`** | 476 arquivos, um por função — consulta sob demanda |
-| **`docs/LISP_Migration/`** | Notas oficiais da ZWSOFT: identificadores COM, arquivos de recurso, FAQ de erros |
-| **`docs/DCL/`** | Dois guias de DCL avançado, em português |
+| **Comando com o seu prefixo** | `AC_`, `JM_`, o que você escolher — nunca o de outra pessoa |
+| **Interface DCL** | Gerada dentro do próprio LISP e apagada no fim. Sem `.dcl` solto |
+| **Ajuda embutida** | No botão `[Ajuda]`, dentro do arquivo. Sem depender de internet |
+| **Acesso duplo** | Botão na janela **e** comando direto, para quem tem pressa |
+| **Trata ESC** | Restaura o que mexeu e não deixa o desenho sujo |
+| **Ctrl+Z único** | Desfaz a execução inteira de uma vez |
+| **Memória** | Lembra a última configuração usada, no registro |
+| **Validação ao vivo** | Avisa do valor inválido na hora, não no OK |
 
 <br>
 
-## Uma amostra do que ela sabe
+## O que ela sabe do ZWCAD
 
 **Proteger código é o comando `COMPILE`**, que gera `.zelx`. Não existe função LISP de compilação —
 quem inventa uma, falha.
@@ -139,29 +258,73 @@ quem inventa uma, falha.
 
 **E as que não aparecem em tabela nenhuma:**
 
-- **`vlax-create-object` com o identificador errado devolve `nil` sem dar erro.** No ZWCAD é
-  `ZWCAD.Application.<ano>`, `ZWCAD.ZcCmColor.<ano>`. Falha silenciosa, que estoura longe da causa
+> ⚠️ **`vlax-create-object` com o identificador errado devolve `nil` sem dar erro.** No ZWCAD é
+> `ZWCAD.Application.<ano>`, `ZWCAD.ZcCmColor.<ano>` — com o ano da versão no fim. É a falha mais
+> traiçoeira: o plugin roda, não reclama, e estoura longe da causa.
+
 - **A janela DCL não abre?** Faltam `base.dcl` e `primitives.dcl` no caminho de suporte
 - **`ZWCAD variable setting rejected`?** É `setvar` com valor fora de faixa ou variável inexistente
+- **Carregar módulo binário** é `zrxload`, e o arquivo é `.zrx`
+- **Arquivos de recurso** são `ZWCAD.lin`, `ZWCAD.pat`, `ZWCAD.cuix`
 
 <br>
 
-## Requisitos
+## Distribuição
 
-| | |
-|---|---|
-| **ZWCAD** | 2026 ou 2027 · o trial de 30 dias serve |
-| **Um agente de IA** | Claude Code, Antigravity, Codex, OpenCode ou Cursor |
-| **Saber programar** | Não |
+O `.zelx` é binário e criptografado — quem recebe usa, não lê o seu código.
+
+```
+1. Digite COMPILE
+2. "Select File"           → o .lsp
+3. "Select Save Directory" → onde salvar
+4. Formato: .zelx
+5. "Compile"
+```
+
+> ⚠️ **É via de mão única.** Não existe caminho de volta do `.zelx` para o fonte. **Guarde a pasta
+> `Source/`** — se perder o `.lsp`, o plugin morre.
 
 <br>
 
-## Curso
+## Créditos
 
-Esta skill é o material central da **Aula 2** do curso *Destravando o Poder da IA no CAD 2D*,
-ministrado por **Alison Cruz** — 6 horas ao vivo, com mentoria.
+<table>
+<tr>
+<td valign="middle" width="120" align="center">
+<img src="assets/totalcad-symbol.png" width="64">
+</td>
+<td valign="middle">
 
-<a href="https://loja.ebbim.com.br">loja.ebbim.com.br</a>
+**TotalCAD** — detentora e distribuidora oficial deste repositório.<br>
+Revenda autorizada ZWCAD no Brasil.
+
+</td>
+<td valign="middle" width="150" align="center">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/zwcad-white.png">
+  <img src="assets/zwcad.png" width="120">
+</picture>
+</td>
+</tr>
+</table>
+
+**Criação e autoria técnica:** [Alison Cruz](https://github.com/ba-lison) — concepção do workflow,
+protocolo de entrevista, padrão de código LISP/DCL e curadoria da documentação técnica.
+
+Desenvolvida a partir do curso **Destravando o Poder da IA no CAD 2D**.
+
+<br>
+
+## Aviso
+
+ZWCAD e ZWSOFT são marcas da **ZWSOFT Co., Ltd. (Guangzhou)**. Claude e Claude Code são marcas da
+**Anthropic**. Este projeto não é afiliado nem endossado por elas — é uma skill independente.
+
+A documentação em `skills/totalcad-lisp/docs/` é material público da ZWSOFT, convertido para
+consulta offline.
+
+O código gerado por esta skill **é de responsabilidade de quem o publica**. Teste antes de
+distribuir: caminho normal, ESC no meio, seleção vazia e Ctrl+Z.
 
 <br>
 
@@ -169,16 +332,10 @@ ministrado por **Alison Cruz** — 6 horas ao vivo, com mentoria.
 
 <div align="center">
 
-<img src="assets/totalcad-simbolo.png" alt="" width="40">
+<img src="assets/totalcad-symbol.png" alt="TotalCAD" width="40">
 
-**Criação:** Alison Cruz · **Desenvolvimento:** TotalCAD
-<br>
-<sub>Revenda autorizada ZWCAD no Brasil</sub>
+**TotalCAD** · [hub.totalcad.com.br](https://hub.totalcad.com.br)
 
-<br>
-
-<sub>A documentação em <code>docs/</code> é material público da ZWSOFT Co., Ltd.,
-convertido para consulta offline.<br>
-ZWCAD é marca registrada da ZWSOFT.</sub>
+<sub>Feito para quem entrega projeto.</sub>
 
 </div>

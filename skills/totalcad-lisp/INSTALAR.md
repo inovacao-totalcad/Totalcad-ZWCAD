@@ -3,23 +3,24 @@
 ## Claude Code
 
 ```bash
-git clone https://github.com/inovacao-totalcad/Totalcad-ZWCAD.git ~/.claude/skills/totalcad-lisp
+git clone https://github.com/inovacao-totalcad/Totalcad-ZWCAD.git
+cp -r Totalcad-ZWCAD/skills/totalcad-lisp ~/.claude/skills/
 ```
 
-Para valer só num projeto, troque o destino por `.claude/skills/totalcad-lisp`.
+Para valer só num projeto, troque o destino por `.claude/skills/`.
 
 ## Outro agente
 
 Antigravity, Codex, OpenCode, Cursor — peça ao próprio agente:
 
-> *"instale esta skill que está na pasta Totalcad-ZWCAD"*
+> *"instale esta skill que está na pasta Totalcad-ZWCAD/skills/totalcad-lisp"*
 
 Ele sabe onde a pasta de skills dele fica.
 
 ## Sem git
 
-Baixe em **Code → Download ZIP** no GitHub e descompacte dentro da pasta de skills do seu agente.
-O `SKILL.md` precisa ficar na **raiz** da pasta que você criar.
+Baixe em **Code → Download ZIP** no GitHub e copie a pasta `skills/totalcad-lisp` de dentro do ZIP
+para a pasta de skills do seu agente. O `SKILL.md` tem que ficar na raiz de `totalcad-lisp/`.
 
 ---
 
