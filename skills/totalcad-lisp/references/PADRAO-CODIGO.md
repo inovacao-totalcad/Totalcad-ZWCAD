@@ -62,17 +62,67 @@ Substitua os placeholders pelos dados de `IDENTIDADE.md`:
 )
 (rot-startup)
 
+;;; --- MODO DEBUG ----------------------------------------------------------
+;;; Enquanto T, a rotina narra o que faz e grava LOG_<COMANDO>.txt.
+;;; VERSAO DE TESTE: T   |   VERSAO FINAL: nil
+(setq *rot-debug* T)
+
+;;; Log fica junto do desenho. Se o desenho nunca foi salvo, cai no temporario.
+(defun rot-log-arq ( / pre)
+  (setq pre (getvar "DWGPREFIX"))
+  (if (or (null pre) (= pre ""))
+    (vl-filename-mktemp (strcat "LOG_" *rot-cmd* ".txt"))
+    (strcat pre "LOG_" *rot-cmd* ".txt")
+  )
+)
+
+(defun rot-log (txt / f)
+  (if *rot-debug*
+    (progn
+      (princ (strcat "\n  [dbg] " txt))
+      (if (setq f (open (rot-log-arq) "a"))
+        (progn
+          (write-line (strcat (rtos (getvar "CDATE") 2 6) "  " txt) f)
+          (close f)
+        )
+      )
+    )
+  )
+  (princ)
+)
+
+;;; Cabecalho do log, uma vez por execucao
+(defun rot-log-inicio ()
+  (if *rot-debug*
+    (progn
+      (rot-log "===================================================")
+      (rot-log (strcat "INICIO  " *rot-nome* " v" *rot-ver*))
+      (rot-log (strcat "desenho: " (getvar "DWGNAME")))
+      (rot-log (strcat "unidade INSUNITS: " (itoa (getvar "INSUNITS"))))
+      (princ (strcat "\n  [dbg] versao de TESTE - log em " (rot-log-arq)))
+    )
+  )
+  (princ)
+)
+
 ;;; --- TRATAMENTO DE ERRO --------------------------------------------------
 ;;; Guarda o que mexeu e devolve no lugar, inclusive quando o usuario da ESC.
 (setq *rot-cmdecho* nil)
 
 (defun *error* (msg)
   (if (not (wcmatch (strcase msg t) "*break*,*cancel*,*exit*"))
-    (princ (strcat "\nErro em " *rot-nome* ": " msg))
-    (princ "\nCancelado pelo usuario.")
+    (progn
+      (princ (strcat "\nErro em " *rot-nome* ": " msg))
+      (rot-log (strcat "*** ERRO: " msg))          ;; vai para o log tambem
+    )
+    (progn
+      (princ "\nCancelado pelo usuario.")
+      (rot-log "cancelado pelo usuario (ESC)")
+    )
   )
   (if *rot-cmdecho* (setvar "CMDECHO" *rot-cmdecho*))
   (rot-undo-fim)
+  (if *rot-debug* (princ (strcat "\n  [dbg] log em " (rot-log-arq))))
   (princ)
 )
 
@@ -164,7 +214,10 @@ Substitua os placeholders pelos dados de `IDENTIDADE.md`:
 )
 
 ;;; --- LOGICA --------------------------------------------------------------
-(defun rot-executa (valor incluir-congelado / ss)
+(defun rot-executa (valor incluir-congelado / ss i ent)
+  (rot-log-inicio)
+  (rot-log (strcat "parametros: valor=" (rtos valor 2 4)
+                   " congelado=" (if incluir-congelado "sim" "nao")))
   (setq *rot-cmdecho* (getvar "CMDECHO"))
   (setvar "CMDECHO" 0)
   (rot-undo-ini)
@@ -172,9 +225,23 @@ Substitua os placeholders pelos dados de `IDENTIDADE.md`:
   ;; >>> LOGICA
   (setq ss (ssget))                    ;; nil se o usuario nao selecionar nada
   (if (null ss)
-    (princ "\nNada selecionado. Nenhuma alteracao feita.")
     (progn
-      ;; ... trabalho aqui ...
+      (rot-log "selecao vazia - nada a fazer")
+      (princ "\nNada selecionado. Nenhuma alteracao feita.")
+    )
+    (progn
+      (rot-log (strcat "selecionados: " (itoa (sslength ss)) " objeto(s)"))
+      (setq i 0)
+      (while (< i (sslength ss))
+        (setq ent (ssname ss i))
+        ;; ... trabalho aqui ...
+        ;; REGISTRE CADA DECISAO. E aqui que se descobre por que deu errado:
+        (rot-log (strcat "  [" (itoa (1+ i)) "] "
+                         (cdr (assoc 0 (entget ent)))   ;; tipo do objeto
+                         " layer=" (cdr (assoc 8 (entget ent)))))
+        (setq i (1+ i))
+      )
+      (rot-log (strcat "CONCLUIDO: " (itoa (sslength ss)) " objeto(s) processado(s)"))
       (princ (strcat "\nConcluido: " (itoa (sslength ss)) " objeto(s)."))
     )
   )
@@ -182,6 +249,9 @@ Substitua os placeholders pelos dados de `IDENTIDADE.md`:
 
   (rot-undo-fim)
   (setvar "CMDECHO" *rot-cmdecho*)
+  (if *rot-debug*
+    (princ (strcat "\n  [dbg] log salvo em " (rot-log-arq)
+                   "\n  [dbg] deu errado? mande este arquivo inteiro")))
   (princ)
 )
 
@@ -259,7 +329,8 @@ Se você conhece a versão anterior deste template, estes pontos foram corrigido
 |---|---|
 | Comando vem de `*rot-cmd*`, não de `(strcase *rot-nome*)` | Nome com espaço gerava comando inválido: `"Count Plus"` → `AC_COUNT PLUS` |
 | Linha `"Autor: "` aparecia duas vezes no alert | Erro de cópia |
-| `[Ajuda]` mostra o texto de uso **dentro do próprio LISP** | Antes abria um site. Uma LISP de um arquivo não deve depender de internet nem de arquivo vizinho para explicar a si mesmo |
+| `[Ajuda]` mostra o texto de uso **dentro do próprio arquivo** | Antes abria um site. Uma rotina de um arquivo só não deve depender de internet nem de arquivo vizinho para explicar a si mesma |
+| ⭐ **Modo debug** com `rot-log` gravando TXT | Sem log, o relato que volta é *"não funcionou"* — e a correção vira chute |
 | `*error*` presente, restaurando `CMDECHO` e fechando o UNDO | Sem isso, um ESC no meio deixa o desenho com `CMDECHO` desligado e o grupo de undo aberto |
 | `rot-undo-ini` / `rot-undo-fim` | Sem isso o usuário aperta Ctrl+Z dez vezes para desfazer uma execução |
 | `load_dialog` testa retorno negativo | `(exit)` dentro de `if` abortava sujo e deixava o `.dcl` temporário no disco |
@@ -275,4 +346,28 @@ Peça ao usuário para rodar os quatro:
 3. **Nada selecionado** — avisa e sai sem alterar
 4. **Ctrl+Z uma vez** — desfaz tudo
 
-Se qualquer um falhar, corrija antes de partir para o `COMPILE`.
+Se qualquer um falhar, **peça o TXT do log** e corrija. Nova versão, `PATCH` acima, debug ainda
+ligado.
+
+---
+
+## Virar a versão final
+
+**Só depois do usuário confirmar em palavras que está do jeito que ele precisa.**
+
+Uma linha muda:
+
+```lisp
+(setq *rot-debug* nil)        ;; era T
+```
+
+E a versão sobe para `1.0.0`.
+
+⚠️ **Não apague as chamadas `rot-log`.** Com o debug desligado elas ficam inertes — não gravam, não
+imprimem, não custam nada. E se a rotina der problema daqui a seis meses, o usuário volta o `T` e
+tem o log de novo. Apagar o debug é jogar fora a única ferramenta de diagnóstico que ele tem.
+
+Diga isso a ele com estas palavras:
+
+> *"Se algum dia der problema, abra o `.lsp`, troque `(setq *rot-debug* nil)` por
+> `(setq *rot-debug* T)` e rode de novo — a rotina volta a gravar o log."*

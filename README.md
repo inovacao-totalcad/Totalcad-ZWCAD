@@ -5,7 +5,7 @@
 # Totalcad&#8209;ZWCAD
 
 **Crie suas próprias rotinas LISP para o ZWCAD conversando em português.**<br>
-Da tarefa que te faz perder tempo à rotina criptografada e pronta para distribuir — sem escrever
+Da tarefa que te faz perder tempo à rotina testada e pronta para distribuir — sem escrever
 uma linha de código.
 
 <br>
@@ -13,7 +13,7 @@ uma linha de código.
 [![Skill](https://img.shields.io/badge/Claude_Code-Skill-F1986C?style=for-the-badge&labelColor=1c1c1c)](#instala%C3%A7%C3%A3o)
 [![ZWCAD](https://img.shields.io/badge/ZWCAD-2026_|_2027-F1986C?style=for-the-badge&labelColor=1c1c1c)](https://www.zwsoft.com/)
 [![LISP](https://img.shields.io/badge/LISP_+_DCL-476_fun%C3%A7%C3%B5es-F1986C?style=for-the-badge&labelColor=1c1c1c)](#o-que-ela-sabe-do-zwcad)
-[![Distribuição](https://img.shields.io/badge/.zelx-criptografado-F1986C?style=for-the-badge&labelColor=1c1c1c)](#distribui%C3%A7%C3%A3o)
+[![Debug](https://img.shields.io/badge/toda_vers%C3%A3o-em_modo_debug-F1986C?style=for-the-badge&labelColor=1c1c1c)](#o-processo)
 
 <br>
 
@@ -50,7 +50,7 @@ código é o comando `COMPILE`. Você descreve o problema, ela pergunta o que fa
 
 ## O processo
 
-Entra do jeito que você conseguir descrever. Sai criptografada e pronta para distribuir.
+Entra do jeito que você conseguir descrever. Sai testada, e do jeito que você escolher distribuir.
 
 ```mermaid
 flowchart LR
@@ -62,10 +62,13 @@ flowchart LR
     N -- "não" --> D["❓ entrevista<br>2 a 8 perguntas"]
 
     D --> G{{"PREMISSAS<br>tabela fechada + ok<br>informado vs. assumido"}}
-    G ==> H["⚙️ LISP + DCL no padrão"]
+    G ==> H["🐞 versão DEBUG<br>narra tudo + log em TXT"]
     H --> T["🧪 APPLOAD e testar"]
-    T -- "erro" --> H
-    T -- "funciona" --> I["🔒 COMPILE → .zelx"]
+    T -- "deu errado:<br>você manda o TXT" --> H
+    T -- "você aprova" --> F["✅ versão final<br>debug desligado"]
+    F --> P{"proteger o código?"}
+    P -- "não" --> L[".lsp aberto<br>roda em qualquer CAD"]
+    P -- "sim" --> Z["🔒 .zelx<br>só ZWCAD"]
 
     classDef entrada fill:#1c1c1c,stroke:#F1986C,stroke-width:1px,color:#e8e8e8
     classDef portao  fill:#F1986C,stroke:#F1986C,stroke-width:2px,color:#1c1c1c
@@ -73,13 +76,16 @@ flowchart LR
     classDef freio   fill:#1c1c1c,stroke:#315AE5,stroke-width:2px,color:#e8e8e8
 
     class A,B entrada
-    class N,G portao
-    class D,H,T,I saida
+    class N,G,P portao
+    class D,H,T,F,L,Z saida
     class X freio
 ```
 
 **A regra-mãe:** não automatize o que já é nativo. Escrever uma LISP para o que o ZWCAD já faz custa
 o seu tempo, mais um arquivo para manter, e quebra na próxima versão.
+
+**A segunda regra:** ninguém acerta de primeira. Por isso **toda versão nasce em modo debug** — e só
+você decide quando está pronta.
 
 <br>
 
@@ -120,12 +126,13 @@ Em dúvida, ela lê o arquivo da função. Ler um custa 6 KB — errar custa a s
 </td>
 <td width="50%" valign="top">
 
-### 🔒 Sai pronta para distribuir
+### 🐞 Toda versão nasce em modo debug
 
-Não para no código que roda na sua máquina. Termina no **`.zelx` criptografado**, gerado pelo
-`COMPILE`, que você compartilha sem entregar o fonte.
+Ninguém acerta de primeira. Até **você** dizer que está perfeito, cada versão narra o que fez na
+linha de comando e **grava um TXT**.
 
-Interface, ajuda e tratamento de erro já vêm no padrão.
+Deu errado? Você manda o arquivo inteiro de volta. Sem log, o que sobra é *"não funcionou"* — e a
+correção vira chute.
 
 </td>
 </tr>
@@ -211,11 +218,12 @@ perco 40 minutos arrumando os layers de todo arquivo que recebo do cliente
 | Só a dor — *"perco tempo com X"* | Pergunta como você faz hoje, na mão, e propõe a solução |
 | A ideia já pronta | Preenche só os buracos — 2 a 4 perguntas |
 | Um pedido que já é nativo | **Para**, mostra o comando, e explica por que uma LISP seria pior |
-| A mensagem de erro do console | Diz qual era a causa e devolve o arquivo inteiro corrigido |
+| O TXT de log da versão debug | Diz **em qual etapa** parou, qual era a causa, e devolve o arquivo corrigido |
 | *"mudei de ideia, quero também..."* | Sobe a versão e mantém o padrão |
 
 **Ela nunca:** escreve código antes de fechar a entrevista · aplica default em silêncio · assina a
-rotina com o nome dela · usa função que não existe no ZWCAD · entrega sem tratar ESC e seleção vazia.
+rotina com o nome dela · usa função que não existe no ZWCAD · entrega sem tratar ESC e seleção
+vazia · **declara pronto no seu lugar** · criptografa sem te avisar que aquilo prende a rotina ao ZWCAD.
 
 <br>
 
@@ -226,11 +234,15 @@ Você não escreve nada. Responde perguntas e testa. O que sai segue um padrão 
 ```
 ArrumaLayer/
   Source/         LISP_ArrumaLayer.lsp   ← fonte, para editar depois
-  Distribution/   ArrumaLayer.zelx       ← o que você compartilha
+  Distribution/   ArrumaLayer.zelx       ← se você escolher criptografar
+
+na pasta do seu desenho, durante os testes:
+  LOG_AC_ARRUMALAYER.txt                 ← o que você manda de volta
 ```
 
 | | |
 |---|---|
+| **Modo debug ligado** | Narra cada decisão e grava TXT — até você aprovar |
 | **Comando com o seu prefixo** | `AC_`, `JM_`, o que você escolher — nunca o de outra pessoa |
 | **Interface DCL** | Gerada dentro do próprio `.lsp` e apagada no fim. Sem `.dcl` solto |
 | **Ajuda embutida** | No botão `[Ajuda]`, dentro do arquivo. Sem depender de internet |
@@ -271,10 +283,34 @@ quem inventa uma, falha.
 
 ## Distribuição
 
-O `.zelx` é binário e criptografado — quem recebe usa, não lê o seu código.
+Terminou e aprovou. Agora vem **a única escolha que a skill não faz por você:**
+
+| Formato | Quem consegue abrir | Código visível? |
+|---|---|---|
+| **`.lsp`** como está | **Qualquer CAD que rode LISP** | Sim — quem receber lê e altera |
+| **`.lsp` criptografado** | ⚠️ **Só ZWCAD** | Não |
+| **`.zelx`** | ⚠️ **Só ZWCAD** | Não |
+
+> ### Criptografar troca alcance por proteção.
+> No momento em que você criptografa, a rotina **passa a ser exclusiva do ZWCAD** — não abre em
+> nenhum outro CAD. Se deixar em `.lsp`, roda em qualquer lugar, mas o código vai aberto.
+
+**Como decidir:**
+
+| Sua situação | Escolha |
+|---|---|
+| Vai vender a rotina | **Criptografado** — seu público já é de ZWCAD |
+| Uso interno, equipe toda em ZWCAD | **Criptografado**, e guarde o fonte |
+| Compartilhar em grupo, fórum, com colega | **`.lsp` aberto** — não trave quem quer te ajudar |
+| Está na dúvida | **`.lsp` aberto.** Criptografar depois é fácil; voltar atrás não existe |
+
+<details>
+<summary><b>Se você escolher criptografar</b></summary>
+
+<br>
 
 ```
-1. Digite COMPILE
+1. No ZWCAD, digite COMPILE
 2. "Select File"           → o .lsp
 3. "Select Save Directory" → onde salvar
 4. Formato: .zelx
@@ -282,7 +318,10 @@ O `.zelx` é binário e criptografado — quem recebe usa, não lê o seu códig
 ```
 
 > ⚠️ **É via de mão única.** Não existe caminho de volta do `.zelx` para o fonte. **Guarde a pasta
-> `Source/`** — se perder o `.lsp`, a LISP morre.
+> `Source/`** — se perder o `.lsp`, a rotina morre como está: sem correção, sem melhoria, sem
+> religar o debug.
+
+</details>
 
 <br>
 
