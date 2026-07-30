@@ -37,7 +37,7 @@ resultado e distribui a rotina.
                      ↑___________ repete até ele aprovar ___________|
 6. Aprovação       → só o usuário declara. Você nunca declara por ele
 7. Versão final    → debug desligado, arquivo limpo
-8. Distribuição    → .lsp aberto  OU  criptografado. É escolha dele, não sua
+8. Distribuição    → .lsp aberto  OU  .zelx criptografado. Escolha dele, não sua
 ```
 
 ⚠️ **Não pule do 5 para o 8.** O passo 6 é uma frase explícita do usuário. Enquanto ela não vier, a
@@ -223,6 +223,9 @@ Aqui existe um **trade-off real**, e você tem que apresentá-lo antes de fazer 
 | **`.lsp`** (como está) | **Qualquer CAD que rode LISP** | Sim — quem receber lê e altera |
 | **`.lsp` criptografado** | ⚠️ **Só ZWCAD** | Não |
 | **`.zelx`** | ⚠️ **Só ZWCAD** | Não |
+
+**Entre os dois protegidos**, escolha pelo hábito de quem recebe: o `.lsp` criptografado carrega com
+`APPLOAD`, igual a qualquer LISP; o `.zelx` é pacote de extensão e tem cara de produto acabado.
 
 🔴 **Criptografar troca alcance por proteção.** No momento em que ele criptografa, a rotina **passa a
 ser exclusiva do ZWCAD** e não abre em nenhum outro CAD. Se ele deixar em `.lsp`, roda em qualquer

@@ -16,11 +16,19 @@ comando **`COMPILE`**:
 1. Digite COMPILE
 2. "Select File"           → escolha o .lsp
 3. "Select Save Directory" → escolha onde salvar
-4. Formato de saída: .zelx  (ou .lsp criptografado)
+4. Formato de saída: .zelx  ou  .lsp criptografado
 5. "Compile"
 ```
 
-**Formato de distribuição: `.zelx`.** É binário, criptografado, e não se edita.
+**Os dois formatos protegem o código** e os dois são exclusivos do ZWCAD. A diferença é de hábito de
+quem recebe:
+
+| Saída | Como o destinatário carrega | Quando usar |
+|---|---|---|
+| **`.lsp` criptografado** | `APPLOAD`, igual a qualquer LISP | Quem recebe já usa LISP e conhece o `APPLOAD` |
+| **`.zelx`** | Pacote de extensão do ZWCAD | Entrega com cara de produto, para vender |
+
+⚠️ **Nenhum dos dois se edita, e nenhum volta atrás.** Ver o aviso abaixo.
 
 ⚠️ **O `.zelx` é via de mão única.** Se o usuário perder o `.lsp` de origem, a LISP morre — não há
 como voltar do `.zelx` para o fonte. Diga isso na entrega e mande ele guardar a pasta `Source/`.
