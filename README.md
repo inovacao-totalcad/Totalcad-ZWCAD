@@ -353,7 +353,7 @@ Revenda autorizada ZWCAD no Brasil.
 **Criação e autoria técnica:** [Alison Cruz](https://github.com/ba-lison) — concepção do workflow,
 protocolo de entrevista, padrão de código LISP/DCL e curadoria da documentação técnica.
 
-Desenvolvida a partir do curso **Destravando o Poder da IA no CAD 2D**.
+Desenvolvida a partir do curso **Destravando o Poder da IA no ZWCAD**.
 
 <br>
 
